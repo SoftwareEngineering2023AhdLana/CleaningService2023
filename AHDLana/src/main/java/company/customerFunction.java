@@ -1,5 +1,7 @@
 package company;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 public class customerFunction {
@@ -104,6 +106,38 @@ public class customerFunction {
 		
 		return 1;
     }
+	public static int checkIfRequestPassed(String date,String time)
+	{
+		int hour=Integer.parseInt(time.split(":")[0]);
+		int minute=Integer.parseInt(time.split(":")[1]);
+		/////////////////////////////////////////////////////////
+		int day=Integer.parseInt(date.split("/")[0]);
+		int month=Integer.parseInt(date.split("/")[1]);
+		int year=Integer.parseInt(date.split("/")[2]);
+		/////////////////////////////////////////////////////////////////
+		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");  
+		LocalDateTime now = LocalDateTime.now();
+		int currentDay=Integer.parseInt(dtf.format(now).split(" ")[0].split("/")[0]);
+		int currentMonth=Integer.parseInt(dtf.format(now).split(" ")[0].split("/")[1]);
+		int currentYear=Integer.parseInt(dtf.format(now).split(" ")[0].split("/")[2]);
+		////////////////////////////////////////////////////////////////////////////////////////////////
+		int currentHour=Integer.parseInt(dtf.format(now).split(" ")[1].split(":")[0]);
+		int currentMinute=Integer.parseInt(dtf.format(now).split(" ")[1].split(":")[1]);
+		//////////////////////////////////////////////////////////////////////////////////////////////
+		if((currentDay>day)||(currentMonth>month)||(currentYear>year))
+			return 1;
+		else if((currentDay<day)||(currentMonth<month)||(currentYear<year))
+			return -1;
+		else if((currentDay==day)||(currentMonth==month)||(currentYear==year))
+		{
+			if((currentHour>=hour)&&(currentMinute>=minute))
+				return 1;
+			else
+				return -1;
+		}
+		return -1;
+				
+	}
 	
 	
 	

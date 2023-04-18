@@ -7,8 +7,8 @@ import io.cucumber.junit.CucumberOptions.SnippetType;
 @RunWith(Cucumber.class)
 @CucumberOptions(features = "uses_case",
 monochrome=true,
-snippets=SnippetType.CAMELCASE,
-plugin= {"html: target/cucumber.html"},
+//snippets=SnippetType.CAMELCASE,
+//plugin= {"html: target/cucumber.html"},
 glue = {"AHDLana"}
 
 		)

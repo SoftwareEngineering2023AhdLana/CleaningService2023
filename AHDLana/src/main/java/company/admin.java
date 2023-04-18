@@ -1,5 +1,7 @@
 package company;
 
+import java.util.ArrayList;
+
 public class admin {
 
 
@@ -9,6 +11,8 @@ public class admin {
 		private String address;
 		private String phoneNumber;
 		private Boolean logState=false;
+		static public ArrayList<product> products=new ArrayList<product>();
+
 		public admin() 
 		{
 			
@@ -69,6 +73,11 @@ public class admin {
 			this.address = address;
 		}
 
+		
+		public void addProduct(product p)
+		{
+			products.add(p);
+		}
 	}
 
 

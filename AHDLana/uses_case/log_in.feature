@@ -3,9 +3,9 @@ Actor: User
 Description: The User's login process to the system
 Background: The clinic has admins and worker
 And these are the users
-|ahmedmohamed|ahmed2000|Mira Jamous|nablus|050677677|
-|ahdghazal|ahd2002|Tala Hamad|nablus|050677677|
-|lanasamer|lana2002|Areen Ateeq|nablus|050677677|
+|ahmedmohamed|ahmed2000|ahmad mohamed|nablus|050677677|
+|ahdghazal|ahd2002|ahd ghazal|nablus|050677677|
+|lanasamer|lana2002|lana samer|nablus|050677677|
 
 Scenario: worker can login
 Given that the worker "lana" is not logged in

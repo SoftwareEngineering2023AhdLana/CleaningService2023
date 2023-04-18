@@ -111,7 +111,7 @@ public class login {
 	
 	public static void main(String[] args)
 	{
-		
+		/*
 			admin a1=new admin("leenhasan","12345","leen hasan","nablus","050677677");
 			admin a2=new admin("ahdGhazal","123123","ahd Ghazal","nablus","050677677");
 			admin a3=new admin("samsam","1234","sam sam","nablus","050677677");
@@ -130,7 +130,7 @@ public class login {
 			customerFunction.customers.add(c1);
 			customerFunction.customers.add(c2);
 			customerFunction.customers.add(c3);
-		
+		*/
 			main_login();
 		
 	}

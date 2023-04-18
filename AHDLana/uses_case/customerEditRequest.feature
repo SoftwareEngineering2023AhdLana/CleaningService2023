@@ -1,6 +1,6 @@
 Feature: Edit request to  system
 	Description: edit a request
-	Actors: customer
+	Actors: patient
 
 Scenario: edit a date or time of request successfully 
  	Given that  the customer "leenh" is logged in 

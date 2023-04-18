@@ -81,6 +81,7 @@ public class customer {
 		public void setRequests(ArrayList<request> Requests) {
 			requests = Requests;
 		}
+	
 		public void addToCustomerRequest(request r)
 		{
 			requests.add(r);
