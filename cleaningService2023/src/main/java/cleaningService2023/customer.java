@@ -1,20 +1,22 @@
-package company;
+package cleaningService2023;
+
+
 
 import java.util.ArrayList;
 
 public class customer {
 
 
-
+//add time work  ( time startb ,time end )
 		private String name;
 		private String username;
 		private String password;
 		private String phoneNumber;
 		private String address;
 		private Boolean logState=false;
-		public ArrayList<request> requests=new ArrayList<request>();
-		public ArrayList<request> requestsDone=new ArrayList<request>();
-		public ArrayList<request> requestsStill=new ArrayList<request>();
+		public static ArrayList<request> requests=new ArrayList<request>();
+		public static ArrayList<request> requestsDone=new ArrayList<request>();
+		public static ArrayList<request> requestsStill=new ArrayList<request>();
 
 		public customer() 
 		{
@@ -51,11 +53,6 @@ public class customer {
 		public void setPassword(String password) 
 		{
 			this.password = password;
-		}
-		@Override
-		public String toString()
-		{
-			return name;
 		}
 		public Boolean getLogState() {
 			return logState;
@@ -94,20 +91,29 @@ public class customer {
 		{
 			requestsDone.add(r);
 		}
-		public void resorRequestStill()
+		public static void resorRequestStill()
 		{
-			this.requestsDone.removeAll(requestsDone);
-			this.requestsStill.removeAll(requestsStill);
-			for(int i=0;i<this.requests.size();i++)
+			requestsDone.removeAll(requestsDone);
+			requestsStill.removeAll(requestsStill);
+			for(int i=0;i<requests.size();i++)
 			{
-				if(this.requests.get(i).getStatus()==1)
-					this.requestsDone.add(this.requests.get(i));
+				if(requests.get(i).getStatus()==1)
+					requestsDone.add(requests.get(i));
 				else
-					this.requestsStill.add(this.requests.get(i));
+					requestsStill.add(requests.get(i));
 			}
 		}
 		
-		
+		 @Override
+		    public String toString() {
+		        return "customer{" +
+		                "username =" + username +
+		                ", name ='" + name + '\'' +
+		                ", phone Number ='" + phoneNumber + '\'' +
+		                ", address ='" + address + '\'' +
+		                '}';
+		}
 		
 
 }
+

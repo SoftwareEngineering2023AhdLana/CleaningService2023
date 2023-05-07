@@ -1,4 +1,5 @@
-package company;
+package cleaningService2023;
+
 
 import java.util.ArrayList;
 
@@ -49,11 +50,6 @@ public class admin {
 		{
 			this.password = password;
 		}
-		@Override
-		public String toString()
-		{
-			return name;
-		}
 		public Boolean getLogState() {
 			return logState;
 		}
@@ -78,7 +74,20 @@ public class admin {
 		{
 			products.add(p);
 		}
+		/*
+		 @Override
+		    public String toString() {
+		        return "admin{" +
+		                "username =" + username +
+		                ", name ='" + name + '\'' +
+		                ", phone Number ='" + phoneNumber + '\'' +
+		                ", address ='" + address + '\'' +
+		                '}';
+		}
+		 */
+		
 	}
+
 
 
 
