@@ -101,23 +101,24 @@ public class login {
         if (choice == 1) {
         	loginFunction.viewProductData();
         } else if (choice == 2) {
-        	addOrder(user);
+
+        
         } else if (choice == 3) {
-        //  Edit order
-        	editOrder(user);
+
+
         }
         else if (choice == 4) {
-       //  delete order
-        	removeOrder(user);
+
+
+        	
         	
         }
         else if (choice == 5) {
-      // show invoice for order
-        	invoiceOrder(user);
+
+
         	
-        	
-       	 System.out.println("...............................");
-	
+
+
         } 
         else if (choice == 6) {
             System.out.println("Logging out...");
@@ -133,121 +134,6 @@ public class login {
       }
 	}
 	
-	public static void addOrder(String user) {
-
-        //	 add order.
-      
-        	int i;
-        	String date1;
-        	String time;
-        	
-        	loginFunction.viewProductData();
-        	
-            System.out.println("Enter index of product");
-            i=in.nextInt();
-            indexOfOrder=i;
-            System.out.println("Enter time for order");
-            time = in.nextLine();
-            timeOfOrder = time;
-        	System.out.println("Enter date for order");
-        	date1 = in.nextLine();
-        	dateOfOrder = date1;
-           
-            product p = adminFunction.searchproductindex(i);
-            request r = new request (user , date1 , time , 0,p);
-        	customerFunction.addRequest(user , r);
-        	
-        	//???
-         System.out.println("...............................");
-         System.out.println("your order :");
-         System.out.println(r.toString());
-    	 System.out.println("...............................");
-    		customerFunction.checkAllOrder();
-	}
-	
-	public static void editOrder(String user) {
-
-
-    	int i,i1;
-    	String date,date1;
-    	String time,time1;
-    	
-    	loginFunction.viewProductData();
-
-        System.out.println("Enter index of product");
-        i =in.nextInt();
-        
-        System.out.println("Enter time for order");
-        time = in.nextLine();
-        
-    	System.out.println("Enter date for order");
-    	date = in.nextLine();
-       
-        product p = adminFunction.searchproductindex(i);
-        
-        System.out.println("Enter new index of product");
-        i1=in.nextInt();
-        
-        System.out.println("Enter new time for order");
-        time1 = in.nextLine();
-        
-    	System.out.println("Enter new date for order");
-    	date1 = in.nextLine();
-       
-        product p1 = adminFunction.searchproductindex(i1);
-        
-        customerFunction.editRequest(user, date, date1, time, time1, p, p1);
-        
-    	System.out.println("...............................");
-    	customerFunction.checkAllOrder();
-	}
-	
-	public static void removeOrder(String user) {
-
-        //	 add order.
-      
-        	int i;
-        	String d="";
-        	String time;
-        	
-        	loginFunction.viewProductData();
-        	
-            System.out.println("Enter index of product");
-            i=in.nextInt();
-            
-            System.out.println("Enter time or order");
-            time = in.nextLine();
-            
-        	System.out.println("Enter date for order");
-        	d = in.nextLine();
-           
-           product p = adminFunction.searchproductindex(i);
-       //     request r = new request (user , date1 , time , 0,p);
-        	customerFunction.removeRequest(user , d,time,p);
-        	
-        	//???
-    	 System.out.println("...............................");
-    		customerFunction.checkAllOrder();
-	}
-	
-	public static void allRequestDone(String username)
-	{
-		int index=customerFunction.search(username);
-		for(int i=0;i<customerFunction.customers.get(index).getRequests().size();i++)
-		{
-			if(customerFunction.customers.get(index).getRequests().get(i).getStatus()==1) {
-				
-				System.out.println(customerFunction.customers.get(index).getRequests().get(i).toString());
-				
-			}
-		}
-		
-	}
-	
-	public static void invoiceOrder(String user) {
-	allRequestDone(user);
-	System.out.println(	customerFunction.invoiceRequestDone(user, dateOfOrder, timeOfOrder));
-	}
 	    ///////////////////////////////////////////////////////////
 	   ///////////////////////////////////////////////////////////
 	  ///////////////////////////////////////////////////////////
@@ -258,9 +144,39 @@ public class login {
  ///////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////
 
-	private static void workerMenu() {
+	private static void workerMenu(String user) {
 		// TODO Auto-generated method stub
-		
+		  int x = 0;
+  	  while(x != 1) {
+      System.out.println("Welcome, worker!");
+      System.out.println("1. Notify the customer when order Done .");
+      System.out.println("2. Generate Statistics.");
+      System.out.println("3. Log out.");
+      System.out.print("Enter your choice: ");
+
+    
+      int choice = in.nextInt();
+	    in.nextLine();
+
+      if (choice == 1) {
+
+
+      } else if (choice == 2) {
+
+
+      } 
+      else if (choice == 3) {
+          System.out.println("Logging out...");
+      	 System.out.println("...............................");
+
+        //  System.exit(0);
+          x=1;
+      } else {
+          System.out.println("Invalid choice. Please enter 1, 2 or 3.");
+      	 System.out.println("...............................");
+
+      }
+    }		
 	}
 	
         ///////////////////////////////////////////////////////////
@@ -326,7 +242,7 @@ public class login {
 				workerFunction.workers.get(index).setLogState(true);
 				customerFunction w=new customerFunction();
 				System.out.print("Welcome to the worker page \n");
-				workerMenu();
+				workerMenu(customerFunction.customers.get(index).getUsername());
 				
 			}
 			else if(res==-3)
@@ -424,6 +340,7 @@ public class login {
 			customerFunction.requests.add(r2);
 			customerFunction.requests.add(r3);
 			customerFunction.requests.add(r4);
+			
 			customerFunction.checkAllOrder();
 			main_login();
 		
