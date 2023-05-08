@@ -1,11 +1,13 @@
 package cleaningService2023;
 
+import java.util.ArrayList;
 
 public class request {
-	private String nameCustomer;
+private String nameCustomer;
 private String date;
 private String time;
 product p;
+
 private int status;//0 still , 1 Done 
 
 public request(String date , String t) {
