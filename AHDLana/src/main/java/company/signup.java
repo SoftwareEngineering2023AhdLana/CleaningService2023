@@ -45,9 +45,11 @@ public class signup {
 		String p=in.nextLine();
 		System.out.println("Please enter your name :");
 		String n=in.nextLine();
-		System.out.println("Please enter your name :");
+
+		System.out.println("Please enter your address :");
 		String a=in.nextLine();
-		System.out.println("Please enter your name");
+		System.out.println("Please enter your phone");
+
 		String ph=in.nextLine();
 		customer cus=new customer(u,p,n,a,ph);
 		customerFunction.customers.add(cus);
