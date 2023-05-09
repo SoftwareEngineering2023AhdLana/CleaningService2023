@@ -24,6 +24,7 @@ public class login {
 	{
 		int res=0;
 		System.out.println("Welcome to the Login \n"+"----------------------------------------------");
+		adminFunction a ;
 		while((res==0)||(res==-1)||(res==1)||(res==-3))
 		{
 			System.out.println("Enter your username");
@@ -34,7 +35,47 @@ public class login {
 			if(res==-2)
 			{
 				adminFunction.admins.get(index).setLogState(true);
-				adminFunction a=new adminFunction();
+				adminFunction a1=new adminFunction();
+				
+				while(true) {
+				System.out.println("-------- hello (admin) --------");
+				System.out.println("1- add product .");
+				System.out.println("2- display report .");
+				System.out.println("3- exite .");
+				int x;
+				x =in.nextInt();
+				if(x==1) {
+					product pp;
+					System.out.println("Enter product name : ");
+					String name=in.nextLine();
+					System.out.println("Enter product name : ");
+					String pic=in.nextLine();
+					System.out.println("Enter product name : ");
+					String des=in.nextLine();
+					System.out.println("Enter product name : ");
+					String cat=in.nextLine();
+					System.out.println("Enter product name : ");
+					double price=in.nextDouble();
+					pp  = new product(name,pic,des,cat,price);
+					
+					boolean b = a1.CheckIfProductCanAdd(pp);
+					if(b) {
+						a1.products.add(pp);
+					}else {
+						System.out.println("the product exite ");
+					}
+				
+				}
+				else if(x==2) {
+					
+				}
+				else if(x==3) {
+					System.exit(0);
+				}
+				else {
+					System.out.println("Enter the valid option");
+				}
+				}
 			}
 			else if(res==-1)
 			{
@@ -111,7 +152,7 @@ public class login {
 	
 	public static void main(String[] args)
 	{
-		/*
+		
 			admin a1=new admin("leenhasan","12345","leen hasan","nablus","050677677");
 			admin a2=new admin("ahdGhazal","123123","ahd Ghazal","nablus","050677677");
 			admin a3=new admin("samsam","1234","sam sam","nablus","050677677");
@@ -130,7 +171,7 @@ public class login {
 			customerFunction.customers.add(c1);
 			customerFunction.customers.add(c2);
 			customerFunction.customers.add(c3);
-		*/
+		
 			main_login();
 		
 	}

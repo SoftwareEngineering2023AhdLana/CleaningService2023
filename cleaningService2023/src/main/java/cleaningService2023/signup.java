@@ -1,4 +1,5 @@
-package company;
+package cleaningService2023;
+
 
 import java.util.Scanner;
 
@@ -34,27 +35,26 @@ public class signup {
 	{
 		System.out.println("Welcome to the Sign up \n"+
 							"----------------------------------------------\n"+
-							"Please enter your new username : ");
+							"Please enter your new user name : ");
 		String u=in.nextLine();
 		while(search(u))
 		{
-			System.out.println("Username already exists, try again \nEnter your new username :");
+			System.out.println("Username already e xists, try again \nEnter your new username :");
 			u=in.nextLine();
 		}
 		System.out.println("Please enter the password : ");
 		String p=in.nextLine();
-		System.out.println("Please enter your name :");
+		System.out.println("Please enter your password :");
 		String n=in.nextLine();
-
-		System.out.println("Please enter your address :");
+		System.out.println("Please enter your phone Number :");
 		String a=in.nextLine();
-		System.out.println("Please enter your phone");
-
+		System.out.println("Please enter your address");
 		String ph=in.nextLine();
 		customer cus=new customer(u,p,n,a,ph);
 		customerFunction.customers.add(cus);
-		System.out.println("User is added to the company successfully");
+		System.out.println("customer is added to the system successfully");
 	}
 	
 	
 }
+
