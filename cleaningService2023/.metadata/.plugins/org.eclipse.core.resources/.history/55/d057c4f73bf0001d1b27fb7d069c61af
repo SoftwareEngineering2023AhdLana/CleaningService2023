@@ -167,7 +167,7 @@ public class customerFunction {
 		
 		customer.resorRequestStill();
 	}
-	// need to write function that check all order if still or done  in worker to notify customer if order done
+	// need to wirte function that check all order if still or done  in worker to notify customer if order done
 	
 	
 	

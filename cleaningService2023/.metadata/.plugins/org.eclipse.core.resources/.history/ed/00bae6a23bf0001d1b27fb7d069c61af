@@ -14,9 +14,9 @@ public class customer {
 		private String phoneNumber;
 		private String address;
 		private Boolean logState=false;
-		public static ArrayList<request> requests=new ArrayList<request>();
-		public static ArrayList<request> requestsDone=new ArrayList<request>();
-		public static ArrayList<request> requestsStill=new ArrayList<request>();
+		public  ArrayList<request> requests=new ArrayList<request>();
+		public  ArrayList<request> requestsDone=new ArrayList<request>();
+		public  ArrayList<request> requestsStill=new ArrayList<request>();
 
 		public customer() 
 		{

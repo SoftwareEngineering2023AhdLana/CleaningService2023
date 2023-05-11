@@ -4,7 +4,6 @@ package cleaningService;
 import java.awt.List;
 import java.util.ArrayList;
 
-public class product {
 private String name;
 //private String picture;
 private String description;
