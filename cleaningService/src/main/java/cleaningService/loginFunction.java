@@ -7,7 +7,6 @@ public class loginFunction {
 	static Scanner in=new Scanner(System.in);
 
     static void viewAllData() {
-		// TODO Auto-generated method stub
     	
     	 System.out.println("all worker in system ..........");
 
@@ -54,7 +53,6 @@ public class loginFunction {
 	}
 
     static void viewProductData() {
-  		// TODO Auto-generated method stub
     //	 ArrayList<product> products=new ArrayList<product>();
       	 System.out.println("all product in system ..........");
 
@@ -67,7 +65,6 @@ public class loginFunction {
   	}
     
 	static void viewWorkerData() {
-		// TODO Auto-generated method stub
    	 System.out.println("all worker in system ..........");
 
 
@@ -80,7 +77,6 @@ public class loginFunction {
 	}
 
 	static void viewCustomerData() {
-		// TODO Auto-generated method stub
 	   	 System.out.println("all customer in system ..........");
 
 		for(int i=0; i < customerFunction.customers.size() ; i++) {
@@ -93,7 +89,6 @@ public class loginFunction {
 	}
 	
 	 static void viewRequestData() {
-		// TODO Auto-generated method stub
 	   	 System.out.println("all Order in system ..........");
           double money = 0.0;
 		for(int i=0; i < customerFunction.requests.size() ; i++) {
