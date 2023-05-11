@@ -82,6 +82,7 @@ public class login {
 ///////////////////////////////////////////////////////////
 
 	private static void customerMenu(String user) {
+		// TODO Auto-generated method stub
 		  int x = 0;
 		  invoiceOrder.customerName = user;
     	  while(x != 1) {
@@ -145,6 +146,7 @@ public class login {
 ///////////////////////////////////////////////////////////
 
 	private static void workerMenu(String user) {
+		// TODO Auto-generated method stub
 		  int x = 0;
   	  while(x != 1) {
       System.out.println("Welcome, worker!");
