@@ -74,7 +74,17 @@ public class admin {
 		{
 			products.add(p);
 		}
-		
+		/*
+		 @Override
+		    public String toString() {
+		        return "admin{" +
+		                "username =" + username +
+		                ", name ='" + name + '\'' +
+		                ", phone Number ='" + phoneNumber + '\'' +
+		                ", address ='" + address + '\'' +
+		                '}';
+		}
+		 */
 		
 	}
 

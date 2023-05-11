@@ -6,6 +6,7 @@ import java.util.ArrayList;
 
 public class product {
 private String name;
+//private String picture;
 private String description;
 private String category;
 private double price ;
@@ -14,7 +15,7 @@ public product() {}
 public product(String s1,String s3,String s4,double p)
 {
 	this.name=s1;
-
+	//this.picture=s2;
 	this.description=s3;
 	this.category=s4;
 	this.price= p;
