@@ -5,8 +5,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class workerFunction {
-	static public List<Worker> workers=new ArrayList<Worker>();
-	static public List<Product> products=new ArrayList<Product>();
+	static protected List<Worker> workers=new ArrayList<Worker>();
+	static protected List<Product> products=new ArrayList<Product>();
 
 	//search worker By Name 
 	public static int search(String w) {
