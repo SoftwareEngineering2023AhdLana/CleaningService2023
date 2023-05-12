@@ -5,13 +5,13 @@ package com.cleaning_service;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class login {
+public class Login {
 	static Scanner in=new Scanner(System.in);
 	static int index=-1;
 	static int indexOfOrder;
 	static String dateOfOrder;
 	static String timeOfOrder;
-	public login() {}
+	public Login() {}
 
     private static void adminMenu() {
     	  int x = 0;
@@ -164,7 +164,7 @@ public class login {
 	
 	
 	
-	public login(ArrayList<admin> a,ArrayList<customer> c,ArrayList<worker> w)
+	public Login(ArrayList<Admin> a,ArrayList<Customer> c,ArrayList<Worker> w)
 	{
 		for(int i=0;i<a.size();i++)
 			adminFunction.admins.add(a.get(i));
@@ -226,7 +226,7 @@ public class login {
 				System.out.println("user name do not exist\n"
 								+ "You will be sign up \n"
 								+ "Loading..........................");
-				signup SU=new signup();
+				Signup SU=new Signup();
 			}
 		}
 	}
@@ -273,28 +273,28 @@ public class login {
 	public static void main(String[] args)
 	{
 		
-			admin a1=new admin("lanahasan","12345","lana hasan","nablus","050677677");
-			admin a2=new admin("ahdGhazal","123123","ahd Ghazal","Ramallah","0501234567");
-			admin a3=new admin("samsam","1234","sam sam","Jerusalem","0501020356");
+			Admin a1=new Admin("lanahasan","12345","lana hasan","nablus","050677677");
+			Admin a2=new Admin("ahdGhazal","123123","ahd Ghazal","Ramallah","0501234567");
+			Admin a3=new Admin("samsam","1234","sam sam","Jerusalem","0501020356");
 			adminFunction.admins.add(a1);
 			adminFunction.admins.add(a2);
 			adminFunction.admins.add(a3);
-			worker w1=new worker("AhmadM","12345","Ahmad Mohamad","nablus","0502222222");		
-			worker w2=new worker("razan12","123123","razan","nablus","0502345678");
-			worker w3=new worker("aliA","1234","ali Ahmad","nablus","0509384751");
+			Worker w1=new Worker("AhmadM","12345","Ahmad Mohamad","nablus","0502222222");		
+			Worker w2=new Worker("razan12","123123","razan","nablus","0502345678");
+			Worker w3=new Worker("aliA","1234","ali Ahmad","nablus","0509384751");
 			workerFunction.workers.add(w1);
 			workerFunction.workers.add(w2);
 			workerFunction.workers.add(w3);
-			customer c1=new customer("leen1","12345","leen","Ramallah","0501111111");		
-			customer c2=new customer("ahd","123123","ahd ghazal","Bethlehem","0502348765");
-			customer c3=new customer("sami","1234","sami saif","Jerusalem","0503456789");
+			Customer c1=new Customer("leen1","12345","leen","Ramallah","0501111111");		
+			Customer c2=new Customer("ahd","123123","ahd ghazal","Bethlehem","0502348765");
+			Customer c3=new Customer("sami","1234","sami saif","Jerusalem","0503456789");
 			customerFunction.customers.add(c1);
 			customerFunction.customers.add(c2);
 			customerFunction.customers.add(c3);
 			///                        name           description    category   price
-			product p1  = new product("Berber carpet","wool","carpet",150.0);
-			product p2  = new product("Persian rugt","synthetic","carpet",300.0);
-			product p3  = new product("Sofa cover","fits 3-seat sofa, cotton","cover",250.0);
+			Product p1  = new Product("Berber carpet","wool","carpet",150.0);
+			Product p2  = new Product("Persian rugt","synthetic","carpet",300.0);
+			Product p3  = new Product("Sofa cover","fits 3-seat sofa, cotton","cover",250.0);
 			adminFunction.products.add(p1);
 			adminFunction.products.add(p2);
 			adminFunction.products.add(p3);
@@ -302,9 +302,9 @@ public class login {
 			workerFunction.products.add(p2);
 			workerFunction.products.add(p3);
 			
-			request r1 = new request("sami","6/5/2023","1:30",0,p1);
-			request r2 = new request("sami","5/5/2023","12:30",0,p2);
-			request r4 = new request("sami","15/5/2023","10:00",0,p3);
+			Request r1 = new Request("sami","6/5/2023","1:30",0,p1);
+			Request r2 = new Request("sami","5/5/2023","12:30",0,p2);
+			Request r4 = new Request("sami","15/5/2023","10:00",0,p3);
 
 			customerFunction.requests.add(r1);
 			customerFunction.requests.add(r2);

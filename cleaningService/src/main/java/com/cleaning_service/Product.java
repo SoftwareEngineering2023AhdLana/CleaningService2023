@@ -4,14 +4,14 @@ package com.cleaning_service;
 import java.awt.List;
 import java.util.ArrayList;
 
-public class product {
+public class Product {
 private String name;
 private String description;
 private String category;
 private double price ;
 
-public product() {}
-public product(String s1,String s3,String s4,double p)
+public Product() {}
+public Product(String s1,String s3,String s4,double p)
 {
 	this.name=s1;
 

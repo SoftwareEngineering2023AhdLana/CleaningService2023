@@ -6,8 +6,8 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 public class customerFunction {
-	static public ArrayList<customer> customers=new ArrayList<customer>();
-	static public ArrayList<request> requests=new ArrayList<request>();
+	static public ArrayList<Customer> customers=new ArrayList<Customer>();
+	static public ArrayList<Request> requests=new ArrayList<Request>();
 
 	public static int search(String c)
 	{
@@ -19,11 +19,11 @@ public class customerFunction {
 		return -1;
 	}
 	
-	public static void addRequest(String customer , request r) {
+	public static void addRequest(String customer , Request r) {
 		customers.get(search(customer)).addToCustomerRequestDone(r);
 	}
 	
-	public static void editRequest(String username,String oldDate,String newDate,String oldTime,String newTime , product old , product newp ) {
+	public static void editRequest(String username,String oldDate,String newDate,String oldTime,String newTime , Product old , Product newp ) {
 		int index=search(username);
 		for(int i=0;i<customers.get(index).getRequests().size();i++)
 		{
@@ -39,10 +39,10 @@ public class customerFunction {
 		}
 	}
 
-	public static void removeRequest(String username,String date,String time,product p)
+	public static void removeRequest(String username,String date,String time,Product p)
 	{
 		int index=search(username);
-		ArrayList<request> a;
+		ArrayList<Request> a;
 		a=customers.get(index).getRequests();
 		for(int i=0;i<a.size();i++)
 		{
@@ -56,10 +56,10 @@ public class customerFunction {
 		}
 	}
 	
-	public static void removeinvoice(String username,String date,String time,product p)
+	public static void removeinvoice(String username,String date,String time,Product p)
 	{
 		int index=search(username);
-		ArrayList<request> a = invoiceOrder.requests;
+		ArrayList<Request> a = invoiceOrder.requests;
 		//a=invoiceOrder.request(username);
 		for(int i=0;i<a.size();i++)
 		{
@@ -165,7 +165,7 @@ public class customerFunction {
 			requests.get(i).setStatus(checkIfRequestPassed(requests.get(i).getDate(),requests.get(i).getTime()));
 		}
 		
-		customer.resorRequestStill();
+		Customer.resorRequestStill();
 	}
 	// need to write function that check all order if still or done  in worker to notify customer if order done
 	

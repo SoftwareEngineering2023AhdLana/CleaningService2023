@@ -119,7 +119,7 @@ public class loginFunction {
     		c = in.nextLine();
     		System.out.println("Enter price for product :");
     		p1 = in.nextDouble();
-    		product p = new product(name,d,c,p1);
+    		Product p = new Product(name,d,c,p1);
     		adminFunction.products.add(p);
 			workerFunction.products.add(p);
 			System.out.println("add product successfully");
@@ -181,7 +181,7 @@ public class loginFunction {
     		c = in.nextLine();
     		System.out.println("Enter new price for product :");
     		p1 = in.nextDouble();
-    		product p = new product(name1,d,c,p1);
+    		Product p = new Product(name1,d,c,p1);
     		adminFunction.products.add(p);
 			workerFunction.products.add(p);
 	        	System.out.println("Edit product successfully");
@@ -219,8 +219,8 @@ public class loginFunction {
         System.out.println("Enter date for order");
     	date = in.nextLine();
         
-        product p = adminFunction.searchproductindex(i);
-        request r = new request (user , date , time , 0,p);
+        Product p = adminFunction.searchproductindex(i);
+        Request r = new Request (user , date , time , 0,p);
         customerFunction.addRequest(user , r);
         invoiceOrder.requests.add(r);
        
@@ -265,7 +265,7 @@ public class loginFunction {
          
 
         
-         request r  = invoiceOrder.searchOrderindex(i);
+         Request r  = invoiceOrder.searchOrderindex(i);
         
          
          
@@ -277,7 +277,7 @@ public class loginFunction {
     		  System.out.println("Enter new index of product");
     	        i1=in.nextInt();
     	        test =in.nextLine();
-    	         product p = adminFunction.searchproductindex(i1);
+    	         Product p = adminFunction.searchproductindex(i1);
 
     	        System.out.println("Enter new time for order");
     	      
@@ -286,7 +286,7 @@ public class loginFunction {
     	        
     	    	System.out.println("Enter new date for order");
     	    	date1 = in.nextLine();
-    	    	request r1 = new request(user ,date1,time1,0,p );
+    	    	Request r1 = new Request(user ,date1,time1,0,p );
     	    	invoiceOrder.requests.add(r1);
     	    	customerFunction.requests.add(r1);
 				System.out.println("edit order successfully.");

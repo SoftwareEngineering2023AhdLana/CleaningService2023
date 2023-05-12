@@ -4,7 +4,7 @@ package com.cleaning_service;
 
 import java.util.ArrayList;
 
-public class customer {
+public class Customer {
 
 
 //add time work  ( time startb ,time end )
@@ -14,15 +14,15 @@ public class customer {
 		private String phoneNumber;
 		private String address;
 		private Boolean logState=false;
-		public static ArrayList<request> requests=new ArrayList<request>();
-		public static ArrayList<request> requestsDone=new ArrayList<request>();
-		public static ArrayList<request> requestsStill=new ArrayList<request>();
+		public static ArrayList<Request> requests=new ArrayList<Request>();
+		public static ArrayList<Request> requestsDone=new ArrayList<Request>();
+		public static ArrayList<Request> requestsStill=new ArrayList<Request>();
 
-		public customer() 
+		public Customer() 
 		{
 			
 		}
-		public customer(String s1,String s2,String s3,String s4,String s5)// user name,pass,name,address,phone
+		public Customer(String s1,String s2,String s3,String s4,String s5)// user name,pass,name,address,phone
 		{
 			this.username=s1;
 			this.password=s2;
@@ -72,14 +72,14 @@ public class customer {
 		public void setAddress(String address) {
 			this.address = address;
 		}
-		public ArrayList<request> getRequests() {
+		public ArrayList<Request> getRequests() {
 			return this.requests;
 		}
-		public void setRequests(ArrayList<request> Requests) {
+		public void setRequests(ArrayList<Request> Requests) {
 			this.requests = Requests;
 		}
 	
-		public void addToCustomerRequest(request r)
+		public void addToCustomerRequest(Request r)
 		{
 			this.requests.add(r);
 		}
@@ -87,7 +87,7 @@ public class customer {
 		{
 			this.requests.remove(i);
 		}
-		public void addToCustomerRequestDone(request r)
+		public void addToCustomerRequestDone(Request r)
 		{
 			this.requestsDone.add(r);
 		}

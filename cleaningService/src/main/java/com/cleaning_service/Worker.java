@@ -2,7 +2,7 @@ package com.cleaning_service;
 
 
 
-public class worker {
+public class Worker {
 
 
 	private String username;
@@ -11,11 +11,11 @@ public class worker {
 	private String phoneNumber;
 	private String address;
 	private Boolean logState=false;
-	public worker() 
+	public Worker() 
 	{
 		
 	}
-	public worker(String s1,String s2,String s3,String s4,String s5)// user name,pass,name,address,phone
+	public Worker(String s1,String s2,String s3,String s4,String s5)// user name,pass,name,address,phone
 	{
 		this.username=s1;
 		this.password=s2;

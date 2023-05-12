@@ -2,27 +2,27 @@ package com.cleaning_service;
 
 import java.util.ArrayList;
 
-public class request {
+public class Request {
 private String nameCustomer;
 private String date;
 private String time;
-product p;
+Product p;
 
 private int status;//0 still , 1 Done 
 
-public request(String date , String t) {
+public Request(String date , String t) {
 	this.date= date;
 	this.time=t;
 }
 
-public request(String date , String t, int s) {
+public Request(String date , String t, int s) {
 	this.date= date;
 	this.status=s;
 	this.time=t;
 	this.setProduct(workerFunction.products.get(0));
 	
 }
-public request(String username ,String date , String t, int s,product p1) {
+public Request(String username ,String date , String t, int s,Product p1) {
 	this.nameCustomer=username;
 	this.date= date;
 	this.status=s;
@@ -30,11 +30,11 @@ public request(String username ,String date , String t, int s,product p1) {
 	p=p1;
 }
 
-public product getproduct() {
+public Product getproduct() {
 	return p;
 }
 
-public void setProduct(product p1) {
+public void setProduct(Product p1) {
 	this.p = p1;
 }
 public String getDate() {

@@ -3,7 +3,7 @@ package com.cleaning_service;
 
 import java.util.ArrayList;
 
-public class admin {
+public class Admin {
 
 
 		private String name;
@@ -12,13 +12,13 @@ public class admin {
 		private String address;
 		private String phoneNumber;
 		private Boolean logState=false;
-		static public ArrayList<product> products=new ArrayList<product>();
+		static public ArrayList<Product> products=new ArrayList<Product>();
 
-		public admin() 
+		public Admin() 
 		{
 			
 		}
-		public admin(String s1,String s2,String s3,String s4,String s5)// user name,pass,name,address,phone
+		public Admin(String s1,String s2,String s3,String s4,String s5)// user name,pass,name,address,phone
 		{
 			this.username=s1;
 			this.password=s2;
@@ -70,7 +70,7 @@ public class admin {
 		}
 
 		
-		public void addProduct(product p)
+		public void addProduct(Product p)
 		{
 			products.add(p);
 		}

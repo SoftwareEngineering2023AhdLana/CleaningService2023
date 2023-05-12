@@ -3,7 +3,7 @@ package com.cleaning_service;
 
 import java.util.Scanner;
 
-public class signup {
+public class Signup {
 
 	static Scanner in=new Scanner(System.in);
 	public static Boolean search(String u)
@@ -31,7 +31,7 @@ public class signup {
 		}
 		return false;
 	}
-	public signup()
+	public Signup()
 	{
 		System.out.println("Welcome to the Sign up \n"+
 							"----------------------------------------------\n"+
@@ -50,7 +50,7 @@ public class signup {
 		String a=in.nextLine();
 		System.out.println("Please enter your address");
 		String ph=in.nextLine();
-		customer cus=new customer(u,p,n,a,ph);
+		Customer cus=new Customer(u,p,n,a,ph);
 		customerFunction.customers.add(cus);
 		System.out.println("customer is added to the system successfully");
 	}

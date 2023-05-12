@@ -4,8 +4,8 @@ package com.cleaning_service;
 import java.util.ArrayList;
 
 public class workerFunction {
-	static public ArrayList<worker> workers=new ArrayList<worker>();
-	static public ArrayList<product> products=new ArrayList<product>();
+	static public ArrayList<Worker> workers=new ArrayList<Worker>();
+	static public ArrayList<Product> products=new ArrayList<Product>();
 
 	//search worker By Name 
 	public static int search(String w) {
