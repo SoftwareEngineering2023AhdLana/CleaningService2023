@@ -19,7 +19,7 @@ public Request(String date , String t, int s) {
 	this.date= date;
 	this.status=s;
 	this.time=t;
-	this.setProduct(workerFunction.products.get(0));
+	this.setProduct(WorkerFunction.products.get(0));
 	
 }
 public Request(String username ,String date , String t, int s,Product p1) {

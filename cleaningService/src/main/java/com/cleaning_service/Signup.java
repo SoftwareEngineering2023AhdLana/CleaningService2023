@@ -8,23 +8,23 @@ public class Signup {
 	static Scanner in=new Scanner(System.in);
 	public static Boolean search(String u)
 	{
-		for(int i=0;i<customerFunction.customers.size();i++)
+		for(int i=0;i<CustomerFunction.customers.size();i++)
 		{
-			if(u.equals(customerFunction.customers.get(i).getUsername()))
+			if(u.equals(CustomerFunction.customers.get(i).getUsername()))
 			{
 				return true;
 			}
 		}
-		for(int i=0;i<adminFunction.admins.size();i++)
+		for(int i=0;i<AdminFunction.admins.size();i++)
 		{
-			if(u.equals(adminFunction.admins.get(i).getUsername()))
+			if(u.equals(AdminFunction.admins.get(i).getUsername()))
 			{
 				return true;
 			}
 		}
-		for(int i=0;i<workerFunction.workers.size();i++)
+		for(int i=0;i<WorkerFunction.workers.size();i++)
 		{
-			if(u.equals(workerFunction.workers.get(i).getUsername()))
+			if(u.equals(WorkerFunction.workers.get(i).getUsername()))
 			{
 				return true;
 			}
@@ -51,7 +51,7 @@ public class Signup {
 		System.out.println("Please enter your address");
 		String ph=in.nextLine();
 		Customer cus=new Customer(u,p,n,a,ph);
-		customerFunction.customers.add(cus);
+		CustomerFunction.customers.add(cus);
 		System.out.println("customer is added to the system successfully");
 	}
 	

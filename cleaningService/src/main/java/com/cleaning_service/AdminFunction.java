@@ -4,12 +4,12 @@ package com.cleaning_service;
 
 import java.util.ArrayList;
 import java.util.List;
-public class adminFunction {
+public class AdminFunction {
 	
 	static List<Admin> admins=new ArrayList<Admin>();
 	static List<Product> products=new ArrayList<Product>();
 	
-	 adminFunction() {
+	 AdminFunction() {
 		
 	}
 	
@@ -23,7 +23,7 @@ public class adminFunction {
 		return -1;
 	}
 
-	public  int searchproduct(String w) {
+	public static  int searchproduct(String w) {
 		for(int i=0; i < products.size() ; i++) {
 		
 			if(w.equalsIgnoreCase(products.get(i).getName())){
@@ -34,12 +34,12 @@ public class adminFunction {
 	}
 		
 		
-		public  Product searchproductindex(int w) {
+		public static  Product searchproductindex(int w) {
 		
 		return products.get(w) ;
 	}
 	public static  Boolean CheckIfProductCanAdd(String name) {
-		for(int i=0; i < workerFunction.products.size() ; i++) {
+		for(int i=0; i < WorkerFunction.products.size() ; i++) {
 			
 			if(products.get(i).getName().equalsIgnoreCase(name))
 			{

@@ -7,8 +7,8 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
-	public class invoiceOrder {
-		invoiceOrder(){
+	public class InvoiceOrder {
+		InvoiceOrder(){
 			
 		}
 

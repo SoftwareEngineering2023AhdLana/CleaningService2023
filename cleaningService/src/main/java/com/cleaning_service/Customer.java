@@ -74,23 +74,23 @@ public class Customer {
 			this.address = address;
 		}
 		public List<Request> getRequests() {
-			return this.requests;
+			return requests;
 		}
 		public void setRequests(List<Request> Requests) {
-			this.requests = Requests;
+			requests = Requests;
 		}
 	
 		public void addToCustomerRequest(Request r)
 		{
-			this.requests.add(r);
+			requests.add(r);
 		}
 		public void removeRequest(int i)
 		{
-			this.requests.remove(i);
+			requests.remove(i);
 		}
 		public void addToCustomerRequestDone(Request r)
 		{
-			this.requestsDone.add(r);
+			requestsDone.add(r);
 		}
 		public static void resorRequestStill()
 		{

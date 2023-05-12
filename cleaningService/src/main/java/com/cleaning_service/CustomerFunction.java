@@ -6,7 +6,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
-public class customerFunction {
+public class CustomerFunction {
 	static public List<Customer> customers=new ArrayList<Customer>();
 	static public List<Request> requests=new ArrayList<Request>();
 
@@ -60,12 +60,12 @@ public class customerFunction {
 	public static void removeinvoice(String username,String date,String time,Product p)
 	{
 		int index=search(username);
-		List<Request> a = invoiceOrder.requests;
+		List<Request> a = InvoiceOrder.requests;
 		for(int i=0;i<a.size();i++)
 		{
 			if((date.equalsIgnoreCase(a.get(i).getDate()))&&(time.equals(a.get(i).getTime()))&&(p.equals(a.get(i).getproduct())))
 			{
-				invoiceOrder.requests.remove(i);
+				InvoiceOrder.requests.remove(i);
 				System.out.println("remove order successfully.");
 				
 				break;
