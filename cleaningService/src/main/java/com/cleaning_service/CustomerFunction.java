@@ -186,8 +186,10 @@ public class CustomerFunction {
 			if(requests.get(i).getNameCustomer().equalsIgnoreCase(n)) {
 				Logger logger=Logger.getLogger(
 						CustomerFunction.class.getName());;
-				logger.log(Level.INFO,i + ". "+requests.get(i).getproduct().getName()+"\n Time of order : "+requests.get(i).getTime()+" and Date of order : "+requests.get(i).getDate()+"\n***************************************************\n");
-		}
+						String footer = i + ". "+requests.get(i).getproduct().getName()+"\n Time of order : "+requests.get(i).getTime()+" and Date of order : "+requests.get(i).getDate()+"\n***************************************************\n";
+					
+				logger.log(Level.INFO,footer);
+				}
 	}
 	}
 	
