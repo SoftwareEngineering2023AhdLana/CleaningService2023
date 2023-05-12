@@ -5,7 +5,8 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
-
+import java.util.logging.Level;
+import java.util.logging.Logger;
 public class CustomerFunction {
 	private CustomerFunction(){
 		
@@ -36,7 +37,9 @@ public class CustomerFunction {
 				customers.get(index).getRequests().get(i).setDate(newDate);
 				customers.get(index).getRequests().get(i).setTime(newTime);
 				customers.get(index).getRequests().get(i).setProduct(newp);
-				System.err.println("edit order successfully.");
+				Logger logger=Logger.getLogger(
+						CustomerFunction.class.getName());;
+				logger.log(Level.INFO, "edit order successfully.");
 
 				break;
 			}
@@ -53,14 +56,15 @@ public class CustomerFunction {
 			if((date.equalsIgnoreCase(a.get(i).getDate()))&&(time.equals(a.get(i).getTime()))&&(p.equals(a.get(i).getproduct())))
 			{
 				customers.get(index).removeRequest(i);
-				System.err.println("remove order successfully.");
-				
+				Logger logger=Logger.getLogger(
+						CustomerFunction.class.getName());;
+				logger.log(Level.INFO, "remove request successfully.");
 				break;
 			}
 		}
 	}
 	
-	public static void removeinvoice(String username,String date,String time,Product p)
+	public static void removeinvoice(String date,String time,Product p)
 	{
 		List<Request> a = InvoiceOrder.requests;
 		for(int i=0;i<a.size();i++)
@@ -68,7 +72,9 @@ public class CustomerFunction {
 			if((date.equalsIgnoreCase(a.get(i).getDate()))&&(time.equals(a.get(i).getTime()))&&(p.equals(a.get(i).getproduct())))
 			{
 				InvoiceOrder.requests.remove(i);
-				System.err.println("remove order successfully.");
+				Logger logger=Logger.getLogger(
+						CustomerFunction.class.getName());;
+				logger.log(Level.INFO, "remove invoice successfully.");
 				
 				break;
 			}
@@ -91,7 +97,7 @@ public class CustomerFunction {
 			if( date.equalsIgnoreCase(customers.get(index).getRequests().get(i).getDate()) && time.equals(customers.get(index).getRequests().get(i).getTime()) )
 			{	
 				customers.get(index).getRequests().get(i).setStatus(1);
-				customers.get(index).resorRequestStill();
+				Customer.resorRequestStill();
 				break;
 			}
 		}
@@ -178,7 +184,9 @@ public class CustomerFunction {
 	public static void viewallrequest( String n) {
 		for(int i =0 ; i < requests.size(); i++) {
 			if(requests.get(i).getNameCustomer().equalsIgnoreCase(n)) {
-			System.err.print(i + ". "+requests.get(i).getproduct().getName()+"\n Time of order : "+requests.get(i).getTime()+" and Date of order : "+requests.get(i).getDate()+"\n***************************************************\n");
+				Logger logger=Logger.getLogger(
+						CustomerFunction.class.getName());;
+				logger.log(Level.INFO,i + ". "+requests.get(i).getproduct().getName()+"\n Time of order : "+requests.get(i).getTime()+" and Date of order : "+requests.get(i).getDate()+"\n***************************************************\n");
 		}
 	}
 	}
