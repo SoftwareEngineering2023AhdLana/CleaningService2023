@@ -38,7 +38,7 @@ public class CustomerFunction {
 				customers.get(index).getRequests().get(i).setTime(newTime);
 				customers.get(index).getRequests().get(i).setProduct(newp);
 				Logger logger=Logger.getLogger(
-						CustomerFunction.class.getName());;
+						CustomerFunction.class.getName());
 				logger.log(Level.INFO, "edit order successfully.");
 
 				break;
@@ -57,7 +57,7 @@ public class CustomerFunction {
 			{
 				customers.get(index).removeRequest(i);
 				Logger logger=Logger.getLogger(
-						CustomerFunction.class.getName());;
+						CustomerFunction.class.getName());
 				logger.log(Level.INFO, "remove request successfully.");
 				break;
 			}
@@ -73,7 +73,7 @@ public class CustomerFunction {
 			{
 				InvoiceOrder.requests.remove(i);
 				Logger logger=Logger.getLogger(
-						CustomerFunction.class.getName());;
+						CustomerFunction.class.getName());
 				logger.log(Level.INFO, "remove invoice successfully.");
 				
 				break;
@@ -185,7 +185,7 @@ public class CustomerFunction {
 		for(int i =0 ; i < requests.size(); i++) {
 			if(requests.get(i).getNameCustomer().equalsIgnoreCase(n)) {
 				Logger logger=Logger.getLogger(
-						CustomerFunction.class.getName());;
+						CustomerFunction.class.getName());
 						String footer = i + ". "+requests.get(i).getproduct().getName()+"\n Time of order : "+requests.get(i).getTime()+" and Date of order : "+requests.get(i).getDate()+"\n***************************************************\n";
 					
 				logger.log(Level.INFO,footer);

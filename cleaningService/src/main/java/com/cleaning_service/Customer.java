@@ -76,9 +76,6 @@ public class Customer {
 		public List<Request> getRequests() {
 			return requests;
 		}
-		public void setRequests(List<Request> r) {
-			requests = r;
-		}
 	
 		public void addToCustomerRequest(Request r)
 		{

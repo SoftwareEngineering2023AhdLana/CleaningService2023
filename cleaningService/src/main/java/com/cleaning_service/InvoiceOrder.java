@@ -6,6 +6,8 @@ package com.cleaning_service;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 	public class InvoiceOrder {
 		InvoiceOrder(){
@@ -13,9 +15,9 @@ import java.util.List;
 		}
 
 
-	static String customerName;
-	static public List<Request> requests=new ArrayList<Request>();
-	 String TimeOfInvoice;
+	 String customerName;
+	 protected static final List<Request> requests=new ArrayList<Request>();
+	 String timeofinvoice;
 	 static double totalPrice=0;
 	 
 	public static String getTimeOfInvoice() {
@@ -28,11 +30,11 @@ import java.util.List;
 		customerName = r.getNameCustomer();
 		requests.add(r);
 	}
-public static  void setcustomername(String n) {
+public   void setcustomername(String n) {
 	customerName=n;
 	
 }
-public  List<Request> request(String customern) {
+public  List<Request> request() {
 	List<Request> a = new ArrayList<Request>() ;
 	for(int i =0 ; i < requests.size(); i++) 
 		if(requests.get(i).getNameCustomer().equalsIgnoreCase(customerName)) 
@@ -41,14 +43,18 @@ public  List<Request> request(String customern) {
 	
 	return a;
 }
-	public static  void print()
+	public void print()
 	{
-			System.out.print("************ customer name : "+customerName +"  *****************\n");
+		Logger logger=Logger.getLogger(
+				CustomerFunction.class.getName());
+		String statement1 ="************ customer name : "+ customerName +"  *****************\n";
+			logger.log(Level.INFO,statement1);
 			viewallrequest();
-			System.out.println("Total price : "+totalPrice);
-
-			System.out.println("Time of invoice : "+getTimeOfInvoice());
-       	 System.out.println("...............................");
+			String statement2 ="Total price : "+totalPrice;
+			logger.log(Level.INFO,statement2);
+			String statement3 ="Time of invoice : "+getTimeOfInvoice();
+			logger.log(Level.INFO,statement3);
+			logger.log(Level.INFO,"...............................");
 
 	}
 
@@ -67,10 +73,15 @@ public static  int searchindexOfOrder(Request w) {
 }
 		return -1;
 	}
-	public static void viewallrequest() {
+	public void viewallrequest() {
 		for(int i =0 ; i < requests.size(); i++) {
 			if(requests.get(i).getNameCustomer().equalsIgnoreCase(customerName)) {
-			System.out.print(i + ". "+requests.get(i).getproduct().getName()+"\n Time of order : "+requests.get(i).getTime()+" and Date of order : "+requests.get(i).getDate()+"\n***************************************************\n");
+				Logger logger=Logger.getLogger(
+						CustomerFunction.class.getName());
+						String footer =i + ". "+requests.get(i).getproduct().getName()+"\n Time of order : "+requests.get(i).getTime()+" and Date of order : "+requests.get(i).getDate()+"\n***************************************************\n";
+					
+				logger.log(Level.INFO,footer);
+		
 			totalPrice +=requests.get(i).getproduct().getPrice();
 
 			}
