@@ -1,10 +1,9 @@
-package cleaningService;
+package cleaningServiceMain;
 
 
 import java.util.Scanner;
 
 public class signup {
-
 	static Scanner in=new Scanner(System.in);
 	public static Boolean search(String u)
 	{
@@ -50,7 +49,9 @@ public class signup {
 		String a=in.nextLine();
 		System.out.println("Please enter your address");
 		String ph=in.nextLine();
-		customer cus=new customer(u,p,n,a,ph);
+		System.out.println("Please enter your email");
+		String e=in.nextLine();
+		customer cus=new customer(u,p,n,a,ph,e);
 		customerFunction.customers.add(cus);
 		System.out.println("customer is added to the system successfully");
 	}

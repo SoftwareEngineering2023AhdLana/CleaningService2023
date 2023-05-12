@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(features = "cases",monochrome= true, 
 snippets = SnippetType.CAMELCASE, 
-glue = {"cleaningService2023"},	
+glue = {"cleaningService"},	
 plugin = {"html:target/cucumber/wikipedia.html"})
 
 public class acceptanceTest {

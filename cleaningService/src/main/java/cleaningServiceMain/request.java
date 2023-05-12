@@ -1,9 +1,9 @@
-package cleaningService;
+package cleaningServiceMain;
 
 import java.util.ArrayList;
 
 public class request {
-private String nameCustomer;
+private static String nameCustomer;
 private String date;
 private String time;
 product p;
@@ -72,8 +72,8 @@ public String getNameCustomer() {
 	return nameCustomer;
 }
 
-public void setNameCustomer(String nameCustomer) {
-	this.nameCustomer = nameCustomer;
+public static void setNameCustomer(String nameCustomer) {
+	request.nameCustomer = nameCustomer;
 }
 
 }

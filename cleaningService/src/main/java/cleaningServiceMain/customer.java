@@ -1,4 +1,4 @@
-package cleaningService;
+package cleaningServiceMain;
 
 
 
@@ -13,6 +13,8 @@ public class customer {
 		private String password;
 		private String phoneNumber;
 		private String address;
+		private String email;
+		private String avilableWorker;
 		private Boolean logState=false;
 		public static ArrayList<request> requests=new ArrayList<request>();
 		public static ArrayList<request> requestsDone=new ArrayList<request>();
@@ -22,13 +24,14 @@ public class customer {
 		{
 			
 		}
-		public customer(String s1,String s2,String s3,String s4,String s5)// user name,pass,name,address,phone
+		public customer(String s1,String s2,String s3,String s4,String s5,String s6)// user name,pass,name,address,phone
 		{
 			this.username=s1;
 			this.password=s2;
 			this.name=s3;
 			this.address=s4;
 			this.phoneNumber=s5;
+			this.email = s6;
 		}
 		public String getName() 
 		{
@@ -112,6 +115,18 @@ public class customer {
 		                ", phone Number ='" + phoneNumber + '\'' +
 		                ", address ='" + address + '\'' +
 		                '}';
+		}
+		public String getAvilableWorker() {
+			return avilableWorker;
+		}
+		public void setAvilableWorker(String avilableWorker) {
+			this.avilableWorker = avilableWorker;
+		}
+		public String getEmail() {
+			return email;
+		}
+		public void setEmail(String email) {
+			this.email = email;
 		}
 		
 

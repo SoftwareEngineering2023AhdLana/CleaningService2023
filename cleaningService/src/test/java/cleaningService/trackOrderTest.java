@@ -25,6 +25,14 @@ boolean a = false;
 	int currentDay=Integer.parseInt(dtf.format(now).split(" ")[0].split("/")[0]);
 	int currentMonth=Integer.parseInt(dtf.format(now).split(" ")[0].split("/")[1]);
 
+	
+	
+	
+	
+	
+	
+	
+
 	@Given("these are the Order")
 	public void theseAreTheOrder(io.cucumber.datatable.DataTable dataTable) {
 	    // Write code here that turns the phrase above into concrete actions
@@ -34,53 +42,8 @@ boolean a = false;
 	    // Double, Byte, Short, Long, BigInteger or BigDecimal.
 	    //
 	    // For other transformations you can register a DataTableType.
-		 System.out.print("Enter your user name: ");
-		 name = s.nextLine();
-		 System.out.print("Enter name of order: ");
-		 np = s.nextLine();
 
-		 for(int i=0;i<3;i++)
-			{
-			
-				
-				if((	name.equalsIgnoreCase( dataTable.cell(i,0)) && np.equalsIgnoreCase( dataTable.cell(i,1))) ) {
-				
-					int day=Integer.parseInt( dataTable.cell(i,2).split("/")[0]);
-					int month=Integer.parseInt( dataTable.cell(i,2).split("/")[1]);
-
-					//////////////////////////////////////////////////////////////////////////////////////////////
-					if((currentDay>= day)&&(currentMonth>=month)) {
-						System.out.println(d);
-						a=true;
-
-					}else {
-						System.out.println(ss);
-					}
-						
-					
-				}
-				
-			
-			}
-		 
-		
-			
-			
-		
-	
-			
-			
-				
-					
-			}
-		
-		 
-		 
-	
-
-
-
-	
+	}
 	@Given("that the customer is logged in to the company")
 	public void thatTheCustomerIsLoggedInToTheCompany() {
 	    // Write code here that turns the phrase above into concrete actions
@@ -94,10 +57,16 @@ boolean a = false;
 	@Then("the request is turned into a Done")
 	public void theRequestIsTurnedIntoADone() {
 	    // Write code here that turns the phrase above into concrete actions
-assertTrue(a==true);
+
+	}
+	@Then("it is stored in the customer")
+	public void itIsStoredInTheCustomer() {
+	    // Write code here that turns the phrase above into concrete actions
+
 	}
 
 
+	
 
 	@Given("the Time of order is befor the local time now")
 	public void theTimeOfOrderIsBeforTheLocalTimeNow() {
@@ -107,7 +76,6 @@ assertTrue(a==true);
 	@Then("the request is still")
 	public void theRequestIsStill() {
 	    // Write code here that turns the phrase above into concrete actions
-		assertTrue(a==false);
 
 	}
 

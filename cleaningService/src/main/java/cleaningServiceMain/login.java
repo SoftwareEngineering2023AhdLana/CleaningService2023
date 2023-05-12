@@ -1,4 +1,4 @@
-package cleaningService;
+package cleaningServiceMain;
 
 
 
@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class login {
+ 
 	static Scanner in=new Scanner(System.in);
 	static int index=-1;
 	static int indexOfOrder;
@@ -81,6 +82,7 @@ public class login {
  ///////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////
 
+	//                   DONE :)  -1
 	private static void customerMenu(String user) {
 		// TODO Auto-generated method stub
 		  int x = 0;
@@ -88,6 +90,11 @@ public class login {
     	  while(x != 1) {
         System.out.println("Welcome, CUSTOMER!");
         // print the available worker depend the time customer login
+        
+        System.out.print("the available worker is : ");
+        workerFunction workerFunction = new workerFunction();
+		workerFunction.findAvilableWorker();
+        
         System.out.println("1. View product data.");
         System.out.println("2. add order.");
         System.out.println("3. Edit order.");
@@ -151,7 +158,7 @@ public class login {
   	  while(x != 1) {
       System.out.println("Welcome, worker!");
       System.out.println("1. Notify the customer when order Done .");
-      System.out.println("2. Generate Statistics.");
+      System.out.println("2. accepte one order.");
       System.out.println("3. Log out.");
       System.out.print("Enter your choice: ");
 
@@ -160,7 +167,8 @@ public class login {
 	    in.nextLine();
 
       if (choice == 1) {
-
+    	  customerFunction.checkAllOrder();
+    	  loginFunction.checkCustomer();
 
       } else if (choice == 2) {
 
@@ -170,7 +178,6 @@ public class login {
           System.out.println("Logging out...");
       	 System.out.println("...............................");
 
-        //  System.exit(0);
           x=1;
       } else {
           System.out.println("Invalid choice. Please enter 1, 2 or 3.");
@@ -198,13 +205,17 @@ public class login {
 		for(int i=0;i<c.size();i++)
 			customerFunction.customers.add(c.get(i));
 	
-		for(int i=0;i<a.size();i++)
+		 workerFunction workerFunction = new workerFunction();
+		for(int i=0;i<a.size();i++) {
 			workerFunction.workers.add(w.get(i));
+	}
 	}
 	
 	public static void main_login()
 	{
 		int res=0;
+		 workerFunction workerFunction = new workerFunction();
+
 		System.out.println("Welcome to the Login \n"+"----------------------------------------------");
 		while((res==0)||(res==-1)||(res==1)||(res==-3))
 		{
@@ -259,7 +270,7 @@ public class login {
 	
 	public static int checkLoginStatus(String u,String p)
 	{
-
+		 workerFunction workerFunction = new workerFunction();
 		for(int i=0;i<customerFunction.customers.size();i++)
 		{
 			if(u.equals(customerFunction.customers.get(i).getUsername()))
@@ -298,22 +309,32 @@ public class login {
 	
 	public static void main(String[] args)
 	{
-		
+		 workerFunction workerFunction = new workerFunction();
 			admin a1=new admin("lanahasan","12345","lana hasan","nablus","050677677");
 			admin a2=new admin("ahdGhazal","123123","ahd Ghazal","Ramallah","0501234567");
 			admin a3=new admin("samsam","1234","sam sam","Jerusalem","0501020356");
 			adminFunction.admins.add(a1);
 			adminFunction.admins.add(a2);
 			adminFunction.admins.add(a3);
-			worker w1=new worker("AhmadM","12345","Ahmad Mohamad","nablus","0502222222");		
-			worker w2=new worker("razan12","123123","razan","nablus","0502345678");
-			worker w3=new worker("aliA","1234","ali Ahmad","nablus","0509384751");
-			workerFunction.workers.add(w1);
-			workerFunction.workers.add(w2);
-			workerFunction.workers.add(w3);
-			customer c1=new customer("leen1","12345","leen","Ramallah","0501111111");		
-			customer c2=new customer("ahd","123123","ahd ghazal","Bethlehem","0502348765");
-			customer c3=new customer("sami","1234","sami saif","Jerusalem","0503456789");
+			
+			worker w3=new worker("AhmadM","12345","Ahmad Mohamad","nablus","0502222222","08:00","15:00");		
+			worker w2=new worker("razan12","123123","razan","nablus","0502345678","15:00","20:00");
+			worker w1=new worker("aliA","1234","ali Ahmad","nablus","0509384751","20:00","23:00");
+	
+		    workerFunction.workers.add(w1);
+		    workerFunction.workers.add(w2);
+		    workerFunction.workers.add(w3);
+			//	worker w4=new worker("lanah","1234","lana hasan","nablus","0509384751","15:02","20:01");
+			//	worker w5=new worker("samisami","1234","sami sami","nablus","0509384751","20:02","23:01");
+		//	    worker w6=new worker("ahd","1234","ahd Ghazal","nablus","0509384751","08:02","12:01");
+
+		//    workerFunction.workers.add(w4);
+	//	    workerFunction.workers.add(w5);
+	//	    workerFunction.workers.add(w6);
+			
+			customer c1=new customer("leen1","12345","leen","Ramallah","0501111111","leen1@gmail.com");		
+			customer c2=new customer("ahdg","123123","ahd ghazal","Bethlehem","0502348765","ahdg@gmail.com");
+			customer c3=new customer("samih","1234","sami saif","Jerusalem","0503456789","samih@gmail.com");
 			customerFunction.customers.add(c1);
 			customerFunction.customers.add(c2);
 			customerFunction.customers.add(c3);

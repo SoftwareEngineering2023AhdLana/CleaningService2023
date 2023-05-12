@@ -1,4 +1,4 @@
-package cleaningService;
+package cleaningServiceMain;
 
 
 
@@ -11,17 +11,24 @@ public class worker {
 	private String phoneNumber;
 	private String address;
 	private Boolean logState=false;
+	private static String timeStart;
+	private static String timeEnd;
+	
+
 	public worker() 
 	{
 		
 	}
-	public worker(String s1,String s2,String s3,String s4,String s5)// user name,pass,name,address,phone
+	public worker(String s1,String s2,String s3,String s4,String s5,String TS,String TE)// user name,pass,name,address,phone
 	{
 		this.username=s1;
 		this.password=s2;
 		this.name=s3;
 		this.address=s4;
 		this.phoneNumber=s5;
+		worker.timeStart=TS;
+		worker.timeEnd = TE;
+		
 	}
 	public String getName() 
 	{
@@ -74,6 +81,19 @@ public class worker {
 	                ", address ='" + address + '\'' +
 	                '}';
 	}
+	public String getTimeStart() {
+		return timeStart;
+	}
+	public  void setTimeStart(String timeStart) {
+		worker.timeStart = timeStart;
+	}
+	public String getTimeEnd() {
+		return timeEnd;
+	}
+	public void setTimeEnd(String timeEnd) {
+		worker.timeEnd = timeEnd;
+	}
+	
 	
 	
 }

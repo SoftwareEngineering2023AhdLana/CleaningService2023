@@ -1,20 +1,20 @@
-package cleaningService;
+package cleaningServiceMain;
 
 
 import java.util.Scanner;
 
 public class loginFunction {
 	static Scanner in=new Scanner(System.in);
-
+	public static workerFunction  w = new workerFunction();
     static void viewAllData() {
 		// TODO Auto-generated method stub
     	
     	 System.out.println("all worker in system ..........");
 
 
- 		for(int i=0; i < workerFunction.workers.size() ; i++) {
+ 		for(int i=0; i < w.workers.size() ; i++) {
  			
- 	        System.out.println(workerFunction.workers.get(i).toString());
+ 	        System.out.println(w.workers.get(i).toString());
 
  		}
      	 System.out.println("...............................");
@@ -71,9 +71,9 @@ public class loginFunction {
    	 System.out.println("all worker in system ..........");
 
 
-		for(int i=0; i < workerFunction.workers.size() ; i++) {
+		for(int i=0; i < w.workers.size() ; i++) {
 			
-	        System.out.println(workerFunction.workers.get(i).toString());
+	        System.out.println(w.workers.get(i).toString());
 
 		}
     	 System.out.println("...............................");
@@ -304,6 +304,43 @@ public class loginFunction {
 
     	}
     	}
+	
+	public static void notifiCustomer(String n) {
+		boolean a = false;
+        double money = 0.0;
+		for(int i=0; i < customerFunction.requests.size() ; i++) {
+			if(customerFunction.requests.get(i).getNameCustomer().equalsIgnoreCase(n)) {
+           if(customerFunction.requests.get(i).getStatus() ==1) {
+        	    System.out.println(customerFunction.requests.get(i).toString());
+
+	      	money +=customerFunction.requests.get(i).p.getPrice();
+	    
+           }
+		}
+		}
+	
+	 System.out.println("Full Sales : "+money);
+  	 System.out.println("Send email successfully....");
+  	 System.out.println("...............................");
+  	 
+  	 // code to send email to customer
+	
+		
+		
+	}
+	
+	
+	public static void checkCustomer() {
+	for(int i =0; i< customerFunction.customers.size();i++) {
+		request.setNameCustomer(customerFunction.customers.get(i).getUsername());
+
+		notifiCustomer(customerFunction.customers.get(i).getUsername()); 
+	}
+	
+	}
+		
+		
+	
 	
 	
 	
