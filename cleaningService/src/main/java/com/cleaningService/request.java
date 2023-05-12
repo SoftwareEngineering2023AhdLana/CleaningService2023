@@ -1,4 +1,4 @@
-package cleaningService;
+package com.cleaningService;
 
 import java.util.ArrayList;
 
