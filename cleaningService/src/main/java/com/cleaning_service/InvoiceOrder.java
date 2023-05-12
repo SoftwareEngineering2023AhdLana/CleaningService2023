@@ -30,7 +30,7 @@ import java.util.logging.Logger;
 		customerName = r.getNameCustomer();
 		requests.add(r);
 	}
-public   void setcustomername(String n) {
+public static   void setcustomername(String n) {
 	customerName=n;
 	
 }

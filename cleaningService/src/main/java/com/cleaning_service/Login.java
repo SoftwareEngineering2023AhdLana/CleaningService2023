@@ -1,15 +1,13 @@
 package com.cleaning_service;
 
 
-
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class Login {
-	private static final String ACTION_1 = "ACTION_1";
+	private static final String ACTION_1 = "..............................";
 	static Scanner in=new Scanner(System.in);
 	static int index=-1;
 	static int indexOfOrder;
@@ -122,7 +120,7 @@ public class Login {
         } 
         else if (choice == 6) {
         	
-            logger.log(Level.INFO,"Logging out...");
+            logger.log(Level.INFO,"Logging out..");
         	 logger.log(Level.INFO,"ACTION_1");
 
             x=1;
@@ -140,12 +138,14 @@ public class Login {
 		  int x = 0;
 		  Logger logger=Logger.getLogger(
 					Login.class.getName());
+		  
   	  while(x != 1) {
-      logger.log(Level.INFO,"Welcome, worker"+user+"!");
+  	  String w = "Welcome, worker"+user+"!";
+      logger.log(Level.INFO,w);
       logger.log(Level.INFO,"1. Notify the customer when order Done .");
       logger.log(Level.INFO,"2. Generate Statistics.");
       logger.log(Level.INFO,"3. Log out.");
-      System.out.print("Enter your choice: ");
+      logger.log(Level.INFO,"Enter your choice:  ");
 
     
       int choice = in.nextInt();
@@ -153,7 +153,7 @@ public class Login {
 
   
       if (choice == 3) {
-          logger.log(Level.INFO,"Logging out...");
+          logger.log(Level.INFO,"Logging out");
       	 logger.log(Level.INFO,"ACTION_1");
 
           x=1;
