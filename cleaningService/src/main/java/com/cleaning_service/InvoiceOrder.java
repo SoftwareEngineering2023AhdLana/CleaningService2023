@@ -15,7 +15,7 @@ import java.util.logging.Logger;
 		}
 
 
-	 String customerName;
+	 static String customerName;
 	 protected static final List<Request> requests=new ArrayList<Request>();
 	 String timeofinvoice;
 	 static double totalPrice=0;
@@ -43,10 +43,10 @@ public  List<Request> request() {
 	
 	return a;
 }
-	public void print()
+	public static void print()
 	{
 		Logger logger=Logger.getLogger(
-				CustomerFunction.class.getName());
+				InvoiceOrder.class.getName());
 		String statement1 ="************ customer name : "+ customerName +"  *****************\n";
 			logger.log(Level.INFO,statement1);
 			viewallrequest();
@@ -73,11 +73,11 @@ public static  int searchindexOfOrder(Request w) {
 }
 		return -1;
 	}
-	public void viewallrequest() {
+	public static void viewallrequest() {
 		for(int i =0 ; i < requests.size(); i++) {
 			if(requests.get(i).getNameCustomer().equalsIgnoreCase(customerName)) {
 				Logger logger=Logger.getLogger(
-						CustomerFunction.class.getName());
+						InvoiceOrder.class.getName());
 						String footer =i + ". "+requests.get(i).getproduct().getName()+"\n Time of order : "+requests.get(i).getTime()+" and Date of order : "+requests.get(i).getDate()+"\n***************************************************\n";
 					
 				logger.log(Level.INFO,footer);
