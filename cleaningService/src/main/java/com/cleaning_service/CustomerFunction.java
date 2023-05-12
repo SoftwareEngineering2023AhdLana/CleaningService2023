@@ -7,8 +7,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CustomerFunction {
-	static public List<Customer> customers=new ArrayList<Customer>();
-	static public List<Request> requests=new ArrayList<Request>();
+	private CustomerFunction(){
+		
+	}
+	protected static final List<Customer> customers=new ArrayList<Customer>();
+	protected static final List<Request> requests=new ArrayList<Request>();
 
 	public static int search(String c)
 	{
@@ -24,7 +27,7 @@ public class CustomerFunction {
 		customers.get(search(customer)).addToCustomerRequestDone(r);
 	}
 	
-	public static void editRequest(String username,String oldDate,String newDate,String oldTime,String newTime , Product old , Product newp ) {
+	public static void editRequest(String username,String oldDate,String newDate,String oldTime,String newTime , Product newp ) {
 		int index=search(username);
 		for(int i=0;i<customers.get(index).getRequests().size();i++)
 		{
@@ -33,7 +36,7 @@ public class CustomerFunction {
 				customers.get(index).getRequests().get(i).setDate(newDate);
 				customers.get(index).getRequests().get(i).setTime(newTime);
 				customers.get(index).getRequests().get(i).setProduct(newp);
-				System.out.println("edit order successfully.");
+				System.err.println("edit order successfully.");
 
 				break;
 			}
@@ -50,7 +53,7 @@ public class CustomerFunction {
 			if((date.equalsIgnoreCase(a.get(i).getDate()))&&(time.equals(a.get(i).getTime()))&&(p.equals(a.get(i).getproduct())))
 			{
 				customers.get(index).removeRequest(i);
-				System.out.println("remove order successfully.");
+				System.err.println("remove order successfully.");
 				
 				break;
 			}
@@ -59,14 +62,13 @@ public class CustomerFunction {
 	
 	public static void removeinvoice(String username,String date,String time,Product p)
 	{
-		int index=search(username);
 		List<Request> a = InvoiceOrder.requests;
 		for(int i=0;i<a.size();i++)
 		{
 			if((date.equalsIgnoreCase(a.get(i).getDate()))&&(time.equals(a.get(i).getTime()))&&(p.equals(a.get(i).getproduct())))
 			{
 				InvoiceOrder.requests.remove(i);
-				System.out.println("remove order successfully.");
+				System.err.println("remove order successfully.");
 				
 				break;
 			}
@@ -102,27 +104,29 @@ public class CustomerFunction {
 		int index=search(username);
 		for(int i=0;i<customers.get(index).getRequests().size();i++)
 		{
-			if( date.equalsIgnoreCase(customers.get(index).getRequests().get(i).getDate()) && time.equals(customers.get(index).getRequests().get(i).getTime()) )
+			if( date.equalsIgnoreCase(customers.get(index).getRequests().get(i).getDate()) && time.equals(customers.get(index).getRequests().get(i).getTime())&&(customers.get(index).getRequests().get(i).getStatus()==1) )
 			{
-				if(customers.get(index).getRequests().get(i).getStatus()==1)
+				
 					return  discount * customers.get(index).getRequests().get(i).getproduct().getPrice();
 				
-			}
+			
 		}
+			}
 		return -1;
+		
+			
 	}
 	
 	public static double addDiscounttoRequest(String username,String date,String time) {
 		int index=search(username);
 		for(int i=0;i<customers.get(index).getRequests().size();i++)
 		{
-			if( date.equalsIgnoreCase(customers.get(index).getRequests().get(i).getDate()) && time.equals(customers.get(index).getRequests().get(i).getTime()) )
-			{
-				if(customers.get(index).getRequests().get(i).getStatus()==1)
-					if(customers.get(index).getRequests().get(i).getproduct().getPrice() >= 200.0)
+			if( date.equalsIgnoreCase(customers.get(index).getRequests().get(i).getDate()) && time.equals(customers.get(index).getRequests().get(i).getTime()) 
+			&& (customers.get(index).getRequests().get(i).getStatus()==1)
+				&& (customers.get(index).getRequests().get(i).getproduct().getPrice() >= 200.0))
 					return 0.20;
 			}
-			}
+			
 		
 		return 1;
     }
@@ -174,7 +178,7 @@ public class CustomerFunction {
 	public static void viewallrequest( String n) {
 		for(int i =0 ; i < requests.size(); i++) {
 			if(requests.get(i).getNameCustomer().equalsIgnoreCase(n)) {
-			System.out.print(i + ". "+requests.get(i).getproduct().getName()+"\n Time of order : "+requests.get(i).getTime()+" and Date of order : "+requests.get(i).getDate()+"\n***************************************************\n");
+			System.err.print(i + ". "+requests.get(i).getproduct().getName()+"\n Time of order : "+requests.get(i).getTime()+" and Date of order : "+requests.get(i).getDate()+"\n***************************************************\n");
 		}
 	}
 	}

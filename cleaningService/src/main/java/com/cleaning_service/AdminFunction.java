@@ -38,7 +38,7 @@ public class AdminFunction {
 		
 		return products.get(w) ;
 	}
-	public static  Boolean CheckIfProductCanAdd(String name) {
+	public static  Boolean checkIfProductCanAdd(String name) {
 		for(int i=0; i < WorkerFunction.products.size() ; i++) {
 			
 			if(products.get(i).getName().equalsIgnoreCase(name))
@@ -63,7 +63,7 @@ public   List<Product> findProductsByName(String name) {
 
 
 
-	public  void AddProduct(Product p) {
+	public  void addProduct(Product p) {
 		products.add(p);
 	}
 }
