@@ -28,7 +28,7 @@ import java.util.List;
 		customerName = r.getNameCustomer();
 		requests.add(r);
 	}
-public  void setcustomername(String n) {
+public static  void setcustomername(String n) {
 	customerName=n;
 	
 }
@@ -53,11 +53,11 @@ public  List<Request> request(String customern) {
 	}
 
 	
-	public  Request searchOrderindex(int w) {
+	public static  Request searchOrderindex(int w) {
 		
 		return requests.get(w);
 	}
-public  int searchindexOfOrder(Request w) {
+public static  int searchindexOfOrder(Request w) {
 		
 	for(int i =0 ; i < requests.size(); i++) {
 		if(requests.get(i)==w) {
