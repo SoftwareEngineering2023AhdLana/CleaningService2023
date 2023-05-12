@@ -5,11 +5,16 @@ package com.cleaning_service;
 	import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.List;
+
 	public class invoiceOrder {
+		invoiceOrder(){
+			
+		}
 
 
 	static String customerName;
-	static public ArrayList<Request> requests=new ArrayList<Request>();
+	static public List<Request> requests=new ArrayList<Request>();
 	 String TimeOfInvoice;
 	 static double totalPrice=0;
 	 
@@ -23,12 +28,12 @@ import java.util.ArrayList;
 		customerName = r.getNameCustomer();
 		requests.add(r);
 	}
-public static void setcustomername(String n) {
+public  void setcustomername(String n) {
 	customerName=n;
 	
 }
-public static ArrayList<Request> request(String customern) {
-	ArrayList<Request> a = new ArrayList<Request>() ;
+public  List<Request> request(String customern) {
+	List<Request> a = new ArrayList<Request>() ;
 	for(int i =0 ; i < requests.size(); i++) 
 		if(requests.get(i).getNameCustomer().equalsIgnoreCase(customerName)) 
              a.add(requests.get(i))	;
@@ -36,7 +41,7 @@ public static ArrayList<Request> request(String customern) {
 	
 	return a;
 }
-	public static void print()
+	public static  void print()
 	{
 			System.out.print("************ customer name : "+customerName +"  *****************\n");
 			viewallrequest();
@@ -48,11 +53,11 @@ public static ArrayList<Request> request(String customern) {
 	}
 
 	
-	public static Request searchOrderindex(int w) {
+	public  Request searchOrderindex(int w) {
 		
 		return requests.get(w);
 	}
-public static int searchindexOfOrder(Request w) {
+public  int searchindexOfOrder(Request w) {
 		
 	for(int i =0 ; i < requests.size(); i++) {
 		if(requests.get(i)==w) {

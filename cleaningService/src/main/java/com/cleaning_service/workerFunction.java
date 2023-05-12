@@ -2,10 +2,11 @@ package com.cleaning_service;
 
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class workerFunction {
-	static public ArrayList<Worker> workers=new ArrayList<Worker>();
-	static public ArrayList<Product> products=new ArrayList<Product>();
+	static public List<Worker> workers=new ArrayList<Worker>();
+	static public List<Product> products=new ArrayList<Product>();
 
 	//search worker By Name 
 	public static int search(String w) {

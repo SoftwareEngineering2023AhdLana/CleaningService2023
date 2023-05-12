@@ -4,10 +4,11 @@ package com.cleaning_service;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.List;
 
 public class customerFunction {
-	static public ArrayList<Customer> customers=new ArrayList<Customer>();
-	static public ArrayList<Request> requests=new ArrayList<Request>();
+	static public List<Customer> customers=new ArrayList<Customer>();
+	static public List<Request> requests=new ArrayList<Request>();
 
 	public static int search(String c)
 	{
@@ -42,7 +43,7 @@ public class customerFunction {
 	public static void removeRequest(String username,String date,String time,Product p)
 	{
 		int index=search(username);
-		ArrayList<Request> a;
+		List<Request> a;
 		a=customers.get(index).getRequests();
 		for(int i=0;i<a.size();i++)
 		{
@@ -59,8 +60,7 @@ public class customerFunction {
 	public static void removeinvoice(String username,String date,String time,Product p)
 	{
 		int index=search(username);
-		ArrayList<Request> a = invoiceOrder.requests;
-		//a=invoiceOrder.request(username);
+		List<Request> a = invoiceOrder.requests;
 		for(int i=0;i<a.size();i++)
 		{
 			if((date.equalsIgnoreCase(a.get(i).getDate()))&&(time.equals(a.get(i).getTime()))&&(p.equals(a.get(i).getproduct())))

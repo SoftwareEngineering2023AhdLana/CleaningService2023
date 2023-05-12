@@ -1,7 +1,7 @@
 package com.cleaning_service;
 
 
-import java.awt.List;
+import java.util.List;
 import java.util.ArrayList;
 
 public class Product {

@@ -2,6 +2,7 @@ package com.cleaning_service;
 
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Admin {
 
@@ -12,7 +13,7 @@ public class Admin {
 		private String address;
 		private String phoneNumber;
 		private Boolean logState=false;
-		static public ArrayList<Product> products=new ArrayList<Product>();
+		List<Product> products=new ArrayList<Product>();
 
 		public Admin() 
 		{

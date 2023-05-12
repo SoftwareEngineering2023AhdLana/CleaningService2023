@@ -3,6 +3,7 @@ package com.cleaning_service;
 
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Customer {
 
@@ -14,9 +15,9 @@ public class Customer {
 		private String phoneNumber;
 		private String address;
 		private Boolean logState=false;
-		public static ArrayList<Request> requests=new ArrayList<Request>();
-		public static ArrayList<Request> requestsDone=new ArrayList<Request>();
-		public static ArrayList<Request> requestsStill=new ArrayList<Request>();
+		public static List<Request> requests=new ArrayList<Request>();
+		public static List<Request> requestsDone=new ArrayList<Request>();
+		public static List<Request> requestsStill=new ArrayList<Request>();
 
 		public Customer() 
 		{
@@ -72,10 +73,10 @@ public class Customer {
 		public void setAddress(String address) {
 			this.address = address;
 		}
-		public ArrayList<Request> getRequests() {
+		public List<Request> getRequests() {
 			return this.requests;
 		}
-		public void setRequests(ArrayList<Request> Requests) {
+		public void setRequests(List<Request> Requests) {
 			this.requests = Requests;
 		}
 	
