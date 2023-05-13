@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class WorkerFunction {
-	WorkerFunction(){
+	public WorkerFunction(){
 		
 	}
 	protected static List<Worker> workers=new ArrayList<Worker>();
