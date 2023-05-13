@@ -112,9 +112,9 @@ public class LoginFunction {
 			String c = CustomerFunction.requests.get(i).toString();
 	       logger.log(Level.INFO,c);
              if(CustomerFunction.requests.get(i).getStatus() ==1)
-	        	money +=CustomerFunction.requests.get(i).p.getPrice();
+            	 money +=CustomerFunction.requests.get(i).p.getPrice();
 		}
-    	logger.log(Level.INFO,".................................");
+    	logger.log(Level.INFO,"..................................");
     	String fullsales="Full Sales : "+money;
 	   	logger.log(Level.INFO,fullsales);
     	logger.log(Level.INFO,"..............................");
@@ -273,7 +273,7 @@ public class LoginFunction {
         CustomerFunction.requests.remove(i);
 		CustomerFunction.checkAllOrder();
 		logger.log(Level.INFO,"remove order successfully.");
-		logger.log(Level.INFO,"..............................");
+		logger.log(Level.INFO,"..................................");
 
 
 	}

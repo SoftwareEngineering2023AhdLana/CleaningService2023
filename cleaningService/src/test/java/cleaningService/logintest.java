@@ -60,7 +60,7 @@ public class logintest {
 	 @Then("the user login succeeds")
 	 public void theUserLoginSucceeds() {
 	     // Write code here that turns the phrase above into concrete actions
-		 assertEquals(a,true);
+		 assertEquals(true,a);
 
 	 
 	 }

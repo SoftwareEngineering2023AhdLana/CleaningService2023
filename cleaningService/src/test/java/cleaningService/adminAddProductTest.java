@@ -68,7 +68,7 @@ Scanner s=new Scanner(new InputStreamReader(System.in));
 	@Then("the product can be added")
 	public void theProductCanBeAdded() {
 	    // Write code here that turns the phrase above into concrete actions
-		 assertEquals(a,true);
+		 assertEquals(true,a);
 	}
 	@Then("the product is added")
 	public void theProductIsAdded() {
@@ -97,7 +97,7 @@ Scanner s=new Scanner(new InputStreamReader(System.in));
 	@Then("the product cannot be added")
 	public void theProductCannotBeAdded() {
 	    // Write code here that turns the phrase above into concrete actions
-		 assertEquals(a,false);
+		 assertEquals(false,a);
 	}
 	@Then("the product is not added")
 	public void theProductIsNotAdded() {

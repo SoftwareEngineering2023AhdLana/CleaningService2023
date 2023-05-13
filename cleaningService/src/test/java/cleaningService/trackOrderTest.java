@@ -95,7 +95,7 @@ boolean a = false;
 	@Then("the request is turned into a Done")
 	public void theRequestIsTurnedIntoADone() {
 	    // Write code here that turns the phrase above into concrete actions
-		 assertEquals(a,true);
+		 assertEquals(true,a);
 	}
 
 
@@ -108,7 +108,7 @@ boolean a = false;
 	@Then("the request is still")
 	public void theRequestIsStill() {
 	    // Write code here that turns the phrase above into concrete actions
-		 assertEquals(a,false);
+		 assertEquals(false,a);
 
 	}
 

@@ -66,7 +66,7 @@ public class customerAddInvoiceTest {
 	@Then("the invoice is generated")
 	public void theInvoiceIsGenerated() {
 	    // Write code here that turns the phrase above into concrete actions
-		 assertEquals(a,true);
+		 assertEquals(true,a);
 	}
 
 

@@ -66,7 +66,7 @@ public class addDiscountToRequestTest {
 	@Then("add discount to request")
 	public void addDiscountToRequest() {
 	    // Write code here that turns the phrase above into concrete actions
-		 assertEquals(a,true);
+		 assertEquals(true,a);
 	}
 	@Then("it is stored in the customer")
 	public void itIsStoredInTheCustomer() {
@@ -79,7 +79,7 @@ public class addDiscountToRequestTest {
 	@Then("not add discount to request")
 	public void notAddDiscountToRequest() {
 	    // Write code here that turns the phrase above into concrete actions
-		 assertEquals(a,false);
+		 assertEquals(false,a);
 	}
 
 
