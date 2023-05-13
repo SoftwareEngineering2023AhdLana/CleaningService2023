@@ -21,8 +21,8 @@ public class LoginFunction {
 
 
  		for(int i=0; i < WorkerFunction.workers.size() ; i++) {
- 			
- 	       logger.log(Level.INFO,WorkerFunction.workers.get(i).toString());
+ 			String w =WorkerFunction.workers.get(i).toString();
+ 	       logger.log(Level.INFO,w);
 
  		}
      	logger.log(Level.INFO,"...............................");
@@ -30,34 +30,35 @@ public class LoginFunction {
      	logger.log(Level.INFO,"all customer in system ..........");
 
  		for(int i=0; i < CustomerFunction.customers.size() ; i++) {
- 			
- 	       logger.log(Level.INFO,CustomerFunction.customers.get(i).toString());
+ 			String c = CustomerFunction.customers.get(i).toString();
+ 	       logger.log(Level.INFO,c);
 
  			
  		}
-     	logger.log(Level.INFO,"...............................");
+     	logger.log(Level.INFO,"..............................");
      	 
      	 
-     	logger.log(Level.INFO,"all product in system ..........");
+     	logger.log(Level.INFO,"all product in system .........");
 
      	for(int i=0; i < AdminFunction.products.size() ; i++) {
-     	
- 	       logger.log(Level.INFO,	AdminFunction.products.get(i).toString());
+     		String a = AdminFunction.products.get(i).toString();
+ 	       logger.log(Level.INFO,a);
 
  		}
-     	logger.log(Level.INFO,"...............................");
+     	logger.log(Level.INFO,"............................");
      	 
      	 
      	logger.log(Level.INFO,"all Order in system ..........");
         double money = 0.0;
 		for(int i=0; i < CustomerFunction.requests.size() ; i++) {
-			
-	       logger.log(Level.INFO,CustomerFunction.requests.get(i).toString());
+			String c=CustomerFunction.requests.get(i).toString();
+	       logger.log(Level.INFO,c);
 
 	 	money +=CustomerFunction.requests.get(i).p.getPrice();
 		}
   	logger.log(Level.INFO,"...............................");
-	   	logger.log(Level.INFO,"Full Sales : "+money);
+  	String fullsale="Full Sales : "+money;
+	   	logger.log(Level.INFO,fullsale);
      	 
 	}
 
@@ -67,11 +68,11 @@ public class LoginFunction {
       	logger.log(Level.INFO,"all product in system ..........");
 
     	for(int i=0; i < AdminFunction.products.size() ; i++) {
-    	
-	       logger.log(Level.INFO,i+ ". "+	AdminFunction.products.get(i).toString());
+    		String a=i+ ". "+	AdminFunction.products.get(i).toString();
+	       logger.log(Level.INFO,a);
 
 		}
-    	logger.log(Level.INFO,"...............................");
+    	logger.log(Level.INFO,"..............................");
   	}
     
 	static void viewWorkerData() {
@@ -81,11 +82,11 @@ public class LoginFunction {
 
 
 		for(int i=0; i < WorkerFunction.workers.size() ; i++) {
-			
-	       logger.log(Level.INFO,WorkerFunction.workers.get(i).toString());
+			String w =WorkerFunction.workers.get(i).toString();
+	       logger.log(Level.INFO,w);
 
 		}
-    	logger.log(Level.INFO,"...............................");
+    	logger.log(Level.INFO,"....................................");
 	}
 
 	static void viewCustomerData() {
@@ -94,12 +95,12 @@ public class LoginFunction {
 	   	logger.log(Level.INFO,"all customer in system ..........");
 
 		for(int i=0; i < CustomerFunction.customers.size() ; i++) {
-			
-	       logger.log(Level.INFO,CustomerFunction.customers.get(i).toString());
+			String c=CustomerFunction.customers.get(i).toString();
+	       logger.log(Level.INFO,c);
 
 			
 		}
-    	logger.log(Level.INFO,"...............................");
+    	logger.log(Level.INFO,".....................................");
 	}
 	
 	 static void viewRequestData() {
@@ -108,14 +109,14 @@ public class LoginFunction {
 	   	logger.log(Level.INFO,"all Order in system ..........");
           double money = 0.0;
 		for(int i=0; i < CustomerFunction.requests.size() ; i++) {
-			
-	       logger.log(Level.INFO,CustomerFunction.requests.get(i).toString());
+			String c = CustomerFunction.requests.get(i).toString();
+	       logger.log(Level.INFO,c);
              if(CustomerFunction.requests.get(i).getStatus() ==1)
 	      	money +=CustomerFunction.requests.get(i).p.getPrice();
 		}
-    	logger.log(Level.INFO,"...............................");
+    	logger.log(Level.INFO,"..............................");
 	   	logger.log(Level.INFO,"Full Sales : "+money);
-    	logger.log(Level.INFO,"...............................");
+    	logger.log(Level.INFO,".............................");
     	 
 // should call function to restall all order  before print order
 	}
@@ -141,13 +142,13 @@ public class LoginFunction {
     		AdminFunction.products.add(p);
 			WorkerFunction.products.add(p);
 			logger.log(Level.INFO,"add product successfully");
-	     	logger.log(Level.INFO,"...............................");
+	     	logger.log(Level.INFO,"...........................");
 
     		b=false;
     	}else {
     		logger.log(Level.INFO," the product exite , Enter new product ...");
     	
-         	logger.log(Level.INFO,"...............................");
+         	logger.log(Level.INFO,".............................");
 }
     	}
 		
@@ -167,13 +168,13 @@ public class LoginFunction {
     		int index = AdminFunction.searchproduct(name);
            	AdminFunction.products.remove(index);
 	        	logger.log(Level.INFO,"remove product successfully");
-        	logger.log(Level.INFO,"...............................");
+        	logger.log(Level.INFO,".................................");
 
 
     		b=false;
     	}else {
     		logger.log(Level.INFO," the product not exite , Enter name product ...");
-         	logger.log(Level.INFO,"...............................");
+         	logger.log(Level.INFO,"..................................");
 
     	}
     	}
@@ -208,12 +209,12 @@ public class LoginFunction {
     		AdminFunction.products.add(p);
 			WorkerFunction.products.add(p);
 	        	logger.log(Level.INFO,"Edit product successfully");
-	     	logger.log(Level.INFO,"..............................");
+	     	logger.log(Level.INFO,"..........................");
 
     		b=false;
     	}else {
     		logger.log(Level.INFO," the product not exite , Enter name product ...");
-         	logger.log(Level.INFO,"................................");
+         	logger.log(Level.INFO,"............................");
 
     	}
     	}
@@ -268,7 +269,7 @@ public class LoginFunction {
         CustomerFunction.requests.remove(i);
 		CustomerFunction.checkAllOrder();
 		logger.log(Level.INFO,"remove order successfully.");
-		logger.log(Level.INFO,"...............................");
+		logger.log(Level.INFO,"..............................");
 
 
 	}
@@ -318,11 +319,11 @@ public class LoginFunction {
     	    	CustomerFunction.requests.add(r1);
 				logger.log(Level.INFO,"edit order successfully.");
 
-			logger.log(Level.INFO,"...............................");
+			logger.log(Level.INFO,".............................");
     		b=false;
     	}else {
     		logger.log(Level.INFO," the order not exite , Enter name order ...");
-         	logger.log(Level.INFO,"...............................");
+         	logger.log(Level.INFO,"..................................");
 
     	}
     	}
