@@ -1,7 +1,5 @@
 package com.cleaning_service;
 
-import java.util.ArrayList;
-
 public class Request {
 private String nameCustomer;
 private String date;

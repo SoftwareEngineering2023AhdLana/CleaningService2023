@@ -1,8 +1,6 @@
 package com.cleaning_service;
 
 
-import java.util.List;
-import java.util.ArrayList;
 
 public class Product {
 private String name;

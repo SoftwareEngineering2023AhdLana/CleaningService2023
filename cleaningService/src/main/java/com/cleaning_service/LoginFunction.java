@@ -126,12 +126,14 @@ public class LoginFunction {
 				LoginFunction.class.getName());
 		boolean b = true;
     	String name;
-    	String d,c;
+    	String d;
+    	String c;
     	double p1;
     	while(b) {
        logger.log(Level.INFO,"Enter name of product :");
     	name= in.nextLine();
-    	if(AdminFunction.checkIfProductCanAdd( name)) {
+    	Boolean checkname=AdminFunction.checkIfProductCanAdd(name);
+    	if(checkname) {
     		logger.log(Level.INFO,"Enter description for product :");
     		d = in.nextLine();
     		logger.log(Level.INFO,"Enter category for product :");
@@ -187,7 +189,8 @@ public class LoginFunction {
 		boolean b = true;
     	String name;
     	String name1;
-    	String d,c;
+    	String d;
+    	String c;
     	double p1;
     	while(b) {
        logger.log(Level.INFO,"Enter name of product :");
@@ -278,11 +281,12 @@ public class LoginFunction {
 		Logger logger=Logger.getLogger(
 				LoginFunction.class.getName());
 		
-		boolean b = true;
+		
 		InvoiceOrder.viewallrequest();
 		
 		
-		int i,i1;
+		int i;
+		int i1;
 		String date1;
     	String time1;
     	String test;
@@ -320,7 +324,7 @@ public class LoginFunction {
 				logger.log(Level.INFO,"edit order successfully.");
 
 			logger.log(Level.INFO,".............................");
-    		b=false;
+    		
     	}else {
     		logger.log(Level.INFO," the order not exite , Enter name order ...");
          	logger.log(Level.INFO,"..................................");
