@@ -48,7 +48,7 @@ public class LoginFunction {
      	logger.log(Level.INFO,"...............................");
      	 
      	 
-     	System.err.println("all Order in system ..........");
+     	logger.log(Level.INFO,"all Order in system ..........");
         double money = 0.0;
 		for(int i=0; i < CustomerFunction.requests.size() ; i++) {
 			
@@ -131,16 +131,16 @@ public class LoginFunction {
        logger.log(Level.INFO,"Enter name of product :");
     	name= in.nextLine();
     	if(AdminFunction.checkIfProductCanAdd( name)) {
-    		System.err.println("Enter description for product :");
+    		logger.log(Level.INFO,"Enter description for product :");
     		d = in.nextLine();
-    		System.err.println("Enter category for product :");
+    		logger.log(Level.INFO,"Enter category for product :");
     		c = in.nextLine();
-    		System.err.println("Enter price for product :");
+    		logger.log(Level.INFO,"Enter price for product :");
     		p1 = in.nextDouble();
     		Product p = new Product(name,d,c,p1);
     		AdminFunction.products.add(p);
 			WorkerFunction.products.add(p);
-			System.err.println("add product successfully");
+			logger.log(Level.INFO,"add product successfully");
 	     	logger.log(Level.INFO,"...............................");
 
     		b=false;
@@ -166,7 +166,7 @@ public class LoginFunction {
     	if(  AdminFunction.searchproduct( name) !=-1) {
     		int index = AdminFunction.searchproduct(name);
            	AdminFunction.products.remove(index);
-	        	System.err.println("remove product successfully");
+	        	logger.log(Level.INFO,"remove product successfully");
         	logger.log(Level.INFO,"...............................");
 
 
@@ -184,7 +184,8 @@ public class LoginFunction {
 				LoginFunction.class.getName());
 		
 		boolean b = true;
-    	String name,name1;
+    	String name;
+    	String name1;
     	String d,c;
     	double p1;
     	while(b) {
@@ -195,24 +196,24 @@ public class LoginFunction {
     	if(  AdminFunction.searchproduct( name) !=-1) {
     		int index = AdminFunction.searchproduct(name);
            	AdminFunction.products.remove(index);
-    		System.err.println("Enter new name of product :");
+    		logger.log(Level.INFO,"Enter new name of product :");
         	name1= in.nextLine();
-    		System.err.println("Enter new description for product :");
+    		logger.log(Level.INFO,"Enter new description for product :");
     		d = in.nextLine();
-    		System.err.println("Enter new category for product :");
+    		logger.log(Level.INFO,"Enter new category for product :");
     		c = in.nextLine();
-    		System.err.println("Enter new price for product :");
+    		logger.log(Level.INFO,"Enter new price for product :");
     		p1 = in.nextDouble();
     		Product p = new Product(name1,d,c,p1);
     		AdminFunction.products.add(p);
 			WorkerFunction.products.add(p);
-	        	System.err.println("Edit product successfully");
-	     	System.err.println("...............................");
+	        	logger.log(Level.INFO,"Edit product successfully");
+	     	logger.log(Level.INFO,"..............................");
 
     		b=false;
     	}else {
     		logger.log(Level.INFO," the product not exite , Enter name product ...");
-         	logger.log(Level.INFO,"...............................");
+         	logger.log(Level.INFO,"................................");
 
     	}
     	}
@@ -232,7 +233,7 @@ public class LoginFunction {
     	String date;
     	String time;
     	String min;
-    	System.err.println("Enter index of product");
+    	logger.log(Level.INFO,"Enter index of product");
         i=in.nextInt();
    
         ////////////////////////////
@@ -266,8 +267,8 @@ public class LoginFunction {
         InvoiceOrder.requests.remove(i);
         CustomerFunction.requests.remove(i);
 		CustomerFunction.checkAllOrder();
-		System.err.println("remove order successfully.");
-		System.err.println("...............................");
+		logger.log(Level.INFO,"remove order successfully.");
+		logger.log(Level.INFO,"...............................");
 
 
 	}
@@ -310,14 +311,14 @@ public class LoginFunction {
 
     	        time1 = in.nextLine();
     	        
-    	    	System.err.println("Enter new date for order");
+    	    	logger.log(Level.INFO,"Enter new date for order");
     	    	date1 = in.nextLine();
     	    	Request r1 = new Request(user ,date1,time1,0,p );
     	    	InvoiceOrder.requests.add(r1);
     	    	CustomerFunction.requests.add(r1);
-				System.err.println("edit order successfully.");
+				logger.log(Level.INFO,"edit order successfully.");
 
-			System.err.println("...............................");
+			logger.log(Level.INFO,"...............................");
     		b=false;
     	}else {
     		logger.log(Level.INFO," the order not exite , Enter name order ...");

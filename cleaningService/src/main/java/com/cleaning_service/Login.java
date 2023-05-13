@@ -7,7 +7,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class Login {
-	private static final String ACTION_1 = "..............................";
+	
 	static Scanner in=new Scanner(System.in);
 	static int index=-1;
 	static int indexOfOrder;
@@ -30,7 +30,7 @@ public class Login {
         logger.log(Level.INFO,"7. Edit product.");
         logger.log(Level.INFO,"8. delete product.");
         logger.log(Level.INFO,"9. Log out.");
-        System.out.print("Enter your choice: ");
+        logger.log(Level.INFO,"Enter your choice: ");
 
       
         int choice = in.nextInt();
@@ -61,13 +61,13 @@ public class Login {
         }
         else if (choice == 9) {
             logger.log(Level.INFO,"Logging out...");
-        	 logger.log(Level.INFO,ACTION_1);
+        	 logger.log(Level.INFO,"...........................");
 
         
             x=1;
         } else {
             logger.log(Level.INFO,"Invalid choice. Please enter 1, 2, 3,4,5,6 or 7.");
-        	 logger.log(Level.INFO,"ACTION_1");
+        	 logger.log(Level.INFO,".............................");
 
         }
       }
@@ -121,12 +121,12 @@ public class Login {
         else if (choice == 6) {
         	
             logger.log(Level.INFO,"Logging out..");
-        	 logger.log(Level.INFO,"ACTION_1");
+        	 logger.log(Level.INFO,"..............................");
 
             x=1;
         } else {
             logger.log(Level.INFO,"Invalid choice. Please enter 1, 2, 3,4,5 or 6.");
-        	 logger.log(Level.INFO,"ACTION_1");
+        	 logger.log(Level.INFO,"............................");
 
         }
       }
@@ -154,12 +154,12 @@ public class Login {
   
       if (choice == 3) {
           logger.log(Level.INFO,"Logging out");
-      	 logger.log(Level.INFO,"ACTION_1");
+      	 logger.log(Level.INFO,"..................................");
 
           x=1;
       } else {
           logger.log(Level.INFO,"Invalid choice. Please enter 1, 2 or 3.");
-      	 logger.log(Level.INFO,"ACTION_1");
+      	 logger.log(Level.INFO,"...................................");
 
       }
     }		
