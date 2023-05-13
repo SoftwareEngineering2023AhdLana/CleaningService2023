@@ -1,6 +1,7 @@
 package cleaningService;
 
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 import java.io.InputStreamReader;
@@ -65,8 +66,7 @@ public class addDiscountToRequestTest {
 	@Then("add discount to request")
 	public void addDiscountToRequest() {
 	    // Write code here that turns the phrase above into concrete actions
-	     assertTrue(a==true);
-
+		 assertEquals(a,true);
 	}
 	@Then("it is stored in the customer")
 	public void itIsStoredInTheCustomer() {
@@ -79,7 +79,7 @@ public class addDiscountToRequestTest {
 	@Then("not add discount to request")
 	public void notAddDiscountToRequest() {
 	    // Write code here that turns the phrase above into concrete actions
-	     assertTrue(a==false);
+		 assertEquals(a,false);
 	}
 
 

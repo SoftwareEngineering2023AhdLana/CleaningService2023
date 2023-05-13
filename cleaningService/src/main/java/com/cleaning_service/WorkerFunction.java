@@ -5,6 +5,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class WorkerFunction {
+	WorkerFunction(){
+		
+	}
 	protected static List<Worker> workers=new ArrayList<Worker>();
 	protected static List<Product> products=new ArrayList<Product>();
 

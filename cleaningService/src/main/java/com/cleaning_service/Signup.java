@@ -2,6 +2,8 @@ package com.cleaning_service;
 
 
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Signup {
 
@@ -31,28 +33,33 @@ public class Signup {
 		}
 		return false;
 	}
-	public Signup()
+	Logger logger=Logger.getLogger(
+			Signup.class.getName());
+	
+	 Signup()
 	{
-		System.out.println("Welcome to the Sign up \n"+
+		 
+		logger.log(Level.INFO,"Welcome to the Sign up \n"+
 							"----------------------------------------------\n"+
 							"Please enter your new user name : ");
 		String u=in.nextLine();
-		while(search(u))
+		boolean search =search(u);
+		while(Boolean.TRUE.equals(search))
 		{
-			System.out.println("Username already e xists, try again \nEnter your new username :");
+			logger.log(Level.INFO,"Username already e xists, try again \nEnter your new username :");
 			u=in.nextLine();
 		}
-		System.out.println("Please enter the password : ");
+		logger.log(Level.INFO,"Please enter the password : ");
 		String p=in.nextLine();
-		System.out.println("Please enter your password :");
+		logger.log(Level.INFO,"Please enter your password :");
 		String n=in.nextLine();
-		System.out.println("Please enter your phone Number :");
+		logger.log(Level.INFO,"Please enter your phone Number :");
 		String a=in.nextLine();
-		System.out.println("Please enter your address");
+		logger.log(Level.INFO,"Please enter your address");
 		String ph=in.nextLine();
 		Customer cus=new Customer(u,p,n,a,ph);
 		CustomerFunction.customers.add(cus);
-		System.out.println("customer is added to the system successfully");
+		logger.log(Level.INFO,"customer is added to the system successfully");
 	}
 	
 	

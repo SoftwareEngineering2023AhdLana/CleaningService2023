@@ -1,7 +1,7 @@
 package cleaningService;
 
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 import java.io.InputStreamReader;
 import java.util.Scanner;
@@ -60,7 +60,7 @@ public class addCustomerTest {
 	@Then("the customer can be added")
 	public void theCustomerCanBeAdded() {
 	    // Write code here that turns the phrase above into concrete actions
-	     assertTrue(a==true);
+	     assertEquals(a,true);
 	}
 	@Then("the customer is added successful")
 	public void theCustomerIsAddedSuccessful() {
@@ -88,7 +88,7 @@ public class addCustomerTest {
 	@Then("the customer cannot be added")
 	public void theCustomerCannotBeAdded() {
 	    // Write code here that turns the phrase above into concrete actions
-		 assertTrue(a==false);
+		 assertEquals(a,false);
 	}
 	@Then("the customer is log in fail")
 	public void theCustomerIsLogInFail() {

@@ -1,6 +1,7 @@
 package cleaningService;
 
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 import java.io.InputStreamReader;
@@ -67,7 +68,7 @@ Scanner s=new Scanner(new InputStreamReader(System.in));
 	@Then("the product can be added")
 	public void theProductCanBeAdded() {
 	    // Write code here that turns the phrase above into concrete actions
-      assertTrue(a==true);
+		 assertEquals(a,true);
 	}
 	@Then("the product is added")
 	public void theProductIsAdded() {
@@ -96,7 +97,7 @@ Scanner s=new Scanner(new InputStreamReader(System.in));
 	@Then("the product cannot be added")
 	public void theProductCannotBeAdded() {
 	    // Write code here that turns the phrase above into concrete actions
-    assertTrue(a==false);
+		 assertEquals(a,false);
 	}
 	@Then("the product is not added")
 	public void theProductIsNotAdded() {

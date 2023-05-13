@@ -25,7 +25,7 @@ public class LoginFunction {
  	       logger.log(Level.INFO,w);
 
  		}
-     	logger.log(Level.INFO,"...............................");
+     	logger.log(Level.INFO,".................................");
      	 
      	logger.log(Level.INFO,"all customer in system ..........");
 
@@ -35,7 +35,7 @@ public class LoginFunction {
 
  			
  		}
-     	logger.log(Level.INFO,"..............................");
+     	logger.log(Level.INFO,"...............................");
      	 
      	 
      	logger.log(Level.INFO,"all product in system .........");
@@ -56,7 +56,7 @@ public class LoginFunction {
 
 	 	money +=CustomerFunction.requests.get(i).p.getPrice();
 		}
-  	logger.log(Level.INFO,"...............................");
+  	logger.log(Level.INFO,"..............................");
   	String fullsale="Full Sales : "+money;
 	   	logger.log(Level.INFO,fullsale);
      	 
@@ -72,7 +72,7 @@ public class LoginFunction {
 	       logger.log(Level.INFO,a);
 
 		}
-    	logger.log(Level.INFO,"..............................");
+    	logger.log(Level.INFO,"............................");
   	}
     
 	static void viewWorkerData() {
@@ -112,11 +112,12 @@ public class LoginFunction {
 			String c = CustomerFunction.requests.get(i).toString();
 	       logger.log(Level.INFO,c);
              if(CustomerFunction.requests.get(i).getStatus() ==1)
-	      	money +=CustomerFunction.requests.get(i).p.getPrice();
+	        	money +=CustomerFunction.requests.get(i).p.getPrice();
 		}
+    	logger.log(Level.INFO,".................................");
+    	String fullsales="Full Sales : "+money;
+	   	logger.log(Level.INFO,fullsales);
     	logger.log(Level.INFO,"..............................");
-	   	logger.log(Level.INFO,"Full Sales : "+money);
-    	logger.log(Level.INFO,".............................");
     	 
 // should call function to restall all order  before print order
 	}
@@ -133,7 +134,7 @@ public class LoginFunction {
        logger.log(Level.INFO,"Enter name of product :");
     	name= in.nextLine();
     	Boolean checkname=AdminFunction.checkIfProductCanAdd(name);
-    	if(checkname) {
+    	if(Boolean.TRUE.equals(checkname)){
     		logger.log(Level.INFO,"Enter description for product :");
     		d = in.nextLine();
     		logger.log(Level.INFO,"Enter category for product :");
@@ -162,7 +163,7 @@ public class LoginFunction {
 		boolean b = true;
     	String name;
     	while(b) {
-       logger.log(Level.INFO,"Enter name of product :");
+       logger.log(Level.INFO,"Enter the name of product :");
     	name= in.nextLine();
     	// delete it by index
     	
@@ -193,7 +194,7 @@ public class LoginFunction {
     	String c;
     	double p1;
     	while(b) {
-       logger.log(Level.INFO,"Enter name of product :");
+       logger.log(Level.INFO,"Enter name of product  :");
     	name= in.nextLine();
     	// delete it by index
     	

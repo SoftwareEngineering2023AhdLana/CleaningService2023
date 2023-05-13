@@ -1,5 +1,6 @@
 package cleaningService;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 import java.io.InputStreamReader;
@@ -65,7 +66,7 @@ public class customerAddInvoiceTest {
 	@Then("the invoice is generated")
 	public void theInvoiceIsGenerated() {
 	    // Write code here that turns the phrase above into concrete actions
-assertTrue(a==true);
+		 assertEquals(a,true);
 	}
 
 

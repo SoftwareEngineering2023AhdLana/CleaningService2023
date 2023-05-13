@@ -1,6 +1,7 @@
 package cleaningService;
 
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 import java.io.InputStreamReader;
@@ -94,7 +95,7 @@ boolean a = false;
 	@Then("the request is turned into a Done")
 	public void theRequestIsTurnedIntoADone() {
 	    // Write code here that turns the phrase above into concrete actions
-assertTrue(a==true);
+		 assertEquals(a,true);
 	}
 
 
@@ -107,7 +108,7 @@ assertTrue(a==true);
 	@Then("the request is still")
 	public void theRequestIsStill() {
 	    // Write code here that turns the phrase above into concrete actions
-		assertTrue(a==false);
+		 assertEquals(a,false);
 
 	}
 
