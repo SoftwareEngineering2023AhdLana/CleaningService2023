@@ -9,7 +9,7 @@ public class AdminFunction {
 	static List<Admin> admins=new ArrayList<Admin>();
 	static List<Product> products=new ArrayList<Product>();
 	
-	 AdminFunction() {
+	 public AdminFunction() {
 		
 	}
 	
