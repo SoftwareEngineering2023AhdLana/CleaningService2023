@@ -60,7 +60,7 @@ public class addCustomerTest {
 	@Then("the customer can be added")
 	public void theCustomerCanBeAdded() {
 	    // Write code here that turns the phrase above into concrete actions
-	     assertEquals(a,true);
+	     assertEquals(true,a);
 	}
 	@Then("the customer is added successful")
 	public void theCustomerIsAddedSuccessful() {
@@ -88,7 +88,7 @@ public class addCustomerTest {
 	@Then("the customer cannot be added")
 	public void theCustomerCannotBeAdded() {
 	    // Write code here that turns the phrase above into concrete actions
-		 assertEquals(a,false);
+		 assertEquals(false,a);
 	}
 	@Then("the customer is log in fail")
 	public void theCustomerIsLogInFail() {

@@ -81,7 +81,7 @@ public class logintest {
 	 @Then("the user is not logged in")
 	 public void theUserIsNotLoggedIn() {
 	     // Write code here that turns the phrase above into concrete actions
-		 assertEquals(a,false);
+		 assertEquals(false,a);
 
 	 
 	 }
