@@ -6,7 +6,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class LoginFunction {
-	LoginFunction(){
+	public LoginFunction(){
 		
 	}
 	 
