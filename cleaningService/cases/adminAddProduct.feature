@@ -3,9 +3,9 @@ Description: The process of adding products to the system by the admin
 Actor: Admin
 Background: The company has products, each of the them has its price 
 And these are the services
-|Capet Wash per meter|lll|lll|lll|40.0|
-|Curtains Wash per Curtain|lll|lll|lll|70.0|
-|covers Wash per Cover|lll|lll|lll|20.0|
+|Capet Wash per meter|wool|carpet|40.0|
+|Curtains Wash per Curtain|synthetic|carpet|70.0|
+|covers Wash per Cover|fits 3-seat sofa, cotton|cover|20.0|
 
 Scenario: Can add a product 
  	Given that the admin is logged in
