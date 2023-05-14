@@ -11,8 +11,8 @@ public class Worker {
 	private String phoneNumber;
 	private String address;
 	private Boolean logState=false;
-	private static String timeStart;
-	private static String timeEnd;
+	private String timeStart;
+	private String timeEnd;
 	public Worker() 
 	{
 		
