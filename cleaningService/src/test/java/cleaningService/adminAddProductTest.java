@@ -19,8 +19,11 @@ boolean a = true;
  String description;
  String category;
  double price ;
+ boolean b  = true;
+ WorkerFunction wf = new WorkerFunction();
 Scanner s=new Scanner(new InputStreamReader(System.in));
-
+Admin ad  =  new Admin();
+AdminFunction ad1  =  new AdminFunction();
 	@Given("these are the services")
 	public void theseAreTheServices(io.cucumber.datatable.DataTable dataTable) {
 	    // Write code here that turns the phrase above into concrete actions
@@ -30,18 +33,22 @@ Scanner s=new Scanner(new InputStreamReader(System.in));
 	    // Double, Byte, Short, Long, BigInteger or BigDecimal.
 	    //
 	    // For other transformations you can register a DataTableType.
-		 System.out.print("the product name: ");
+	 for(int i=0;i<3;i++)
+		{
+		 Product p = new Product(dataTable.cell(i, 0),dataTable.cell(i, 1),dataTable.cell(i, 2),Double.parseDouble(dataTable.cell(i, 2)));
+		AdminFunction.products.add(p);
+		
+		
+		}
+	 
+		System.out.print("the product name: ");
 		 name = s.nextLine();
-		 
-		 for(int i=0;i<3;i++)
-			{
+		for(int i=0; i < AdminFunction.products.size() ; i++) {
 				
-				if((	name.equalsIgnoreCase( dataTable.cell(i, 0)) ) ) {
-					 a=false;
-					
+				if(AdminFunction.products.get(i).getName().equalsIgnoreCase(name))
+				{
+					b = false;
 				}
-				
-			
 			}
 
 	}
@@ -68,7 +75,7 @@ Scanner s=new Scanner(new InputStreamReader(System.in));
 	@Then("the product can be added")
 	public void theProductCanBeAdded() {
 	    // Write code here that turns the phrase above into concrete actions
-		 assertEquals(true,a);
+		 assertEquals(true,b);
 	}
 	@Then("the product is added")
 	public void theProductIsAdded() {
@@ -97,7 +104,7 @@ Scanner s=new Scanner(new InputStreamReader(System.in));
 	@Then("the product cannot be added")
 	public void theProductCannotBeAdded() {
 	    // Write code here that turns the phrase above into concrete actions
-		 assertEquals(false,a);
+		 assertEquals(false,b);
 	}
 	@Then("the product is not added")
 	public void theProductIsNotAdded() {
