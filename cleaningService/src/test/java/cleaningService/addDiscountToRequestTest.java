@@ -24,24 +24,21 @@ public class addDiscountToRequestTest {
 	    // Double, Byte, Short, Long, BigInteger or BigDecimal.
 	    //
 	    // For other transformations you can register a DataTableType.
-	
-		 System.out.print("Enter your user name: ");
+	 System.out.print("Enter your user name: ");
 		 name = s.nextLine();
 		 
-		 for(int i=0;i<3;i++)
+		 for(int i=0;i<5;i++)
 			{
 				
 				if((	name.equalsIgnoreCase( dataTable.cell(i,0)) ) ) {
 					double n =  Double.parseDouble(dataTable.cell(i,1));
-				
-					if(n>=400.0 ) {
-					 a=true;
+			double b = 	CustomerFunction.addDiscounttoTest(name, dataTable.cell(i,0), n);
+				if(b == 1)a = false;
 					
 				}
 				
 			
 				}
-			}
 	
 	
 	}
