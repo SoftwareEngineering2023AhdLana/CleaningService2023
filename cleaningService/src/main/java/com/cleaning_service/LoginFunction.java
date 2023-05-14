@@ -334,6 +334,40 @@ public class LoginFunction {
     	}
 	
 	
+	public static void notifiCustomer(String n) {
+		boolean a = false;
+        double money = 0.0;
+		for(int i=0; i < CustomerFunction.requests.size() ; i++) {
+			if(CustomerFunction.requests.get(i).getNameCustomer().equalsIgnoreCase(n)) {
+           if(CustomerFunction.requests.get(i).getStatus() ==1) {
+        	    System.out.println(CustomerFunction.requests.get(i).toString());
+
+	      	money +=CustomerFunction.requests.get(i).p.getPrice();
+	    
+           }
+		}
+		}
+	
+	 System.out.println("Full Sales : "+money);
+  	 System.out.println("Send email successfully....");
+  	 System.out.println("...............................");
+  	 
+  	 // code to send email to customer
+	
+		
+		
+	}
+	
+	
+	public static void checkCustomer() {
+	for(int i =0; i< CustomerFunction.customers.size();i++) {
+		Request.setNameCustomer(CustomerFunction.customers.get(i).getUsername());
+
+		notifiCustomer(CustomerFunction.customers.get(i).getUsername()); 
+	}
+	
+	}
+		
 	
 	}
 	
