@@ -84,6 +84,7 @@ public class Login {
     	  while(x != 1) {
         logger.log(Level.INFO,"Welcome, CUSTOMER!");
         // print the available worker depend the time customer login
+        logger.log(Level.INFO,"the available worker is : ");
         logger.log(Level.INFO,"1. View product data.");
         logger.log(Level.INFO,"2. add order.");
         logger.log(Level.INFO,"3. Edit order.");
@@ -288,12 +289,10 @@ public class Login {
 			AdminFunction.admins.add(a1);
 			AdminFunction.admins.add(a2);
 			AdminFunction.admins.add(a3);
-			Worker w1=new Worker("AhmadM","1234","Ahmad Mohamad","bethlehem","0502222222");		
-			Worker w2=new Worker("razan12","123123","razan","nablus","0502345678");
-			Worker w3=new Worker("aliA","1234","ali Ahmad","Hebron","0509384751");
+			Worker w1=new Worker("AhmadM","12345","Ahmad Mohamad","nablus","0502222222","08:00","16:00");
+		
 			WorkerFunction.workers.add(w1);
-			WorkerFunction.workers.add(w2);
-			WorkerFunction.workers.add(w3);
+	
 			Customer c1=new Customer("leen1","12343","leen","Ramallah","0501111111");		
 			Customer c2=new Customer("ahd","12312","ahd ghazal","Bethlehem","0502348765");
 			Customer c3=new Customer("sami","1234","sami saif","Jerusalem","0503456789");

@@ -9,8 +9,8 @@ public class AdminFunction {
 	static List<Admin> admins=new ArrayList<Admin>();
 	static List<Product> products=new ArrayList<Product>();
 	
-	 public AdminFunction() {
-		
+	  AdminFunction() {
+		//
 	}
 	
 	public  int search(String w) {

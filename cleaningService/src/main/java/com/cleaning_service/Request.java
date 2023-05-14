@@ -7,6 +7,9 @@ private String time;
 Product p;
 
 private int status;//0 still , 1 Done 
+Request(){
+	
+}
 
 public Request(String date , String t) {
 	this.date= date;
