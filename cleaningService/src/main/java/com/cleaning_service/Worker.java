@@ -11,17 +11,22 @@ public class Worker {
 	private String phoneNumber;
 	private String address;
 	private Boolean logState=false;
+	private static String timeStart;
+	private static String timeEnd;
 	public Worker() 
 	{
 		
 	}
-	public Worker(String s1,String s2,String s3,String s4,String s5)// user name,pass,name,address,phone
+	public Worker(String s1,String s2,String s3,String s4,String s5,String TS,String TE)// user name,pass,name,address,phone
 	{
 		this.username=s1;
 		this.password=s2;
 		this.name=s3;
 		this.address=s4;
 		this.phoneNumber=s5;
+		Worker.timeStart=TS;
+		Worker.timeEnd = TE;
+		
 	}
 	public String getName() 
 	{
@@ -73,6 +78,18 @@ public class Worker {
 	                ", phone Number ='" + phoneNumber + '\'' +
 	                ", address ='" + address + '\'' +
 	                '}';
+	}
+		public String getTimeStart() {
+		return timeStart;
+	}
+	public  void setTimeStart(String timeStart) {
+		Worker.timeStart = timeStart;
+	}
+	public String getTimeEnd() {
+		return timeEnd;
+	}
+	public void setTimeEnd(String timeEnd) {
+		Worker.timeEnd = timeEnd;
 	}
 	
 	
