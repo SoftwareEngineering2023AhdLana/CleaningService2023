@@ -192,7 +192,18 @@ public class CustomerFunction {
 				}
 	}
 	}
-	
+	public static double addDiscounttoTest(String username , String name , double totalprice) {
+		
+		for(int i=0;i<5;i++)
+		{
+			if( username.equalsIgnoreCase(name) )
+				if(totalprice >= 200.0)
+					return 0.20;
+	    }
+			
+		
+		return 1;
+    }
 	
 }
 
