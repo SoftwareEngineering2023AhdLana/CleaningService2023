@@ -74,4 +74,5 @@ public class Worker {
     }
 
     // Other methods related to Worker
+
 }
