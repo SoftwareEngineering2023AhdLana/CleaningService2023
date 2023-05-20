@@ -1,117 +1,99 @@
 package com.cleaning_service;
-
-
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class Customer {
+	  private String id;
+	    private String name;
+	    private String phone;
+	    private String address;
+	    private String email;
+	    private String password;
+	    private List<Invoice> invoices;
 
+	    public Customer(String id, String name, String phone, String address, String email,String password) {
+	        this.id = id;
+	        this.name = name;
+	        this.phone = phone;
+	        this.address = address;
+	        this.email = email;
+	        this.password = password;
+	        this.invoices = new ArrayList<Invoice>();
+	    }
+    // Setters and getters for all attributes
+    public void setId(String id) {
+        this.id = id;
+    }
 
-//add time work  ( time startb ,time end )
-		private String name;
-		private String username;
-		private String password;
-		private String phoneNumber;
-		private String address;
-		private Boolean logState=false;
-		protected static List<Request> requests=new ArrayList<Request>();
-		protected  static List<Request> requestsDone=new ArrayList<Request>();
-		protected  static List<Request> requestsStill=new ArrayList<Request>();
+    public String getId() {
+        return id;
+    }
 
-		public Customer() 
-		{
-			
-		}
-		public Customer(String s1,String s2,String s3,String s4,String s5)// user name,pass,name,address,phone
-		{
-			this.username=s1;
-			this.password=s2;
-			this.name=s3;
-			this.address=s4;
-			this.phoneNumber=s5;
-		}
-		public String getName() 
-		{
-			return this.name;
-		}
-		public void setName(String name) 
-		{
-			this.name = name;
-		}
-		public String getUsername() 
-		{
-			return this.username;
-		}
-		public void setUsername(String username)
-		{
-			this.username = username;
-		}
-		public String getPassword() 
-		{
-			return this.password;
-		}
-		public void setPassword(String password) 
-		{
-			this.password = password;
-		}
-		public Boolean getLogState() {
-			return this.logState;
-		}
-		public void setLogState(Boolean logStat) {
-			this.logState = logStat;
-		}
-		public String getPhoneNumber() {
-			return this.phoneNumber;
-		}
-		public void setPhoneNumber(String phoneNumber) {
-			this.phoneNumber = phoneNumber;
-		}
-		public String getAddress() {
-			return this.address;
-		}
-		public void setAddress(String address) {
-			this.address = address;
-		}
-		public List<Request> getRequests() {
-			return requests;
-		}
-	
-		public void addToCustomerRequest(Request r)
-		{
-			requests.add(r);
-		}
-		public void removeRequest(int i)
-		{
-			requests.remove(i);
-		}
-		public void addToCustomerRequestDone(Request r)
-		{
-			requestsDone.add(r);
-		}
-		public static void resorRequestStill()
-		{
-			requestsDone.removeAll(requestsDone);
-			requestsStill.removeAll(requestsStill);
-			for(int i=0;i<requests.size();i++)
-			{
-				if(requests.get(i).getStatus()==1)
-					requestsDone.add(requests.get(i));
-				else
-					requestsStill.add(requests.get(i));
-			}
-		}
-		
-		 @Override
-		    public String toString() {
-		        return "customer{" +
-		                "username =" + username +
-		                ", name ='" + name + '\'' +
-		                ", phone Number ='" + phoneNumber + '\'' +
-		                ", address ='" + address + '\'' +
-		                '}';
-		}
-		
+    public void setName(String name) {
+        this.name = name;
+    }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    // Additional methods as needed
+
+    // List to store instances of Customer
+    private static List<Customer> customerList = new ArrayList<Customer>();
+
+    public static void addCustomer(Customer customer) {
+        customerList.add(customer);
+    }
+
+    public static List<Customer> getAllCustomers() {
+        return customerList;
+    }
+
+    // Other methods related to Customer
+
+    public static Customer findCustomerByName(String name) {
+        for (Customer customer : customerList) {
+            if (customer.getName().equalsIgnoreCase(name)) {
+                return customer;
+            }
+        }
+        return null;
+    }
+    public double getTotalAmountSpent() {
+        double totalAmount = 0.0;
+        for (Invoice invoice : invoices) {
+            totalAmount += invoice.getPrice();
+        }
+        return totalAmount;
+    }
+    public int getNumberOfOrders() {
+        return invoices.size();
+    }
+
+    
 }
-
