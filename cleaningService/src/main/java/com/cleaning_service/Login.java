@@ -139,7 +139,7 @@ public class Login {
 	    
 
 	private static void workerMenu(String user) {
-		
+		LoginFunction l = new LoginFunction();
 		  int x = 0;
 		  Logger logger=Logger.getLogger(
 					Login.class.getName());
@@ -159,12 +159,12 @@ public class Login {
 
       if (choice == 1) {
     	  CustomerFunction.checkAllOrder();
-    	  LoginFunction.checkCustomer();
+    	  l.checkCustomer();
 
       }
 	if (choice == 2) {
     	  CustomerFunction.checkAllOrder();
-    	  LoginFunction.checkCustomer();
+    	  l.checkCustomer();
 
       }
       if (choice == 3) {
@@ -298,17 +298,11 @@ public class Login {
 	{
 		
 			Admin a1=new Admin("lanahasan","1235","lana hasan","nablus","050677677");
-			Admin a2=new Admin("ahdGhazal","123","ahd Ghazal","Ramallah","0501234567");
-			Admin a3=new Admin("samsam","1234","sam sam","Jerusalem","0501020356");
 			AdminFunction.admins.add(a1);
-			AdminFunction.admins.add(a2);
-			AdminFunction.admins.add(a3);
-			Worker w1=new Worker("AhmadM","1234","Ahmad Mohamad","bethlehem","0502222222");		
-			Worker w2=new Worker("razan12","123123","razan","nablus","0502345678");
-			Worker w3=new Worker("aliA","1234","ali Ahmad","Hebron","0509384751");
+			Worker w1=new Worker("AhmadM","1234","Ahmad Mohamad","bethlehem","0502222222","08:00","15:00");		
+	
 			WorkerFunction.workers.add(w1);
-			WorkerFunction.workers.add(w2);
-			WorkerFunction.workers.add(w3);
+	
 			Customer c1=new Customer("leen1","12343","leen","Ramallah","0501111111");		
 			Customer c2=new Customer("ahd","12312","ahd ghazal","Bethlehem","0502348765");
 			Customer c3=new Customer("sami","1234","sami saif","Jerusalem","0503456789");
