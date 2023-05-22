@@ -84,8 +84,7 @@ public class Admin {
 				   
 
 			   }
-			    if(!flag)return true;
-			    else return false;
+			    return !flag;
 
 		   }
 			public  void addP() {

@@ -7,7 +7,7 @@ import java.util.logging.Logger;
 
 public class LoginFunction {
 	public LoginFunction(){
-		
+		//default constructor
 	}
 	 
 	  
@@ -45,7 +45,7 @@ public class LoginFunction {
  	       logger.log(Level.INFO,a);
 
  		}
-     	logger.log(Level.INFO,"............................");
+     	logger.log(Level.INFO,"................................");
      	 
      	 
      	logger.log(Level.INFO,"all Order in system ..........");
@@ -57,7 +57,7 @@ public class LoginFunction {
 	 	money +=CustomerFunction.requests.get(i).p.getPrice();
 		}
   	logger.log(Level.INFO,"..............................");
-  	String fullsale="Full Sales : "+money;
+  	String fullsale="Full Sales  : "+money;
 	   	logger.log(Level.INFO,fullsale);
      	 
 	}
@@ -114,7 +114,7 @@ public class LoginFunction {
              if(CustomerFunction.requests.get(i).getStatus() ==1)
             	 money +=CustomerFunction.requests.get(i).p.getPrice();
 		}
-    	logger.log(Level.INFO,"..................................");
+    	logger.log(Level.INFO,"....................................");
     	String fullsales="Full Sales : "+money;
 	   	logger.log(Level.INFO,fullsales);
     	logger.log(Level.INFO,"..............................");
@@ -171,13 +171,13 @@ public class LoginFunction {
     		int index = AdminFunction.searchproduct(name);
            	AdminFunction.products.remove(index);
 	        	logger.log(Level.INFO,"remove product successfully");
-        	logger.log(Level.INFO,".................................");
+        	logger.log(Level.INFO,"...................................");
 
 
     		b=false;
     	}else {
     		logger.log(Level.INFO," the product not exite , Enter name product ...");
-         	logger.log(Level.INFO,"..................................");
+         	logger.log(Level.INFO,".................................");
 
     	}
     	}
@@ -290,11 +290,11 @@ public class LoginFunction {
 		int i1;
 		String date1;
     	String time1;
-    	String test;
+    	
     	
     	logger.log(Level.INFO,"Enter index of request");
          i =in.nextInt();
-         test =in.nextLine();
+        
          
 
         
@@ -309,7 +309,7 @@ public class LoginFunction {
 
     		 logger.log(Level.INFO,"Enter new index of product");
     	        i1=in.nextInt();
-    	        test =in.nextLine();
+    	        
     	         Product p = AdminFunction.searchproductindex(i1);
 
     	       logger.log(Level.INFO,"Enter new time for order");
@@ -328,29 +328,30 @@ public class LoginFunction {
     		
     	}else {
     		logger.log(Level.INFO," the order not exite , Enter name order ...");
-         	logger.log(Level.INFO,"..................................");
+         	logger.log(Level.INFO,"............................");
 
     	}
     	}
 	
 	
 	public static void notifiCustomer(String n) {
-		boolean a = false;
+		Logger logger=Logger.getLogger(
+				LoginFunction.class.getName());
         double money = 0.0;
 		for(int i=0; i < CustomerFunction.requests.size() ; i++) {
-			if(CustomerFunction.requests.get(i).getNameCustomer().equalsIgnoreCase(n)) {
-           if(CustomerFunction.requests.get(i).getStatus() ==1) {
-        	    System.out.println(CustomerFunction.requests.get(i).toString());
+			if(CustomerFunction.requests.get(i).getNameCustomer().equalsIgnoreCase(n) && CustomerFunction.requests.get(i).getStatus() ==1) {
+           {
+        	   logger.log(Level.INFO,CustomerFunction.requests.get(i).toString());
 
 	      	money +=CustomerFunction.requests.get(i).p.getPrice();
 	    
            }
 		}
 		}
-	
-	 System.out.println("Full Sales : "+money);
-  	 System.out.println("Send email successfully....");
-  	 System.out.println("...............................");
+		String fullsale="Full Sales : "+money;
+		logger.log(Level.INFO,fullsale);
+		logger.log(Level.INFO,"Send email successfully....");
+		logger.log(Level.INFO,"...............................");
   	 
   	 // code to send email to customer
 	

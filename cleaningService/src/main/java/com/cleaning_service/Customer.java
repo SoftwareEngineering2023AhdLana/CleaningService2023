@@ -92,10 +92,9 @@ public class Customer {
 		}
 		public  String addCustomer(String string) {
 			addC1();
-			// TODO Auto"-generated method stub
 			for(int i = 0;  i<  customers.size(); i++) {
 				if(customers.get(i).getUsername().equalsIgnoreCase(string))
-				return "Customer already exists";
+				   return "Customer already exists";
 			}
 			return "Customer added successfully";
 		}
@@ -103,10 +102,12 @@ public class Customer {
 
 		public  String addCustomerWithInfo(Customer customer) {
 
-			if(customer.email ==" "||customer.phoneNumber == " "||customer.password == " "||customer.name ==" "||customer.username ==" ")
-			return "Please enter valid information.";
-			return "Customer added successfully";
-		}
+			if(customer.email ==" "||customer.phoneNumber == " "||customer.password == " "||customer.name ==" "||customer.username ==" ") 
+				return "Please enter valid information.";	
+			else
+				return "Customer added successfully";
+	       	
+			}
 		
 		public static void resorRequestStill()
 		{

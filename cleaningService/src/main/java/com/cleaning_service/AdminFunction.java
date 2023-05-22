@@ -10,7 +10,7 @@ public class AdminFunction {
 	static List<Product> products=new ArrayList<Product>();
 	
 	 public AdminFunction() {
-		
+		//default constructor
 	}
 	
 	public  int search(String w) {

@@ -11,7 +11,7 @@ import java.util.logging.Logger;
 
 	public class InvoiceOrder {
 		public InvoiceOrder(){
-			
+			//default constructor
 		}
 
 
@@ -26,7 +26,7 @@ import java.util.logging.Logger;
 		LocalDateTime now = LocalDateTime.now();
 		return dtf.format(now);
 	}
-	public void addrequest(Request r) {
+	public static void addrequest(Request r) {
 		customerName = r.getNameCustomer();
 		requests.add(r);
 	}

@@ -84,9 +84,9 @@ public class Login {
     	  while(x != 1) {
         logger.log(Level.INFO,"Welcome, CUSTOMER!");
         // print the available worker depend the time customer login
-		    System.out.print("the available worker is : ");
+        logger.log(Level.INFO,"the available worker is : ");
 
-		  //	workerFunction.findAvilableWorker();
+
         
         logger.log(Level.INFO,"1. View product data.");
         logger.log(Level.INFO,"2. add order.");
@@ -138,14 +138,15 @@ public class Login {
 	
 	    
 
-	private static void workerMenu(String user) {
+	private static void workerMenu(String username) {
 		LoginFunction l = new LoginFunction();
 		  int x = 0;
 		  Logger logger=Logger.getLogger(
 					Login.class.getName());
 		  
   	  while(x != 1) {
-	
+  	String w = "Hey "+username+" !";
+  			
       logger.log(Level.INFO,"1. Notify the customer when order Done .");
       logger.log(Level.INFO,"2. Generate Statistics.");
       logger.log(Level.INFO,"3. Log out.");

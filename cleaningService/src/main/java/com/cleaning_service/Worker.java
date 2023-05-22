@@ -17,15 +17,15 @@ public class Worker {
 	{
 		
 	}
-	public Worker(String s1,String s2,String s3,String s4,String s5,String TS,String TE)// user name,pass,name,address,phone
+	public Worker(String s1,String s2,String s3,String s4,String s5,String te,String ts)// user name,pass,name,address,phone
 	{
 		this.username=s1;
 		this.password=s2;
 		this.name=s3;
 		this.address=s4;
 		this.phoneNumber=s5;
-		this.timeStart=TS;
-		this.timeEnd = TE;
+		this.timeStart=ts;
+		this.timeEnd = te;
 		
 	}
 	public String getName() 

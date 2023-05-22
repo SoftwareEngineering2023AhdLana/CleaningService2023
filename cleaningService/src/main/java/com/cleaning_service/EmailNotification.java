@@ -7,6 +7,9 @@ import java.util.Properties;
 import java.util.logging.Logger;
 
 public class EmailNotification {
+	private EmailNotification() {
+		//default constructor
+	}
     private static final Logger logger = Logger.getLogger(EmailNotification.class.getName());
 
     private static final String EMAIL_HOST = "your-email-host";

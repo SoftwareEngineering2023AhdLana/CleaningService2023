@@ -8,8 +8,8 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 public class CustomerFunction {
-	public CustomerFunction(){
-		
+	private CustomerFunction(){
+		//default constructor
 	}
 	protected static final List<Customer> customers=new ArrayList<Customer>();
 	protected static final List<Request> requests=new ArrayList<Request>();
@@ -196,8 +196,7 @@ public class CustomerFunction {
 		
 		for(int i=0;i<5;i++)
 		{
-			if( username.equalsIgnoreCase(name) )
-				if(totalprice >= 200.0)
+			if( username.equalsIgnoreCase(name) && totalprice >= 200.0)
 					return 0.20;
 	    }
 			
