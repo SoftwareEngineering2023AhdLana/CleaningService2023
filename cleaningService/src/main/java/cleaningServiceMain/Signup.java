@@ -3,34 +3,36 @@ package cleaningServiceMain;
 
 import java.util.Scanner;
 
-public class signup {
+public class Signup {
 	static Scanner in=new Scanner(System.in);
 	public static Boolean search(String u)
 	{
-		for(int i=0;i<customerFunction.customers.size();i++)
+		 WorkerFunction wf  = new WorkerFunction();
+
+		for(int i=0;i<CustomerFunction.customers.size();i++)
 		{
-			if(u.equals(customerFunction.customers.get(i).getUsername()))
+			if(u.equals(CustomerFunction.customers.get(i).getUsername()))
 			{
 				return true;
 			}
 		}
-		for(int i=0;i<adminFunction.admins.size();i++)
+		for(int i=0;i<AdminFunction.admins.size();i++)
 		{
-			if(u.equals(adminFunction.admins.get(i).getUsername()))
+			if(u.equals(AdminFunction.admins.get(i).getUsername()))
 			{
 				return true;
 			}
 		}
-		for(int i=0;i<workerFunction.workers.size();i++)
+		for(int i=0;i<wf.workers.size();i++)
 		{
-			if(u.equals(workerFunction.workers.get(i).getUsername()))
+			if(u.equals(wf.workers.get(i).getUsername()))
 			{
 				return true;
 			}
 		}
 		return false;
 	}
-	public signup()
+	public Signup()
 	{
 		System.out.println("Welcome to the Sign up \n"+
 							"----------------------------------------------\n"+
@@ -49,10 +51,8 @@ public class signup {
 		String a=in.nextLine();
 		System.out.println("Please enter your address");
 		String ph=in.nextLine();
-		System.out.println("Please enter your email");
-		String e=in.nextLine();
-		customer cus=new customer(u,p,n,a,ph,e);
-		customerFunction.customers.add(cus);
+		Customer cus=new Customer(u,p,n,a,ph);
+		CustomerFunction.customers.add(cus);
 		System.out.println("customer is added to the system successfully");
 	}
 	

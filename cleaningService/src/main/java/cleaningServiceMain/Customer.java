@@ -3,8 +3,9 @@ package cleaningServiceMain;
 
 
 import java.util.ArrayList;
+import java.util.List;
 
-public class customer {
+public class Customer {
 
 
 //add time work  ( time startb ,time end )
@@ -13,29 +14,28 @@ public class customer {
 		private String password;
 		private String phoneNumber;
 		private String address;
-		private String email;
-		private String avilableWorker;
 		private Boolean logState=false;
-		public static ArrayList<request> requests=new ArrayList<request>();
-		public static ArrayList<request> requestsDone=new ArrayList<request>();
-		public static ArrayList<request> requestsStill=new ArrayList<request>();
+		private String email;
+        private String avilableWorker;
+		  static List<Request> requests=new ArrayList<Request>();
+		  static List<Request> requestsDone=new ArrayList<Request>();
+		  static List<Request> requestsStill=new ArrayList<Request>();
 
-		public customer() 
+		public Customer() 
 		{
 			
 		}
-		public customer(String s1,String s2,String s3,String s4,String s5,String s6)// user name,pass,name,address,phone
+		public Customer(String s1,String s2,String s3,String s4,String s5)// user name,pass,name,address,phone
 		{
 			this.username=s1;
 			this.password=s2;
 			this.name=s3;
 			this.address=s4;
 			this.phoneNumber=s5;
-			this.email = s6;
 		}
 		public String getName() 
 		{
-			return name;
+			return this.name;
 		}
 		public void setName(String name) 
 		{
@@ -43,7 +43,7 @@ public class customer {
 		}
 		public String getUsername() 
 		{
-			return username;
+			return this.username;
 		}
 		public void setUsername(String username)
 		{
@@ -51,49 +51,48 @@ public class customer {
 		}
 		public String getPassword() 
 		{
-			return password;
+			return this.password;
 		}
 		public void setPassword(String password) 
 		{
 			this.password = password;
 		}
 		public Boolean getLogState() {
-			return logState;
+			return this.logState;
 		}
 		public void setLogState(Boolean logStat) {
 			this.logState = logStat;
 		}
 		public String getPhoneNumber() {
-			return phoneNumber;
+			return this.phoneNumber;
 		}
 		public void setPhoneNumber(String phoneNumber) {
 			this.phoneNumber = phoneNumber;
 		}
 		public String getAddress() {
-			return address;
+			return this.address;
 		}
 		public void setAddress(String address) {
 			this.address = address;
 		}
-		public ArrayList<request> getRequests() {
+		public List<Request> getRequests() {
 			return requests;
 		}
-		public void setRequests(ArrayList<request> Requests) {
-			requests = Requests;
-		}
 	
-		public void addToCustomerRequest(request r)
+		public void addToCustomerRequest(Request r)
 		{
 			requests.add(r);
 		}
 		public void removeRequest(int i)
 		{
-			this.requests.remove(i);
+			requests.remove(i);
 		}
-		public void addToCustomerRequestDone(request r)
+		public void addToCustomerRequestDone(Request r)
 		{
 			requestsDone.add(r);
 		}
+	
+		
 		public static void resorRequestStill()
 		{
 			requestsDone.removeAll(requestsDone);
@@ -106,7 +105,19 @@ public class customer {
 					requestsStill.add(requests.get(i));
 			}
 		}
+		  public void setEmail(String email) {
+		        this.email = email;
+		    }
+		  public String getEmail() {
+		        return email;
+		    }
 		
+               public String getAvilableWorker() {
+			return avilableWorker;
+		}
+		public void setAvilableWorker(String avilableWorker) {
+			this.avilableWorker = avilableWorker;
+		}
 		 @Override
 		    public String toString() {
 		        return "customer{" +
@@ -115,18 +126,6 @@ public class customer {
 		                ", phone Number ='" + phoneNumber + '\'' +
 		                ", address ='" + address + '\'' +
 		                '}';
-		}
-		public String getAvilableWorker() {
-			return avilableWorker;
-		}
-		public void setAvilableWorker(String avilableWorker) {
-			this.avilableWorker = avilableWorker;
-		}
-		public String getEmail() {
-			return email;
-		}
-		public void setEmail(String email) {
-			this.email = email;
 		}
 		
 

@@ -5,11 +5,11 @@ package cleaningServiceMain;
 	import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-	public class invoiceOrder {
+	public class InvoiceOrder {
 
 
 	static String customerName;
-	static public ArrayList<request> requests=new ArrayList<request>();
+	static public ArrayList<Request> requests=new ArrayList<Request>();
 	 String TimeOfInvoice;
 	 static double totalPrice=0;
 	 
@@ -19,7 +19,7 @@ import java.util.ArrayList;
 		LocalDateTime now = LocalDateTime.now();
 		return dtf.format(now);
 	}
-	public void addrequest(request r) {
+	public void addrequest(Request r) {
 		customerName = r.getNameCustomer();
 		requests.add(r);
 	}
@@ -27,8 +27,8 @@ public static void setcustomername(String n) {
 	customerName=n;
 	
 }
-public static ArrayList<request> request(String customern) {
-	ArrayList<request> a = new ArrayList<request>() ;
+public static ArrayList<Request> request(String customern) {
+	ArrayList<Request> a = new ArrayList<Request>() ;
 	for(int i =0 ; i < requests.size(); i++) 
 		if(requests.get(i).getNameCustomer().equalsIgnoreCase(customerName)) 
              a.add(requests.get(i))	;
@@ -48,11 +48,11 @@ public static ArrayList<request> request(String customern) {
 	}
 
 	
-	public static request searchOrderindex(int w) {
+	public static Request searchOrderindex(int w) {
 		
 		return requests.get(w);
 	}
-public static int searchindexOfOrder(request w) {
+public static int searchindexOfOrder(Request w) {
 		
 	for(int i =0 ; i < requests.size(); i++) {
 		if(requests.get(i)==w) {

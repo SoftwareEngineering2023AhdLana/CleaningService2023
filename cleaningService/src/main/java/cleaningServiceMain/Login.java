@@ -5,14 +5,14 @@ package cleaningServiceMain;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class login {
+public class Login {
  
 	static Scanner in=new Scanner(System.in);
 	static int index=-1;
 	static int indexOfOrder;
 	static String dateOfOrder;
 	static String timeOfOrder;
-	public login() {}
+	public Login() {}
 
 	//                   DONE :) 
     private static void adminMenu() {
@@ -35,27 +35,27 @@ public class login {
   	  in.nextLine();
 
         if (choice == 1) {
-        	loginFunction.viewCustomerData();
+        	LoginFunction.viewCustomerData();
         } else if (choice == 2) {
-        	loginFunction.viewWorkerData();
+        	LoginFunction.viewWorkerData();
         } else if (choice == 3) {
-        	loginFunction.viewProductData();
+        	LoginFunction.viewProductData();
         }
         else if (choice == 4) {
-        	loginFunction.viewAllData();
+        	LoginFunction.viewAllData();
         }
         else if (choice == 5) {
-        	loginFunction.viewRequestData();
+        	LoginFunction.viewRequestData();
         } else if (choice == 6) {
-        	loginFunction.addProduct();
+        	LoginFunction.addProduct();
         	
         }
         else if (choice == 7) {
             // Edit product
-        	loginFunction.editProduct();
+        	LoginFunction.editProduct();
         }
         else if (choice == 8) {
-        	loginFunction.removeProduct();
+        	LoginFunction.removeProduct();
         }
         else if (choice == 9) {
             System.out.println("Logging out...");
@@ -86,14 +86,13 @@ public class login {
 	private static void customerMenu(String user) {
 		// TODO Auto-generated method stub
 		  int x = 0;
-		  invoiceOrder.customerName = user;
+		  InvoiceOrder.customerName = user;
     	  while(x != 1) {
         System.out.println("Welcome, CUSTOMER!");
         // print the available worker depend the time customer login
         
         System.out.print("the available worker is : ");
-        workerFunction workerFunction = new workerFunction();
-		workerFunction.findAvilableWorker();
+        WorkerFunction.findAvilableWorker();
         
         System.out.println("1. View product data.");
         System.out.println("2. add order.");
@@ -108,23 +107,23 @@ public class login {
   	    in.nextLine();
 
         if (choice == 1) {
-        	loginFunction.viewProductData();
+        	LoginFunction.viewProductData();
         } else if (choice == 2) {
-        	loginFunction.addOrderCustomer(user);
+        	LoginFunction.addOrderCustomer(user);
         
         } else if (choice == 3) {
-        	loginFunction.editOrder(user);
+        	LoginFunction.editOrder(user);
 
         }
         else if (choice == 4) {
 
-        	loginFunction.deleteOrder(user);
+        	LoginFunction.deleteOrder(user);
         	
         	
         }
         else if (choice == 5) {
 
-        invoiceOrder.print();
+        InvoiceOrder.print();
         	
 
 
@@ -158,8 +157,7 @@ public class login {
   	  while(x != 1) {
       System.out.println("Welcome, worker!");
       System.out.println("1. Notify the customer when order Done .");
-      System.out.println("2. accepte one order.");
-      System.out.println("3. Log out.");
+      System.out.println("2. Log out.");
       System.out.print("Enter your choice: ");
 
     
@@ -167,14 +165,11 @@ public class login {
 	    in.nextLine();
 
       if (choice == 1) {
-    	  customerFunction.checkAllOrder();
-    	  loginFunction.checkCustomer();
+    	  CustomerFunction.checkAllOrder();
+    	  LoginFunction.checkCustomer();
 
-      } else if (choice == 2) {
-
-
-      } 
-      else if (choice == 3) {
+      }
+      else if (choice == 2) {
           System.out.println("Logging out...");
       	 System.out.println("...............................");
 
@@ -197,15 +192,15 @@ public class login {
  ///////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////
 
-	public login(ArrayList<admin> a,ArrayList<customer> c,ArrayList<worker> w)
+	public Login(ArrayList<Admin> a,ArrayList<Customer> c,ArrayList<Worker> w)
 	{
 		for(int i=0;i<a.size();i++)
-			adminFunction.admins.add(a.get(i));
+			AdminFunction.admins.add(a.get(i));
 		
 		for(int i=0;i<c.size();i++)
-			customerFunction.customers.add(c.get(i));
+			CustomerFunction.customers.add(c.get(i));
 	
-		 workerFunction workerFunction = new workerFunction();
+		 WorkerFunction workerFunction = new WorkerFunction();
 		for(int i=0;i<a.size();i++) {
 			workerFunction.workers.add(w.get(i));
 	}
@@ -214,7 +209,7 @@ public class login {
 	public static void main_login()
 	{
 		int res=0;
-		 workerFunction workerFunction = new workerFunction();
+		 WorkerFunction workerFunction = new WorkerFunction();
 
 		System.out.println("Welcome to the Login \n"+"----------------------------------------------");
 		while((res==0)||(res==-1)||(res==1)||(res==-3))
@@ -226,31 +221,31 @@ public class login {
 			res=checkLoginStatus(u,p);
 			if(res==-2)
 			{
-				adminFunction.admins.get(index).setLogState(true);
-				adminFunction a=new adminFunction();
+				AdminFunction.admins.get(index).setLogState(true);
+				AdminFunction a=new AdminFunction();
 				adminMenu();
 			}
 			else if(res==-1)
 			{
-				adminFunction.admins.get(index).setLogState(false);
+				AdminFunction.admins.get(index).setLogState(false);
 				System.out.println("Invalid admin name or password. Try again");
 			}
 			else if(res==2)
 			{
-				customerFunction.customers.get(index).setLogState(true);
-				customerFunction c=new customerFunction();
-				customerMenu(customerFunction.customers.get(index).getUsername());
+				CustomerFunction.customers.get(index).setLogState(true);
+				CustomerFunction c=new CustomerFunction();
+				customerMenu(CustomerFunction.customers.get(index).getUsername());
 			}
 			else if(res==1)
 			{
-				customerFunction.customers.get(index).setLogState(false);
+				CustomerFunction.customers.get(index).setLogState(false);
 				System.out.println("Invalid customer name or password. Try again");
 			}
 			else if(res==3)
 			{
 				workerFunction.workers.get(index).setLogState(true);
-				customerFunction w=new customerFunction();
-				workerMenu(customerFunction.customers.get(index).getUsername());
+				CustomerFunction w=new CustomerFunction();
+				workerMenu(CustomerFunction.customers.get(index).getUsername());
 				
 			}
 			else if(res==-3)
@@ -263,31 +258,31 @@ public class login {
 				System.out.println("user name do not exist\n"
 								+ "You will be sign up \n"
 								+ "Loading..........................");
-				signup SU=new signup();
+				Signup SU=new Signup();
 			}
 		}
 	}
 	
 	public static int checkLoginStatus(String u,String p)
 	{
-		 workerFunction workerFunction = new workerFunction();
-		for(int i=0;i<customerFunction.customers.size();i++)
+		 WorkerFunction workerFunction = new WorkerFunction();
+		for(int i=0;i<CustomerFunction.customers.size();i++)
 		{
-			if(u.equals(customerFunction.customers.get(i).getUsername()))
+			if(u.equals(CustomerFunction.customers.get(i).getUsername()))
 			{	
 				index=i;
-				if(p.equals(customerFunction.customers.get(i).getPassword()))
+				if(p.equals(CustomerFunction.customers.get(i).getPassword()))
 					return 2;
 				else
 					return 1;
 			}
 		}
-		for(int i=0;i<adminFunction.admins.size();i++)
+		for(int i=0;i<AdminFunction.admins.size();i++)
 		{
-			if(u.equals(adminFunction.admins.get(i).getUsername()))
+			if(u.equals(AdminFunction.admins.get(i).getUsername()))
 			{	
 				index=i;
-				if(p.equals(adminFunction.admins.get(i).getPassword()))
+				if(p.equals(AdminFunction.admins.get(i).getPassword()))
 					return -2;
 				else
 					return -1;
@@ -309,59 +304,39 @@ public class login {
 	
 	public static void main(String[] args)
 	{
-		 workerFunction workerFunction = new workerFunction();
-			admin a1=new admin("lanahasan","12345","lana hasan","nablus","050677677");
-			admin a2=new admin("ahdGhazal","123123","ahd Ghazal","Ramallah","0501234567");
-			admin a3=new admin("samsam","1234","sam sam","Jerusalem","0501020356");
-			adminFunction.admins.add(a1);
-			adminFunction.admins.add(a2);
-			adminFunction.admins.add(a3);
+			Admin a1=new Admin("AdamA","12345","Adam Ahmad","nablus","050677677");
+			AdminFunction.admins.add(a1);
 			
-			worker w3=new worker("AhmadM","12345","Ahmad Mohamad","nablus","0502222222","08:00","15:00");		
-			worker w2=new worker("razan12","123123","razan","nablus","0502345678","15:00","20:00");
-			worker w1=new worker("aliA","1234","ali Ahmad","nablus","0509384751","20:00","23:00");
-	
-		    workerFunction.workers.add(w1);
-		    workerFunction.workers.add(w2);
-		    workerFunction.workers.add(w3);
-			//	worker w4=new worker("lanah","1234","lana hasan","nablus","0509384751","15:02","20:01");
-			//	worker w5=new worker("samisami","1234","sami sami","nablus","0509384751","20:02","23:01");
-		//	    worker w6=new worker("ahd","1234","ahd Ghazal","nablus","0509384751","08:02","12:01");
-
-		//    workerFunction.workers.add(w4);
-	//	    workerFunction.workers.add(w5);
-	//	    workerFunction.workers.add(w6);
 			
-			customer c1=new customer("leen1","12345","leen","Ramallah","0501111111","leen1@gmail.com");		
-			customer c2=new customer("ahdg","123123","ahd ghazal","Bethlehem","0502348765","ahdg@gmail.com");
-			customer c3=new customer("samih","1234","sami saif","Jerusalem","0503456789","samih@gmail.com");
-			customerFunction.customers.add(c1);
-			customerFunction.customers.add(c2);
-			customerFunction.customers.add(c3);
+			Worker w2=new Worker("AhmadM","12345","Ahmad Mohamad","nablus","0502222222","08:00","23:00");
+			WorkerFunction.workers.add(w2);
+			
+			Customer c1=new Customer("sami","1234","sami saif","Jerusalem","0503456789");
+			CustomerFunction.customers.add(c1);
 			///                        name           description    category   price
-			product p1  = new product("Berber carpet","wool","carpet",150.0);
-			product p2  = new product("Persian rugt","synthetic","carpet",300.0);
-			product p3  = new product("Sofa cover","fits 3-seat sofa, cotton","cover",250.0);
-			adminFunction.products.add(p1);
-			adminFunction.products.add(p2);
-			adminFunction.products.add(p3);
-			workerFunction.products.add(p1);
-			workerFunction.products.add(p2);
-			workerFunction.products.add(p3);
+			Product p1  = new Product("Berber carpet","wool","carpet",150.0);
+			Product p2  = new Product("Persian rugt","synthetic","carpet",300.0);
+			Product p3  = new Product("Sofa cover","fits 3-seat sofa, cotton","cover",250.0);
+			AdminFunction.products.add(p1);
+			AdminFunction.products.add(p2);
+			AdminFunction.products.add(p3);
+			WorkerFunction.products.add(p1);
+			WorkerFunction.products.add(p2);
+			WorkerFunction.products.add(p3);
 			
-			request r1 = new request("sami","6/5/2023","1:30",0,p1);
-			request r2 = new request("sami","5/5/2023","12:30",0,p2);
-			request r4 = new request("sami","15/5/2023","10:00",0,p3);
+			Request r1 = new Request("sami","6/5/2023","1:30",0,p1);
+			Request r2 = new Request("sami","5/5/2023","12:30",0,p2);
+			Request r4 = new Request("sami","15/5/2023","10:00",0,p3);
 
-			customerFunction.requests.add(r1);
-			customerFunction.requests.add(r2);
-			customerFunction.requests.add(r4);
+			CustomerFunction.requests.add(r1);
+			CustomerFunction.requests.add(r2);
+			CustomerFunction.requests.add(r4);
 			
-			 invoiceOrder.requests.add(r1);
-			 invoiceOrder.requests.add(r2);
-			 invoiceOrder.requests.add(r4);
+			 InvoiceOrder.requests.add(r1);
+			 InvoiceOrder.requests.add(r2);
+			 InvoiceOrder.requests.add(r4);
 			 
-			customerFunction.checkAllOrder();
+			CustomerFunction.checkAllOrder();
 			main_login();
 		
 	}

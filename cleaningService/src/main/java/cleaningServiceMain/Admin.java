@@ -3,7 +3,7 @@ package cleaningServiceMain;
 
 import java.util.ArrayList;
 
-public class admin {
+public class Admin {
 
 
 		private String name;
@@ -12,13 +12,40 @@ public class admin {
 		private String address;
 		private String phoneNumber;
 		private Boolean logState=false;
-		static public ArrayList<product> products=new ArrayList<product>();
+		static public ArrayList<Product> products=new ArrayList<Product>();
 
-		public admin() 
+
+		public Admin() 
 		{
-			
+			 addp();
 		}
-		public admin(String s1,String s2,String s3,String s4,String s5)// user name,pass,name,address,phone
+		  
+			public  void addp() {
+				  Product p1 =  new Product("Capet Wash per meter","wool","carpet1",40.0);
+				  Product p2 =  new Product("Curtains Wash per C9urtain","synthetic","carpet1",70.0);
+				  Product p3 =  new Product("covers Wash per Cover","fits 3-seat sofa, cotton","cover",20.0);
+				   
+				    addProduct(p1);
+				    addProduct(p2);
+				    addProduct(p3);
+			}
+
+public boolean addProductTest(Product product  ) {
+	   boolean flag = false;
+		   for( int i  = 0 ; i < products.size(); i++) {
+			    if(product.getName().equalsIgnoreCase(products.get(i).getName())){
+			    flag = true;
+			    }
+		   
+
+	   }
+	    if(!flag)return true;
+	    else return false;
+
+}
+				   
+			
+		public Admin(String s1,String s2,String s3,String s4,String s5)// user name,pass,name,address,phone
 		{
 			this.username=s1;
 			this.password=s2;
@@ -70,21 +97,12 @@ public class admin {
 		}
 
 		
-		public void addProduct(product p)
+		public void addProduct(Product p)
 		{
 			products.add(p);
 		}
-		/*
-		 @Override
-		    public String toString() {
-		        return "admin{" +
-		                "username =" + username +
-		                ", name ='" + name + '\'' +
-		                ", phone Number ='" + phoneNumber + '\'' +
-		                ", address ='" + address + '\'' +
-		                '}';
-		}
-		 */
+
+	
 		
 	}
 

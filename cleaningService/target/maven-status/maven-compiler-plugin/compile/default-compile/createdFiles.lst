@@ -1,0 +1,12 @@
+cleaningService\customer.class
+cleaningService\login.class
+cleaningService\customerFunction.class
+cleaningService\product.class
+cleaningService\worker.class
+cleaningService\admin.class
+cleaningService\adminFunction.class
+cleaningService\signup.class
+cleaningService\request.class
+cleaningService\workerFunction.class
+cleaningService\invoiceOrder.class
+cleaningService\loginFunction.class

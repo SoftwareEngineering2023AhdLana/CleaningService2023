@@ -4,11 +4,41 @@ package cleaningServiceMain;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.List;
 
-public class customerFunction {
-	static public ArrayList<customer> customers=new ArrayList<customer>();
-	static public ArrayList<request> requests=new ArrayList<request>();
+public class CustomerFunction {
+	static public ArrayList<Customer> customers=new ArrayList<Customer>();
+	static public ArrayList<Request> requests=new ArrayList<Request>();
+	  public  void addC1() {
+		   Customer c = new Customer();
+		    
+		    
+			c.setUsername("lana");
+			c.setPassword("123456");
+			c.setName("Julia Williams");
+			c.setPhoneNumber("123456");
+			c.setAddress("Tel Aviv");
+			c.setEmail("julia@company.com");
+			
+      customers.add(c);
+		
+	}
+	public  String addCustomer(String string) {
+		addC1();
+		// TODO Auto"-generated method stub
+		for(int i = 0;  i<  customers.size(); i++) {
+			if(customers.get(i).getUsername().equalsIgnoreCase(string))
+			return "Customer already exists";
+		}
+		return "Customer added successfully";
+	}
 
+	public  String addCustomerWithInfo(Customer customer) {
+
+		if(customer.getEmail() ==" "||customer.getPhoneNumber() == " "||customer.getPassword ()== " "||customer.getName() ==" "||customer.getUsername() ==" ")
+		return "Please enter valid information.";
+		return "Customer added successfully";
+	}
 	public static int search(String c)
 	{
 		for(int i=0;i<customers.size();i++)
@@ -19,11 +49,11 @@ public class customerFunction {
 		return -1;
 	}
 	
-	public static void addRequest(String customer , request r) {
+	public static void addRequest(String customer , Request r) {
 		customers.get(search(customer)).addToCustomerRequestDone(r);
 	}
 	
-	public static void editRequest(String username,String oldDate,String newDate,String oldTime,String newTime , product old , product newp ) {
+	public static void editRequest(String username,String oldDate,String newDate,String oldTime,String newTime , Product old , Product newp ) {
 		int index=search(username);
 		for(int i=0;i<customers.get(index).getRequests().size();i++)
 		{
@@ -39,10 +69,10 @@ public class customerFunction {
 		}
 	}
 
-	public static void removeRequest(String username,String date,String time,product p)
+	public static void removeRequest(String username,String date,String time,Product p)
 	{
 		int index=search(username);
-		ArrayList<request> a;
+		List<Request> a;
 		a=customers.get(index).getRequests();
 		for(int i=0;i<a.size();i++)
 		{
@@ -56,16 +86,16 @@ public class customerFunction {
 		}
 	}
 	
-	public static void removeinvoice(String username,String date,String time,product p)
+	public static void removeinvoice(String username,String date,String time,Product p)
 	{
 		int index=search(username);
-		ArrayList<request> a = invoiceOrder.requests;
+		ArrayList<Request> a = InvoiceOrder.requests;
 		//a=invoiceOrder.request(username);
 		for(int i=0;i<a.size();i++)
 		{
 			if((date.equalsIgnoreCase(a.get(i).getDate()))&&(time.equals(a.get(i).getTime()))&&(p.equals(a.get(i).getproduct())))
 			{
-				invoiceOrder.requests.remove(i);
+				InvoiceOrder.requests.remove(i);
 				System.out.println("remove order successfully.");
 				
 				break;
@@ -149,7 +179,7 @@ public class customerFunction {
 			return 1;
 		else if((currentDay<day)||(currentMonth<month)||(currentYear<year))
 			return -1;
-		else if((currentDay==day)||(currentMonth==month)||(currentYear==year))
+		else if((currentDay==day)&&(currentMonth==month)&&(currentYear==year))
 		{
 			if((currentHour>=hour)&&(currentMinute>=minute))
 				return 1;
@@ -165,8 +195,9 @@ public class customerFunction {
 			requests.get(i).setStatus(checkIfRequestPassed(requests.get(i).getDate(),requests.get(i).getTime()));
 		}
 		
-		customer.resorRequestStill();
+		Customer.resorRequestStill();
 	}
+	
 	// need to wirte function that check all order if still or done  in worker to notify customer if order done
 	
 	

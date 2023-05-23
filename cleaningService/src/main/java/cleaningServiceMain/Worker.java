@@ -1,8 +1,11 @@
 package cleaningServiceMain;
 
+import java.time.LocalTime;
+import java.util.ArrayList;
+import java.util.List;
 
 
-public class worker {
+public class Worker {
 
 
 	private String username;
@@ -13,23 +16,27 @@ public class worker {
 	private Boolean logState=false;
 	private static String timeStart;
 	private static String timeEnd;
-	
 
-	public worker() 
+
+
+	public Worker() 
 	{
 		
+
 	}
-	public worker(String s1,String s2,String s3,String s4,String s5,String TS,String TE)// user name,pass,name,address,phone
+	
+	public Worker(String s1,String s2,String s3,String s4,String s5,String TS,String TE)// user name,pass,name,address,phone
 	{
 		this.username=s1;
 		this.password=s2;
 		this.name=s3;
 		this.address=s4;
 		this.phoneNumber=s5;
-		worker.timeStart=TS;
-		worker.timeEnd = TE;
+		Worker.timeStart=TS;
+		Worker.timeEnd = TE;
 		
 	}
+
 	public String getName() 
 	{
 		return name;
@@ -85,13 +92,13 @@ public class worker {
 		return timeStart;
 	}
 	public  void setTimeStart(String timeStart) {
-		worker.timeStart = timeStart;
+		Worker.timeStart = timeStart;
 	}
 	public String getTimeEnd() {
 		return timeEnd;
 	}
 	public void setTimeEnd(String timeEnd) {
-		worker.timeEnd = timeEnd;
+		Worker.timeEnd = timeEnd;
 	}
 	
 	

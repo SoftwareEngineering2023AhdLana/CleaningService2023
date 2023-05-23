@@ -3,27 +3,26 @@ package cleaningServiceMain;
 
 import java.util.Scanner;
 
-public class loginFunction {
+public class LoginFunction {
 	static Scanner in=new Scanner(System.in);
-	public static workerFunction  w = new workerFunction();
     static void viewAllData() {
 		// TODO Auto-generated method stub
     	
     	 System.out.println("all worker in system ..........");
 
 
- 		for(int i=0; i < w.workers.size() ; i++) {
+ 		for(int i=0; i < WorkerFunction.workers.size() ; i++) {
  			
- 	        System.out.println(w.workers.get(i).toString());
+ 	        System.out.println(WorkerFunction.workers.get(i).toString());
 
  		}
      	 System.out.println("...............................");
      	 
      	 System.out.println("all customer in system ..........");
 
- 		for(int i=0; i < customerFunction.customers.size() ; i++) {
+ 		for(int i=0; i < CustomerFunction.customers.size() ; i++) {
  			
- 	        System.out.println(customerFunction.customers.get(i).toString());
+ 	        System.out.println(CustomerFunction.customers.get(i).toString());
 
  			
  		}
@@ -32,9 +31,9 @@ public class loginFunction {
      	 
      	 System.out.println("all product in system ..........");
 
-     	for(int i=0; i < adminFunction.products.size() ; i++) {
+     	for(int i=0; i < AdminFunction.products.size() ; i++) {
      	
- 	        System.out.println(	adminFunction.products.get(i).toString());
+ 	        System.out.println(	AdminFunction.products.get(i).toString());
 
  		}
      	 System.out.println("...............................");
@@ -42,11 +41,11 @@ public class loginFunction {
      	 
      	System.out.println("all Order in system ..........");
         double money = 0.0;
-		for(int i=0; i < customerFunction.requests.size() ; i++) {
+		for(int i=0; i < CustomerFunction.requests.size() ; i++) {
 			
-	        System.out.println(customerFunction.requests.get(i).toString());
+	        System.out.println(CustomerFunction.requests.get(i).toString());
 
-	 	money +=customerFunction.requests.get(i).p.getPrice();
+	 	money +=CustomerFunction.requests.get(i).p.getPrice();
 		}
   	 System.out.println("...............................");
 	   	 System.out.println("Full Sales : "+money);
@@ -58,9 +57,9 @@ public class loginFunction {
     //	 ArrayList<product> products=new ArrayList<product>();
       	 System.out.println("all product in system ..........");
 
-    	for(int i=0; i < adminFunction.products.size() ; i++) {
+    	for(int i=0; i < AdminFunction.products.size() ; i++) {
     	
-	        System.out.println(i+ ". "+	adminFunction.products.get(i).toString());
+	        System.out.println(i+ ". "+	AdminFunction.products.get(i).toString());
 
 		}
     	 System.out.println("...............................");
@@ -71,9 +70,9 @@ public class loginFunction {
    	 System.out.println("all worker in system ..........");
 
 
-		for(int i=0; i < w.workers.size() ; i++) {
+		for(int i=0; i < WorkerFunction.workers.size() ; i++) {
 			
-	        System.out.println(w.workers.get(i).toString());
+	        System.out.println(WorkerFunction.workers.get(i).toString());
 
 		}
     	 System.out.println("...............................");
@@ -83,9 +82,9 @@ public class loginFunction {
 		// TODO Auto-generated method stub
 	   	 System.out.println("all customer in system ..........");
 
-		for(int i=0; i < customerFunction.customers.size() ; i++) {
+		for(int i=0; i < CustomerFunction.customers.size() ; i++) {
 			
-	        System.out.println(customerFunction.customers.get(i).toString());
+	        System.out.println(CustomerFunction.customers.get(i).toString());
 
 			
 		}
@@ -96,11 +95,11 @@ public class loginFunction {
 		// TODO Auto-generated method stub
 	   	 System.out.println("all Order in system ..........");
           double money = 0.0;
-		for(int i=0; i < customerFunction.requests.size() ; i++) {
+		for(int i=0; i < CustomerFunction.requests.size() ; i++) {
 			
-	        System.out.println(customerFunction.requests.get(i).toString());
-             if(customerFunction.requests.get(i).getStatus() ==1)
-	      	money +=customerFunction.requests.get(i).p.getPrice();
+	        System.out.println(CustomerFunction.requests.get(i).toString());
+             if(CustomerFunction.requests.get(i).getStatus() ==1)
+	      	money +=CustomerFunction.requests.get(i).p.getPrice();
 		}
     	 System.out.println("...............................");
 	   	 System.out.println("Full Sales : "+money);
@@ -117,16 +116,16 @@ public class loginFunction {
     	while(b) {
         System.out.println("Enter name of product :");
     	name= in.nextLine();
-    	if(adminFunction.CheckIfProductCanAdd( name)) {
+    	if(AdminFunction.CheckIfProductCanAdd( name)) {
     		System.out.println("Enter description for product :");
     		d = in.nextLine();
     		System.out.println("Enter category for product :");
     		c = in.nextLine();
     		System.out.println("Enter price for product :");
     		p1 = in.nextDouble();
-    		product p = new product(name,d,c,p1);
-    		adminFunction.products.add(p);
-			workerFunction.products.add(p);
+    		Product p = new Product(name,d,c,p1);
+    		AdminFunction.products.add(p);
+			WorkerFunction.products.add(p);
 			System.out.println("add product successfully");
 	     	 System.out.println("...............................");
 
@@ -148,9 +147,9 @@ public class loginFunction {
     	name= in.nextLine();
     	// delete it by index
     	
-    	if(  adminFunction.searchproduct( name) !=-1) {
-    		int index = adminFunction.searchproduct(name);
-           	adminFunction.products.remove(index);
+    	if(  AdminFunction.searchproduct( name) !=-1) {
+    		int index = AdminFunction.searchproduct(name);
+           	AdminFunction.products.remove(index);
 	        	System.out.println("remove product successfully");
         	 System.out.println("...............................");
 
@@ -175,9 +174,9 @@ public class loginFunction {
     	name= in.nextLine();
     	// delete it by index
     	
-    	if(  adminFunction.searchproduct( name) !=-1) {
-    		int index = adminFunction.searchproduct(name);
-           	adminFunction.products.remove(index);
+    	if(  AdminFunction.searchproduct( name) !=-1) {
+    		int index = AdminFunction.searchproduct(name);
+           	AdminFunction.products.remove(index);
     		System.out.println("Enter new name of product :");
         	name1= in.nextLine();
     		System.out.println("Enter new description for product :");
@@ -186,9 +185,9 @@ public class loginFunction {
     		c = in.nextLine();
     		System.out.println("Enter new price for product :");
     		p1 = in.nextDouble();
-    		product p = new product(name1,d,c,p1);
-    		adminFunction.products.add(p);
-			workerFunction.products.add(p);
+    		Product p = new Product(name1,d,c,p1);
+    		AdminFunction.products.add(p);
+			WorkerFunction.products.add(p);
 	        	System.out.println("Edit product successfully");
 	     	System.out.println("...............................");
 
@@ -208,7 +207,7 @@ public class loginFunction {
 	
 	public static void addOrderCustomer(String user) {
 		viewProductData();
-		invoiceOrder.setcustomername(user);
+		InvoiceOrder.setcustomername(user);
 		int i;
     	String date;
     	String time;
@@ -224,28 +223,28 @@ public class loginFunction {
         System.out.println("Enter date for order");
     	date = in.nextLine();
         
-        product p = adminFunction.searchproductindex(i);
-        request r = new request (user , date , time , 0,p);
-        customerFunction.addRequest(user , r);
-        invoiceOrder.requests.add(r);
+        Product p = AdminFunction.searchproductindex(i);
+        Request r = new Request (user , date , time , 0,p);
+        CustomerFunction.addRequest(user , r);
+        InvoiceOrder.requests.add(r);
        
        
         
         
-        customerFunction.checkAllOrder();
+        CustomerFunction.checkAllOrder();
 	}
 
 	public static void deleteOrder(String user) {
     	int i;
     	
-    	invoiceOrder.setcustomername(user);
-		invoiceOrder.viewallrequest();
+    	InvoiceOrder.setcustomername(user);
+		InvoiceOrder.viewallrequest();
 		
         System.out.println("Enter index of request");
         i=in.nextInt();
-        invoiceOrder.requests.remove(i);
-        customerFunction.requests.remove(i);
-		customerFunction.checkAllOrder();
+        InvoiceOrder.requests.remove(i);
+        CustomerFunction.requests.remove(i);
+		CustomerFunction.checkAllOrder();
 		System.out.println("remove order successfully.");
 		System.out.println("...............................");
 
@@ -256,7 +255,7 @@ public class loginFunction {
 		
 		boolean b = true;
 	//	invoiceOrder.setcustomername(user);
-		invoiceOrder.viewallrequest();
+		InvoiceOrder.viewallrequest();
 		
 		
 		int i,i1;
@@ -270,19 +269,19 @@ public class loginFunction {
          
 
         
-         request r  = invoiceOrder.searchOrderindex(i);
+         Request r  = InvoiceOrder.searchOrderindex(i);
         
          
          
 
-    	if(invoiceOrder.searchindexOfOrder(r) != -1) {
-    		invoiceOrder.requests.remove(i);
-   	        customerFunction.requests.remove(i);
+    	if(InvoiceOrder.searchindexOfOrder(r) != -1) {
+    		InvoiceOrder.requests.remove(i);
+   	        CustomerFunction.requests.remove(i);
 
     		  System.out.println("Enter new index of product");
     	        i1=in.nextInt();
     	        test =in.nextLine();
-    	         product p = adminFunction.searchproductindex(i1);
+    	         Product p = AdminFunction.searchproductindex(i1);
 
     	        System.out.println("Enter new time for order");
     	      
@@ -291,9 +290,9 @@ public class loginFunction {
     	        
     	    	System.out.println("Enter new date for order");
     	    	date1 = in.nextLine();
-    	    	request r1 = new request(user ,date1,time1,0,p );
-    	    	invoiceOrder.requests.add(r1);
-    	    	customerFunction.requests.add(r1);
+    	    	Request r1 = new Request(user ,date1,time1,0,p );
+    	    	InvoiceOrder.requests.add(r1);
+    	    	CustomerFunction.requests.add(r1);
 				System.out.println("edit order successfully.");
 
 			System.out.println("...............................");
@@ -306,41 +305,44 @@ public class loginFunction {
     	}
 	
 	public static void notifiCustomer(String n) {
-		boolean a = false;
+		double d = 1;
         double money = 0.0;
-		for(int i=0; i < customerFunction.requests.size() ; i++) {
-			if(customerFunction.requests.get(i).getNameCustomer().equalsIgnoreCase(n)) {
-           if(customerFunction.requests.get(i).getStatus() ==1) {
-        	    System.out.println(customerFunction.requests.get(i).toString());
+		for(int i=0; i < CustomerFunction.requests.size() ; i++) {
+			if(CustomerFunction.requests.get(i).getNameCustomer().equalsIgnoreCase(n)) {
+           if(CustomerFunction.requests.get(i).getStatus() ==1) {
+        	    System.out.println(CustomerFunction.requests.get(i).toString());
 
-	      	money +=customerFunction.requests.get(i).p.getPrice();
+	      	money +=CustomerFunction.requests.get(i).p.getPrice();
 	    
            }
 		}
+			 d = CustomerFunction.addDiscounttoRequest(n,CustomerFunction.requests.get(i).getDate(),CustomerFunction.requests.get(i).getTime());
+
 		}
-	
+     money *= d;
 	 System.out.println("Full Sales : "+money);
   	 System.out.println("Send email successfully....");
   	 System.out.println("...............................");
-  	 
+  	
   	 // code to send email to customer
 	
 		
 		
 	}
 	
-	
-	public static void checkCustomer() {
-	for(int i =0; i< customerFunction.customers.size();i++) {
-		request.setNameCustomer(customerFunction.customers.get(i).getUsername());
+	public static boolean checkCustomer() {
+		boolean b = false;
+	for(int i =0; i< CustomerFunction.customers.size();i++) {
+		Request.setNameCustomer(CustomerFunction.customers.get(i).getUsername());
 
-		notifiCustomer(customerFunction.customers.get(i).getUsername()); 
+		notifiCustomer(CustomerFunction.customers.get(i).getUsername()); 
+		b=true;
 	}
-	
+	 return b;
 	}
 		
 		
-	
+
 	
 	
 	

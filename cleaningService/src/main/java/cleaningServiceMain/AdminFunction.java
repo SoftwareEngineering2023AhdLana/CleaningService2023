@@ -1,12 +1,13 @@
 package cleaningServiceMain;
 
 
+
 import java.awt.List;
 import java.util.ArrayList;
 
-public class adminFunction {
-	static public ArrayList<admin> admins=new ArrayList<admin>();
-	static public ArrayList<product> products=new ArrayList<product>();
+public class AdminFunction {
+	static public ArrayList<Admin> admins=new ArrayList<Admin>();
+	static public ArrayList<Product> products=new ArrayList<Product>();
 
 	public static int search(String w) {
 		for(int i=0; i < admins.size() ; i++) {
@@ -33,12 +34,12 @@ public class adminFunction {
 	}
 		
 		
-		public static product searchproductindex(int w) {
+		public static Product searchproductindex(int w) {
 		
 		return products.get(w) ;
 	}
 	public static Boolean CheckIfProductCanAdd(String name) {
-		for(int i=0; i < workerFunction.products.size() ; i++) {
+		for(int i=0; i < WorkerFunction.products.size() ; i++) {
 			
 			if(products.get(i).getName().equalsIgnoreCase(name))
 			{
@@ -50,9 +51,9 @@ public class adminFunction {
 		
 	}
 
-public static  ArrayList<product> findProductsByName(String name) {
-	ArrayList<product> foundProducts = new ArrayList<product>();
-    for (product product : products) {
+public static  ArrayList<Product> findProductsByName(String name) {
+	ArrayList<Product> foundProducts = new ArrayList<Product>();
+    for (Product product : products) {
         if (product.getName().equalsIgnoreCase(name)) {
             foundProducts.add(product);
         }
@@ -62,9 +63,7 @@ public static  ArrayList<product> findProductsByName(String name) {
 
 
 
-	public static void AddProduct(product p) {
-		products.add(p);
-	}
 }
+
 
 
