@@ -1,29 +1,14 @@
 package com.cleaning_service;
 
 public class Request {
-private String nameCustomer;
+private static String nameCustomer;
 private String date;
 private String time;
 Product p;
 
 private int status;//0 still , 1 Done 
 
-public Request() {
-	
-}
 
-public Request(String date , String t) {
-	this.date= date;
-	this.time=t;
-}
-
-public Request(String date , String t, int s) {
-	this.date= date;
-	this.status=s;
-	this.time=t;
-	this.setProduct(WorkerFunction.products.get(0));
-	
-}
 public Request(String username ,String date , String t, int s,Product p1) {
 	this.nameCustomer=username;
 	this.date= date;
@@ -74,10 +59,9 @@ public String getNameCustomer() {
 	return nameCustomer;
 }
 
-public void setNameCustomer(String nameCustomer) {
-	this.nameCustomer = nameCustomer;
+public static void setNameCustomer(String nameCustomer) {
+	Request.nameCustomer = nameCustomer;
 }
 
 }
-
 

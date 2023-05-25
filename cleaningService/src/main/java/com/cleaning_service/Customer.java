@@ -15,10 +15,11 @@ public class Customer {
 		private String phoneNumber;
 		private String address;
 		private Boolean logState=false;
-		 private String email;
-		protected static List<Request> requests=new ArrayList<Request>();
-		protected  static List<Request> requestsDone=new ArrayList<Request>();
-		protected  static List<Request> requestsStill=new ArrayList<Request>();
+		private String email;
+        private String avilableWorker;
+		  static List<Request> requests=new ArrayList<Request>();
+		  static List<Request> requestsDone=new ArrayList<Request>();
+		  static List<Request> requestsStill=new ArrayList<Request>();
 
 		public Customer() 
 		{
@@ -90,24 +91,7 @@ public class Customer {
 		{
 			requestsDone.add(r);
 		}
-		public  String addCustomer(String string) {
-			addC1();
-			for(int i = 0;  i<  customers.size(); i++) {
-				if(customers.get(i).getUsername().equalsIgnoreCase(string))
-				   return "Customer already exists";
-			}
-			return "Customer added successfully";
-		}
-		ArrayList<Customer> customers = new ArrayList<Customer>();
-
-		public  String addCustomerWithInfo(Customer customer) {
-
-			if(customer.email ==" "||customer.phoneNumber == " "||customer.password == " "||customer.name ==" "||customer.username ==" ") 
-				return "Please enter valid information.";	
-			else
-				return "Customer added successfully";
-	       	
-			}
+	
 		
 		public static void resorRequestStill()
 		{
@@ -127,19 +111,12 @@ public class Customer {
 		  public String getEmail() {
 		        return email;
 		    }
-		  public  void addC1() {
-			   Customer c = new Customer();
-			    
-			    
-				c.setUsername("lana");
-				c.setPassword("123456");
-				c.setName("Julia Williams");
-				c.setPhoneNumber("123456");
-				c.setAddress("Tel Aviv");
-				c.setEmail("julia@company.com");
-				
-	        customers.add(c);
-			
+		
+               public String getAvilableWorker() {
+			return avilableWorker;
+		}
+		public void setAvilableWorker(String avilableWorker) {
+			this.avilableWorker = avilableWorker;
 		}
 		 @Override
 		    public String toString() {
@@ -153,4 +130,3 @@ public class Customer {
 		
 
 }
-

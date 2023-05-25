@@ -1,224 +1,199 @@
 package com.cleaning_service;
 
-
 import java.util.Scanner;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class LoginFunction {
-	public LoginFunction(){
-		//default constructor
-	}
-	 
-	  
 	static Scanner in=new Scanner(System.in);
-
     static void viewAllData() {
-    	Logger logger=Logger.getLogger(
-				LoginFunction.class.getName());
+		// TODO Auto-generated method stub
     	
-    	logger.log(Level.INFO,"all worker in system ..........");
+    	 System.out.println("all worker in system ..........");
 
 
  		for(int i=0; i < WorkerFunction.workers.size() ; i++) {
- 			String w =WorkerFunction.workers.get(i).toString();
- 	       logger.log(Level.INFO,w);
+ 			
+ 	        System.out.println(WorkerFunction.workers.get(i).toString());
 
  		}
-     	logger.log(Level.INFO,".................................");
+     	 System.out.println("...............................");
      	 
-     	logger.log(Level.INFO,"all customer in system ..........");
+     	 System.out.println("all customer in system ..........");
 
  		for(int i=0; i < CustomerFunction.customers.size() ; i++) {
- 			String c = CustomerFunction.customers.get(i).toString();
- 	       logger.log(Level.INFO,c);
+ 			
+ 	        System.out.println(CustomerFunction.customers.get(i).toString());
 
  			
  		}
-     	logger.log(Level.INFO,"...............................");
+     	 System.out.println("...............................");
      	 
      	 
-     	logger.log(Level.INFO,"all product in system .........");
+     	 System.out.println("all product in system ..........");
 
      	for(int i=0; i < AdminFunction.products.size() ; i++) {
-     		String a = AdminFunction.products.get(i).toString();
- 	       logger.log(Level.INFO,a);
+     	
+ 	        System.out.println(	AdminFunction.products.get(i).toString());
 
  		}
-     	logger.log(Level.INFO,"................................");
+     	 System.out.println("...............................");
      	 
      	 
-     	logger.log(Level.INFO,"all Order in system ..........");
+     	System.out.println("all Order in system ..........");
         double money = 0.0;
 		for(int i=0; i < CustomerFunction.requests.size() ; i++) {
-			String c=CustomerFunction.requests.get(i).toString();
-	       logger.log(Level.INFO,c);
+			
+	        System.out.println(CustomerFunction.requests.get(i).toString());
 
 	 	money +=CustomerFunction.requests.get(i).p.getPrice();
 		}
-  	logger.log(Level.INFO,"..............................");
-  	String fullsale="Full Sales  : "+money;
-	   	logger.log(Level.INFO,fullsale);
+  	 System.out.println("...............................");
+	   	 System.out.println("Full Sales : "+money);
      	 
 	}
 
     static void viewProductData() {
-    	Logger logger=Logger.getLogger(
-				LoginFunction.class.getName());
-      	logger.log(Level.INFO,"all product in system ..........");
+  		// TODO Auto-generated method stub
+    //	 ArrayList<product> products=new ArrayList<product>();
+      	 System.out.println("all product in system ..........");
 
     	for(int i=0; i < AdminFunction.products.size() ; i++) {
-    		String a=i+ ". "+	AdminFunction.products.get(i).toString();
-	       logger.log(Level.INFO,a);
+    	
+	        System.out.println(i+ ". "+	AdminFunction.products.get(i).toString());
 
 		}
-    	logger.log(Level.INFO,"............................");
+    	 System.out.println("...............................");
   	}
     
 	static void viewWorkerData() {
-		Logger logger=Logger.getLogger(
-				LoginFunction.class.getName());
-   	logger.log(Level.INFO,"all worker in system ..........");
+		// TODO Auto-generated method stub
+   	 System.out.println("all worker in system ..........");
 
 
 		for(int i=0; i < WorkerFunction.workers.size() ; i++) {
-			String w =WorkerFunction.workers.get(i).toString();
-	       logger.log(Level.INFO,w);
+			
+	        System.out.println(WorkerFunction.workers.get(i).toString());
 
 		}
-    	logger.log(Level.INFO,"....................................");
+    	 System.out.println("...............................");
 	}
 
 	static void viewCustomerData() {
-		Logger logger=Logger.getLogger(
-				LoginFunction.class.getName());
-	   	logger.log(Level.INFO,"all customer in system ..........");
+		// TODO Auto-generated method stub
+	   	 System.out.println("all customer in system ..........");
 
 		for(int i=0; i < CustomerFunction.customers.size() ; i++) {
-			String c=CustomerFunction.customers.get(i).toString();
-	       logger.log(Level.INFO,c);
+			
+	        System.out.println(CustomerFunction.customers.get(i).toString());
 
 			
 		}
-    	logger.log(Level.INFO,".....................................");
+    	 System.out.println("...............................");
 	}
 	
 	 static void viewRequestData() {
-		 Logger logger=Logger.getLogger(
-					LoginFunction.class.getName());
-	   	logger.log(Level.INFO,"all Order in system ..........");
+		// TODO Auto-generated method stub
+	   	 System.out.println("all Order in system ..........");
           double money = 0.0;
 		for(int i=0; i < CustomerFunction.requests.size() ; i++) {
-			String c = CustomerFunction.requests.get(i).toString();
-	       logger.log(Level.INFO,c);
+			
+	        System.out.println(CustomerFunction.requests.get(i).toString());
              if(CustomerFunction.requests.get(i).getStatus() ==1)
-            	 money +=CustomerFunction.requests.get(i).p.getPrice();
+	      	money +=CustomerFunction.requests.get(i).p.getPrice();
 		}
-    	logger.log(Level.INFO,"....................................");
-    	String fullsales="Full Sales : "+money;
-	   	logger.log(Level.INFO,fullsales);
-    	logger.log(Level.INFO,"..............................");
+    	 System.out.println("...............................");
+	   	 System.out.println("Full Sales : "+money);
+    	 System.out.println("...............................");
     	 
-// should call function to restall all order  before print order
+// should call function to restoll all order  before print order
 	}
 	
 	static void addProduct() {
-		Logger logger=Logger.getLogger(
-				LoginFunction.class.getName());
 		boolean b = true;
     	String name;
-    	String d;
-    	String c;
+    	String d,c;
     	double p1;
     	while(b) {
-       logger.log(Level.INFO,"Enter name of product :");
+        System.out.println("Enter name of product :");
     	name= in.nextLine();
-    	Boolean checkname=AdminFunction.checkIfProductCanAdd(name);
-    	if(Boolean.TRUE.equals(checkname)){
-    		logger.log(Level.INFO,"Enter description for product :");
+    	if(AdminFunction.CheckIfProductCanAdd( name)) {
+    		System.out.println("Enter description for product :");
     		d = in.nextLine();
-    		logger.log(Level.INFO,"Enter category for product :");
+    		System.out.println("Enter category for product :");
     		c = in.nextLine();
-    		logger.log(Level.INFO,"Enter price for product :");
+    		System.out.println("Enter price for product :");
     		p1 = in.nextDouble();
     		Product p = new Product(name,d,c,p1);
     		AdminFunction.products.add(p);
 			WorkerFunction.products.add(p);
-			logger.log(Level.INFO,"add product successfully");
-	     	logger.log(Level.INFO,"...........................");
+			System.out.println("add product successfully");
+	     	 System.out.println("...............................");
 
     		b=false;
     	}else {
-    		logger.log(Level.INFO," the product exite , Enter new product ...");
+    		 System.out.println(" the product exite , Enter new product ...");
     	
-         	logger.log(Level.INFO,".............................");
+         	 System.out.println("...............................");
 }
     	}
 		
 	}
 	
 	static void removeProduct() {
-		Logger logger=Logger.getLogger(
-				LoginFunction.class.getName());
 		boolean b = true;
     	String name;
     	while(b) {
-       logger.log(Level.INFO,"Enter the name of product :");
+        System.out.println("Enter name of product :");
     	name= in.nextLine();
     	// delete it by index
     	
     	if(  AdminFunction.searchproduct( name) !=-1) {
     		int index = AdminFunction.searchproduct(name);
            	AdminFunction.products.remove(index);
-	        	logger.log(Level.INFO,"remove product successfully");
-        	logger.log(Level.INFO,"...................................");
+	        	System.out.println("remove product successfully");
+        	 System.out.println("...............................");
 
 
     		b=false;
     	}else {
-    		logger.log(Level.INFO," the product not exite , Enter name product ...");
-         	logger.log(Level.INFO,".................................");
+    		 System.out.println(" the product not exite , Enter name product ...");
+         	 System.out.println("...............................");
 
     	}
     	}
 	}
 	
 	static void editProduct() {
-		Logger logger=Logger.getLogger(
-				LoginFunction.class.getName());
 		
 		boolean b = true;
-    	String name;
-    	String name1;
-    	String d;
-    	String c;
+    	String name,name1;
+    	String d,c;
     	double p1;
     	while(b) {
-       logger.log(Level.INFO,"Enter name of product  :");
+        System.out.println("Enter name of product :");
     	name= in.nextLine();
     	// delete it by index
     	
     	if(  AdminFunction.searchproduct( name) !=-1) {
     		int index = AdminFunction.searchproduct(name);
            	AdminFunction.products.remove(index);
-    		logger.log(Level.INFO,"Enter new name of product :");
+    		System.out.println("Enter new name of product :");
         	name1= in.nextLine();
-    		logger.log(Level.INFO,"Enter new description for product :");
+    		System.out.println("Enter new description for product :");
     		d = in.nextLine();
-    		logger.log(Level.INFO,"Enter new category for product :");
+    		System.out.println("Enter new category for product :");
     		c = in.nextLine();
-    		logger.log(Level.INFO,"Enter new price for product :");
+    		System.out.println("Enter new price for product :");
     		p1 = in.nextDouble();
     		Product p = new Product(name1,d,c,p1);
     		AdminFunction.products.add(p);
 			WorkerFunction.products.add(p);
-	        	logger.log(Level.INFO,"Edit product successfully");
-	     	logger.log(Level.INFO,"..........................");
+	        	System.out.println("Edit product successfully");
+	     	System.out.println("...............................");
 
     		b=false;
     	}else {
-    		logger.log(Level.INFO," the product not exite , Enter name product ...");
-         	logger.log(Level.INFO,"............................");
+    		 System.out.println(" the product not exite , Enter name product ...");
+         	 System.out.println("...............................");
 
     	}
     	}
@@ -230,22 +205,21 @@ public class LoginFunction {
   //////////////////////////////////////////
 	
 	public static void addOrderCustomer(String user) {
-		Logger logger=Logger.getLogger(
-			LoginFunction.class.getName());
 		viewProductData();
 		InvoiceOrder.setcustomername(user);
 		int i;
     	String date;
     	String time;
-    	String min;
-    	logger.log(Level.INFO,"Enter index of product");
+    	String hour,min;
+    	System.out.println("Enter index of product");
         i=in.nextInt();
-   
+        /////////////////////////////
+        hour = in.nextLine();
         ////////////////////////////
-       logger.log(Level.INFO,"Enter time for order");
+        System.out.println("Enter time for order");
         min = in.nextLine();
         time = min;
-       logger.log(Level.INFO,"Enter date for order");
+        System.out.println("Enter date for order");
     	date = in.nextLine();
         
         Product p = AdminFunction.searchproductindex(i);
@@ -260,41 +234,37 @@ public class LoginFunction {
 	}
 
 	public static void deleteOrder(String user) {
-		Logger logger=Logger.getLogger(
-				LoginFunction.class.getName());
     	int i;
     	
     	InvoiceOrder.setcustomername(user);
 		InvoiceOrder.viewallrequest();
 		
-       logger.log(Level.INFO,"Enter index of request");
+        System.out.println("Enter index of request");
         i=in.nextInt();
         InvoiceOrder.requests.remove(i);
         CustomerFunction.requests.remove(i);
 		CustomerFunction.checkAllOrder();
-		logger.log(Level.INFO,"remove order successfully.");
-		logger.log(Level.INFO,"..................................");
+		System.out.println("remove order successfully.");
+		System.out.println("...............................");
 
 
 	}
 
 	public static void editOrder(String user) {
-		Logger logger=Logger.getLogger(
-				LoginFunction.class.getName());
 		
-		
+		boolean b = true;
+	//	invoiceOrder.setcustomername(user);
 		InvoiceOrder.viewallrequest();
 		
 		
-		int i;
-		int i1;
+		int i,i1;
 		String date1;
     	String time1;
+    	String test;
     	
-    	
-    	logger.log(Level.INFO,"Enter index of request");
+    	 System.out.println("Enter index of request");
          i =in.nextInt();
-        
+         test =in.nextLine();
          
 
         
@@ -307,72 +277,75 @@ public class LoginFunction {
     		InvoiceOrder.requests.remove(i);
    	        CustomerFunction.requests.remove(i);
 
-    		 logger.log(Level.INFO,"Enter new index of product");
+    		  System.out.println("Enter new index of product");
     	        i1=in.nextInt();
-    	        
+    	        test =in.nextLine();
     	         Product p = AdminFunction.searchproductindex(i1);
 
-    	       logger.log(Level.INFO,"Enter new time for order");
+    	        System.out.println("Enter new time for order");
     	      
 
     	        time1 = in.nextLine();
     	        
-    	    	logger.log(Level.INFO,"Enter new date for order");
+    	    	System.out.println("Enter new date for order");
     	    	date1 = in.nextLine();
     	    	Request r1 = new Request(user ,date1,time1,0,p );
     	    	InvoiceOrder.requests.add(r1);
     	    	CustomerFunction.requests.add(r1);
-				logger.log(Level.INFO,"edit order successfully.");
+				System.out.println("edit order successfully.");
 
-			logger.log(Level.INFO,".............................");
-    		
+			System.out.println("...............................");
+    		b=false;
     	}else {
-    		logger.log(Level.INFO," the order not exite , Enter name order ...");
-         	logger.log(Level.INFO,"............................");
+    		 System.out.println(" the order not exite , Enter name order ...");
+         	 System.out.println("...............................");
 
     	}
     	}
-	
 	
 	public static void notifiCustomer(String n) {
-		Logger logger=Logger.getLogger(
-				LoginFunction.class.getName());
+		double d = 1;
         double money = 0.0;
 		for(int i=0; i < CustomerFunction.requests.size() ; i++) {
-			if(CustomerFunction.requests.get(i).getNameCustomer().equalsIgnoreCase(n) && CustomerFunction.requests.get(i).getStatus() ==1) {
-           {
-        	   logger.log(Level.INFO,CustomerFunction.requests.get(i).toString());
+			if(CustomerFunction.requests.get(i).getNameCustomer().equalsIgnoreCase(n)) {
+           if(CustomerFunction.requests.get(i).getStatus() ==1) {
+        	    System.out.println(CustomerFunction.requests.get(i).toString());
 
 	      	money +=CustomerFunction.requests.get(i).p.getPrice();
 	    
            }
 		}
+			 d = CustomerFunction.addDiscounttoRequest(n,CustomerFunction.requests.get(i).getDate(),CustomerFunction.requests.get(i).getTime());
+
 		}
-		String fullsale="Full Sales : "+money;
-		logger.log(Level.INFO,fullsale);
-		logger.log(Level.INFO,"Send email successfully....");
-		logger.log(Level.INFO,"...............................");
-  	 
+     money *= d;
+	 System.out.println("Full Sales : "+money);
+  	 System.out.println("Send email successfully....");
+  	 System.out.println("...............................");
+  	
   	 // code to send email to customer
 	
 		
 		
 	}
 	
-	
-	public void checkCustomer() {
+	public static boolean checkCustomer() {
+		boolean b = false;
 	for(int i =0; i< CustomerFunction.customers.size();i++) {
-		Request r = new Request();
-		r.setNameCustomer(CustomerFunction.customers.get(i).getUsername());
+		Request.setNameCustomer(CustomerFunction.customers.get(i).getUsername());
 
 		notifiCustomer(CustomerFunction.customers.get(i).getUsername()); 
+		b=true;
 	}
-	
+	 return b;
 	}
 		
+		
+
+	
+	
 	
 	}
 	
 	
-
 

@@ -2,6 +2,7 @@ package com.cleaning_service;
 
 
 
+
 public class Worker {
 
 
@@ -11,23 +12,29 @@ public class Worker {
 	private String phoneNumber;
 	private String address;
 	private Boolean logState=false;
-	private String timeStart;
-	private String timeEnd;
+	private static String timeStart;
+	private static String timeEnd;
+
+
+
 	public Worker() 
 	{
 		
+
 	}
-	public Worker(String s1,String s2,String s3,String s4,String s5,String te,String ts)// user name,pass,name,address,phone
+	
+	public Worker(String s1,String s2,String s3,String s4,String s5,String TS,String TE)// user name,pass,name,address,phone
 	{
 		this.username=s1;
 		this.password=s2;
 		this.name=s3;
 		this.address=s4;
 		this.phoneNumber=s5;
-		this.timeStart=ts;
-		this.timeEnd = te;
+		Worker.timeStart=TS;
+		Worker.timeEnd = TE;
 		
 	}
+
 	public String getName() 
 	{
 		return name;
@@ -79,22 +86,21 @@ public class Worker {
 	                ", address ='" + address + '\'' +
 	                '}';
 	}
-	 
-		public String getTimeStart() {
+	public String getTimeStart() {
 		return timeStart;
 	}
 	public  void setTimeStart(String timeStart) {
-		this.timeStart = timeStart;
+		Worker.timeStart = timeStart;
 	}
 	public String getTimeEnd() {
 		return timeEnd;
 	}
 	public void setTimeEnd(String timeEnd) {
-		this.timeEnd = timeEnd;
+		Worker.timeEnd = timeEnd;
 	}
 	
 	
+	
 }
-
 
 

@@ -1,13 +1,12 @@
 package com.cleaning_service;
 
 
-import java.util.List;
+
+import java.util.ArrayList;
 import java.util.Scanner;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class Login {
-	
+ 
 	static Scanner in=new Scanner(System.in);
 	static int index=-1;
 	static int indexOfOrder;
@@ -15,22 +14,21 @@ public class Login {
 	static String timeOfOrder;
 	public Login() {}
 
+	//                   DONE :) 
     private static void adminMenu() {
     	  int x = 0;
     	  while(x != 1) {
-    		  Logger logger=Logger.getLogger(
-						Login.class.getName());
-       logger.log(Level.INFO,"Welcome, admin!");
-       logger.log(Level.INFO,"1. View customer data.");
-       logger.log(Level.INFO,"2. View worker data.");
-        logger.log(Level.INFO,"3. View product data.");
-        logger.log(Level.INFO,"4. View all data.");
-        logger.log(Level.INFO,"5. View all order.");
-        logger.log(Level.INFO,"6. add product.");
-        logger.log(Level.INFO,"7. Edit product.");
-        logger.log(Level.INFO,"8. delete product.");
-        logger.log(Level.INFO,"9. Log out.");
-        logger.log(Level.INFO,"Enter your choice: ");
+        System.out.println("Welcome, admin!");
+        System.out.println("1. View customer data.");
+        System.out.println("2. View worker data.");
+        System.out.println("3. View product data.");
+        System.out.println("4. View all data.");
+        System.out.println("5. View all order.");
+        System.out.println("6. add product.");
+        System.out.println("7. Edit product.");
+        System.out.println("8. delete product.");
+        System.out.println("9. Log out.");
+        System.out.print("Enter your choice: ");
 
       
         int choice = in.nextInt();
@@ -60,41 +58,49 @@ public class Login {
         	LoginFunction.removeProduct();
         }
         else if (choice == 9) {
-            logger.log(Level.INFO,"Logging out...");
-        	 logger.log(Level.INFO,"...........................");
+            System.out.println("Logging out...");
+        	 System.out.println("...............................");
 
-        
+          //  System.exit(0);
             x=1;
         } else {
-            logger.log(Level.INFO,"Invalid choice. Please enter 1, 2, 3,4,5,6 or 7.");
-        	 logger.log(Level.INFO,".............................");
+            System.out.println("Invalid choice. Please enter 1, 2, 3,4,5,6 or 7.");
+        	 System.out.println("...............................");
 
         }
       }
         
     }
 
-	   
+	    ///////////////////////////////////////////////////////////
+	   ///////////////////////////////////////////////////////////
+	  ///////////////////////////////////////////////////////////
+	 ///////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////
+   ///////////////////////////////////////////////////////////
+  ///////////////////////////////////////////////////////////
+ ///////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////
 
+	//                   DONE :)  -1
 	private static void customerMenu(String user) {
+		// TODO Auto-generated method stub
 		  int x = 0;
-		  Logger logger=Logger.getLogger(
-					Login.class.getName());
 		  InvoiceOrder.customerName = user;
     	  while(x != 1) {
-        logger.log(Level.INFO,"Welcome, CUSTOMER!");
+        System.out.println("Welcome, CUSTOMER!");
         // print the available worker depend the time customer login
-        logger.log(Level.INFO,"the available worker is : ");
-
-
         
-        logger.log(Level.INFO,"1. View product data.");
-        logger.log(Level.INFO,"2. add order.");
-        logger.log(Level.INFO,"3. Edit order.");
-        logger.log(Level.INFO,"4. delete order.");
-        logger.log(Level.INFO,"5. show invoice for order.");
-        logger.log(Level.INFO,"6. Log out.");
-        logger.log(Level.INFO,"Enter your choice: ");
+        System.out.print("the available worker is : ");
+        WorkerFunction.findAvilableWorker();
+        
+        System.out.println("1. View product data.");
+        System.out.println("2. add order.");
+        System.out.println("3. Edit order.");
+        System.out.println("4. delete order.");
+        System.out.println("5. show invoice for order.");
+        System.out.println("6. Log out.");
+        System.out.print("Enter your choice: ");
 
       
         int choice = in.nextInt();
@@ -123,36 +129,36 @@ public class Login {
 
         } 
         else if (choice == 6) {
-        	
-            logger.log(Level.INFO,"Logging out..");
-        	 logger.log(Level.INFO,"..............................");
+            System.out.println("Logging out...");
+        	 System.out.println("...............................");
 
             x=1;
         } else {
-            logger.log(Level.INFO,"Invalid choice. Please enter 1, 2, 3,4,5 or 6.");
-        	 logger.log(Level.INFO,"............................");
+            System.out.println("Invalid choice. Please enter 1, 2, 3,4,5 or 6.");
+        	 System.out.println("...............................");
 
         }
       }
 	}
 	
-	    
+	    ///////////////////////////////////////////////////////////
+	   ///////////////////////////////////////////////////////////
+	  ///////////////////////////////////////////////////////////
+	 ///////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////
+   ///////////////////////////////////////////////////////////
+  ///////////////////////////////////////////////////////////
+ ///////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////
 
-	private static void workerMenu(String username) {
-		LoginFunction l = new LoginFunction();
+	private static void workerMenu(String user) {
+		// TODO Auto-generated method stub
 		  int x = 0;
-		  Logger logger=Logger.getLogger(
-					Login.class.getName());
-		  
   	  while(x != 1) {
-  	String w = "Hey "+username+" !";
-  			
-      logger.log(Level.INFO,"1. Notify the customer when order Done .");
-      logger.log(Level.INFO,"2. Generate Statistics.");
-      logger.log(Level.INFO,"3. Log out.");
-      logger.log(Level.INFO,"Enter your choice:  ");
-
- 
+      System.out.println("Welcome, worker!");
+      System.out.println("1. Notify the customer when order Done .");
+      System.out.println("2. Log out.");
+      System.out.print("Enter your choice: ");
 
     
       int choice = in.nextInt();
@@ -160,32 +166,33 @@ public class Login {
 
       if (choice == 1) {
     	  CustomerFunction.checkAllOrder();
-    	  l.checkCustomer();
+    	  LoginFunction.checkCustomer();
 
       }
-	if (choice == 2) {
-    	  CustomerFunction.checkAllOrder();
-    	  l.checkCustomer();
-
-      }
-      if (choice == 3) {
-          logger.log(Level.INFO,"Logging out");
-      	 logger.log(Level.INFO,"..................................");
+      else if (choice == 2) {
+          System.out.println("Logging out...");
+      	 System.out.println("...............................");
 
           x=1;
       } else {
-          logger.log(Level.INFO,"Invalid choice. Please enter 1, 2 or 3.");
-      	 logger.log(Level.INFO,"...................................");
+          System.out.println("Invalid choice. Please enter 1, 2 or 3.");
+      	 System.out.println("...............................");
 
       }
     }		
 	}
-	 
 	
-	
-	
-	
-	public Login(List<Admin> a,List<Customer> c,List<Worker> w)
+        ///////////////////////////////////////////////////////////
+       ///////////////////////////////////////////////////////////
+      ///////////////////////////////////////////////////////////
+     ///////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////
+   ///////////////////////////////////////////////////////////
+  ///////////////////////////////////////////////////////////
+ ///////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////
+
+	public Login(ArrayList<Admin> a,ArrayList<Customer> c,ArrayList<Worker> w)
 	{
 		for(int i=0;i<a.size();i++)
 			AdminFunction.admins.add(a.get(i));
@@ -193,123 +200,119 @@ public class Login {
 		for(int i=0;i<c.size();i++)
 			CustomerFunction.customers.add(c.get(i));
 	
-		for(int i=0;i<a.size();i++)
-			WorkerFunction.workers.add(w.get(i));
+		 WorkerFunction workerFunction = new WorkerFunction();
+		for(int i=0;i<a.size();i++) {
+			workerFunction.workers.add(w.get(i));
+	}
 	}
 	
-	public static void mainLogin()
+	public static void main_login()
 	{
-		  Logger logger=Logger.getLogger(
-					Login.class.getName());
 		int res=0;
-		logger.log(Level.INFO,"Welcome to the Login \n"+"----------------------------------------------");
+		 WorkerFunction workerFunction = new WorkerFunction();
+
+		System.out.println("Welcome to the Login \n"+"----------------------------------------------");
 		while((res==0)||(res==-1)||(res==1)||(res==-3))
 		{
-			logger.log(Level.INFO,"Enter your username");
+			System.out.println("Enter your username");
 			String u=in.nextLine();
-			logger.log(Level.INFO,"Enter the password");
+			System.out.println("Enter the password");
 			String p=in.nextLine();
 			res=checkLoginStatus(u,p);
 			if(res==-2)
 			{
 				AdminFunction.admins.get(index).setLogState(true);
-				
+				AdminFunction a=new AdminFunction();
 				adminMenu();
 			}
 			else if(res==-1)
 			{
 				AdminFunction.admins.get(index).setLogState(false);
-				logger.log(Level.INFO,"Invalid admin name or password. Try again");
+				System.out.println("Invalid admin name or password. Try again");
 			}
 			else if(res==2)
 			{
 				CustomerFunction.customers.get(index).setLogState(true);
-				
+				CustomerFunction c=new CustomerFunction();
 				customerMenu(CustomerFunction.customers.get(index).getUsername());
 			}
 			else if(res==1)
 			{
 				CustomerFunction.customers.get(index).setLogState(false);
-				logger.log(Level.INFO,"Invalid customer name or password. Try again");
+				System.out.println("Invalid customer name or password. Try again");
 			}
 			else if(res==3)
 			{
-				WorkerFunction.workers.get(index).setLogState(true);
-		
+				workerFunction.workers.get(index).setLogState(true);
+				CustomerFunction w=new CustomerFunction();
 				workerMenu(CustomerFunction.customers.get(index).getUsername());
 				
 			}
 			else if(res==-3)
 			{
-				WorkerFunction.workers.get(index).setLogState(false);
-				logger.log(Level.INFO,"Invalid worker name or password. Try again");
+				workerFunction.workers.get(index).setLogState(false);
+				System.out.println("Invalid worker name or password. Try again");
 			}
 			else if(res==0)
 			{
-				logger.log(Level.INFO,"user name do not exist\n"
+				System.out.println("user name do not exist\n"
 								+ "You will be sign up \n"
 								+ "Loading..........................");
-				
+				Signup SU=new Signup();
 			}
 		}
 	}
 	
 	public static int checkLoginStatus(String u,String p)
 	{
-
+		 WorkerFunction workerFunction = new WorkerFunction();
 		for(int i=0;i<CustomerFunction.customers.size();i++)
 		{
-			if(u.equals(CustomerFunction.customers.get(i).getUsername())&&p.equals(CustomerFunction.customers.get(i).getPassword()))
+			if(u.equals(CustomerFunction.customers.get(i).getUsername()))
 			{	
 				index=i;
-					return 2;}
-			
+				if(p.equals(CustomerFunction.customers.get(i).getPassword()))
+					return 2;
 				else
 					return 1;
 			}
-		
+		}
 		for(int i=0;i<AdminFunction.admins.size();i++)
 		{
-			if(u.equals(AdminFunction.admins.get(i).getUsername())&&p.equals(AdminFunction.admins.get(i).getPassword()))
+			if(u.equals(AdminFunction.admins.get(i).getUsername()))
 			{	
 				index=i;
-				
+				if(p.equals(AdminFunction.admins.get(i).getPassword()))
 					return -2;
-					}
 				else
 					return -1;
 			}
-		
-		for(int i=0;i<WorkerFunction.workers.size();i++)
+		}
+		for(int i=0;i<workerFunction.workers.size();i++)
 		{
-			if(u.equals(WorkerFunction.workers.get(i).getUsername())&&p.equals(WorkerFunction.workers.get(i).getPassword()))
+			if(u.equals(workerFunction.workers.get(i).getUsername()))
 			{	
 				index=i;
-				
+				if(p.equals(workerFunction.workers.get(i).getPassword()))
 					return 3;
-					}
 				else
 					return -3;
 			}
-		
+		}
 		return 0;
 	}
 	
 	public static void main(String[] args)
 	{
-		
-			Admin a1=new Admin("lanahasan","1235","lana hasan","nablus","050677677");
+			Admin a1=new Admin("AdamA","12345","Adam Ahmad","nablus","050677677");
 			AdminFunction.admins.add(a1);
-			Worker w1=new Worker("AhmadM","1234","Ahmad Mohamad","bethlehem","0502222222","08:00","15:00");		
-	
-			WorkerFunction.workers.add(w1);
-	
-			Customer c1=new Customer("leen1","12343","leen","Ramallah","0501111111");		
-			Customer c2=new Customer("ahd","12312","ahd ghazal","Bethlehem","0502348765");
-			Customer c3=new Customer("sami","1234","sami saif","Jerusalem","0503456789");
+			
+			
+			Worker w2=new Worker("AhmadM","12345","Ahmad Mohamad","nablus","0502222222","08:00","23:00");
+			WorkerFunction.workers.add(w2);
+			
+			Customer c1=new Customer("sami","1234","sami saif","Jerusalem","0503456789");
 			CustomerFunction.customers.add(c1);
-			CustomerFunction.customers.add(c2);
-			CustomerFunction.customers.add(c3);
 			///                        name           description    category   price
 			Product p1  = new Product("Berber carpet","wool","carpet",150.0);
 			Product p2  = new Product("Persian rugt","synthetic","carpet",300.0);
@@ -334,9 +337,8 @@ public class Login {
 			 InvoiceOrder.requests.add(r4);
 			 
 			CustomerFunction.checkAllOrder();
-			mainLogin();
+			main_login();
 		
 	}
 	
 }
-

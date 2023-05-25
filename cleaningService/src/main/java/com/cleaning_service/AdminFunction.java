@@ -1,19 +1,13 @@
 package com.cleaning_service;
 
 
-
 import java.util.ArrayList;
-import java.util.List;
+
 public class AdminFunction {
-	
-	static List<Admin> admins=new ArrayList<Admin>();
-	static List<Product> products=new ArrayList<Product>();
-	
-	 public AdminFunction() {
-		//default constructor
-	}
-	
-	public  int search(String w) {
+	static public ArrayList<Admin> admins=new ArrayList<Admin>();
+	static public ArrayList<Product> products=new ArrayList<Product>();
+
+	public static int search(String w) {
 		for(int i=0; i < admins.size() ; i++) {
 			if(w.equalsIgnoreCase(admins.get(i).getUsername())) {
 				return i;
@@ -23,9 +17,13 @@ public class AdminFunction {
 		return -1;
 	}
 
-	public static  int searchproduct(String w) {
+	public static int searchproduct(String w) {
 		for(int i=0; i < products.size() ; i++) {
-		
+			/*
+			if(w.equals(products.get(i).getName())) {
+				return i;
+			}
+			*/
 			if(w.equalsIgnoreCase(products.get(i).getName())){
 				return i;
 			}
@@ -34,11 +32,11 @@ public class AdminFunction {
 	}
 		
 		
-		public static  Product searchproductindex(int w) {
+		public static Product searchproductindex(int w) {
 		
 		return products.get(w) ;
 	}
-	public static  Boolean checkIfProductCanAdd(String name) {
+	public static Boolean CheckIfProductCanAdd(String name) {
 		for(int i=0; i < WorkerFunction.products.size() ; i++) {
 			
 			if(products.get(i).getName().equalsIgnoreCase(name))
@@ -51,7 +49,7 @@ public class AdminFunction {
 		
 	}
 
-public   List<Product> findProductsByName(String name) {
+public static  ArrayList<Product> findProductsByName(String name) {
 	ArrayList<Product> foundProducts = new ArrayList<Product>();
     for (Product product : products) {
         if (product.getName().equalsIgnoreCase(name)) {
@@ -63,9 +61,4 @@ public   List<Product> findProductsByName(String name) {
 
 
 
-	public  void addProduct(Product p) {
-		products.add(p);
-	}
 }
-
-

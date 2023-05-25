@@ -12,7 +12,6 @@ public Product() {}
 public Product(String s1,String s3,String s4,double p)
 {
 	this.name=s1;
-
 	this.description=s3;
 	this.category=s4;
 	this.price= p;
@@ -29,7 +28,6 @@ public String getDescription() {
 public void setDescription(String description) {
 	this.description = description;
 }
- 
 
 public String getName() {
 	return name;
@@ -55,4 +53,3 @@ public String toString()
     '}';
 }
 }
-

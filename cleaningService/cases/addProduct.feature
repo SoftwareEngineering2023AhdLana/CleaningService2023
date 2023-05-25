@@ -23,4 +23,3 @@ Scenario: Can not add a product
  	When admin tries to add the product to the company
  	Then the product cannot be added
  	Then the product is not added
- 	

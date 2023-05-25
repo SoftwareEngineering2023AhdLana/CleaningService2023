@@ -2,7 +2,6 @@ package com.cleaning_service;
 
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class Admin {
 
@@ -13,12 +12,39 @@ public class Admin {
 		private String address;
 		private String phoneNumber;
 		private Boolean logState=false;
-		List<Product> products=new ArrayList<Product>();
+		static public ArrayList<Product> products=new ArrayList<Product>();
+
 
 		public Admin() 
 		{
-			addP();
+			 addp();
 		}
+		  
+			public  void addp() {
+				  Product p1 =  new Product("Capet Wash per meter","wool","carpet1",40.0);
+				  Product p2 =  new Product("Curtains Wash per C9urtain","synthetic","carpet1",70.0);
+				  Product p3 =  new Product("covers Wash per Cover","fits 3-seat sofa, cotton","cover",20.0);
+				   
+				    addProduct(p1);
+				    addProduct(p2);
+				    addProduct(p3);
+			}
+
+public boolean addProductTest(Product product  ) {
+	   boolean flag = false;
+		   for( int i  = 0 ; i < products.size(); i++) {
+			    if(product.getName().equalsIgnoreCase(products.get(i).getName())){
+			    flag = true;
+			    }
+		   
+
+	   }
+	    if(!flag)return true;
+	    else return false;
+
+}
+				   
+			
 		public Admin(String s1,String s2,String s3,String s4,String s5)// user name,pass,name,address,phone
 		{
 			this.username=s1;
@@ -75,32 +101,7 @@ public class Admin {
 		{
 			products.add(p);
 		}
-		public boolean addProductTest(Product product  ) {
-			   boolean flag = false;
-				   for( int i  = 0 ; i < products.size(); i++) {
-					    if(product.getName().equalsIgnoreCase(products.get(i).getName())){
-					    flag = true;
-					    }
-				   
 
-			   }
-			    return !flag;
-
-		   }
-			public  void addP() {
-				  Product p1 =  new Product("Capet Wash per meter","wool","carpet1",40.0);
-				  Product p2 =  new Product("Curtains Wash per C9urtain","synthetic","carpet1",70.0);
-				  Product p3 =  new Product("covers Wash per Cover","fits 3-seat sofa, cotton","cover",20.0);
-				   
-				    addProduct(p1);
-				    addProduct(p2);
-				    addProduct(p3);
-			}
-		    
-		
+	
 		
 	}
-
-
-
-

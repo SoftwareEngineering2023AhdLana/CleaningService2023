@@ -5,15 +5,40 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-public class CustomerFunction {
-	private CustomerFunction(){
-		//default constructor
-	}
-	protected static final List<Customer> customers=new ArrayList<Customer>();
-	protected static final List<Request> requests=new ArrayList<Request>();
 
+public class CustomerFunction {
+	static public ArrayList<Customer> customers=new ArrayList<Customer>();
+	static public ArrayList<Request> requests=new ArrayList<Request>();
+	  public  void addC1() {
+		   Customer c = new Customer();
+		    
+		    
+			c.setUsername("lana");
+			c.setPassword("123456");
+			c.setName("Julia Williams");
+			c.setPhoneNumber("123456");
+			c.setAddress("Tel Aviv");
+			c.setEmail("julia@company.com");
+			
+      customers.add(c);
+		
+	}
+	public  String addCustomer(String string) {
+		addC1();
+		// TODO Auto"-generated method stub
+		for(int i = 0;  i<  customers.size(); i++) {
+			if(customers.get(i).getUsername().equalsIgnoreCase(string))
+			return "Customer already exists";
+		}
+		return "Customer added successfully";
+	}
+
+	public  String addCustomerWithInfo(Customer customer) {
+
+		if(customer.getEmail() ==" "||customer.getPhoneNumber() == " "||customer.getPassword ()== " "||customer.getName() ==" "||customer.getUsername() ==" ")
+		return "Please enter valid information.";
+		return "Customer added successfully";
+	}
 	public static int search(String c)
 	{
 		for(int i=0;i<customers.size();i++)
@@ -28,7 +53,7 @@ public class CustomerFunction {
 		customers.get(search(customer)).addToCustomerRequestDone(r);
 	}
 	
-	public static void editRequest(String username,String oldDate,String newDate,String oldTime,String newTime , Product newp ) {
+	public static void editRequest(String username,String oldDate,String newDate,String oldTime,String newTime , Product old , Product newp ) {
 		int index=search(username);
 		for(int i=0;i<customers.get(index).getRequests().size();i++)
 		{
@@ -37,9 +62,7 @@ public class CustomerFunction {
 				customers.get(index).getRequests().get(i).setDate(newDate);
 				customers.get(index).getRequests().get(i).setTime(newTime);
 				customers.get(index).getRequests().get(i).setProduct(newp);
-				Logger logger=Logger.getLogger(
-						CustomerFunction.class.getName());
-				logger.log(Level.INFO, "edit order successfully.");
+				System.out.println("edit order successfully.");
 
 				break;
 			}
@@ -56,25 +79,24 @@ public class CustomerFunction {
 			if((date.equalsIgnoreCase(a.get(i).getDate()))&&(time.equals(a.get(i).getTime()))&&(p.equals(a.get(i).getproduct())))
 			{
 				customers.get(index).removeRequest(i);
-				Logger logger=Logger.getLogger(
-						CustomerFunction.class.getName());
-				logger.log(Level.INFO, "remove request successfully.");
+				System.out.println("remove order successfully.");
+				
 				break;
 			}
 		}
 	}
 	
-	public static void removeinvoice(String date,String time,Product p)
+	public static void removeinvoice(String username,String date,String time,Product p)
 	{
-		List<Request> a = InvoiceOrder.requests;
+		int index=search(username);
+		ArrayList<Request> a = InvoiceOrder.requests;
+		//a=invoiceOrder.request(username);
 		for(int i=0;i<a.size();i++)
 		{
 			if((date.equalsIgnoreCase(a.get(i).getDate()))&&(time.equals(a.get(i).getTime()))&&(p.equals(a.get(i).getproduct())))
 			{
 				InvoiceOrder.requests.remove(i);
-				Logger logger=Logger.getLogger(
-						CustomerFunction.class.getName());
-				logger.log(Level.INFO, "remove invoice successfully.");
+				System.out.println("remove order successfully.");
 				
 				break;
 			}
@@ -97,7 +119,7 @@ public class CustomerFunction {
 			if( date.equalsIgnoreCase(customers.get(index).getRequests().get(i).getDate()) && time.equals(customers.get(index).getRequests().get(i).getTime()) )
 			{	
 				customers.get(index).getRequests().get(i).setStatus(1);
-				Customer.resorRequestStill();
+				customers.get(index).resorRequestStill();
 				break;
 			}
 		}
@@ -110,29 +132,27 @@ public class CustomerFunction {
 		int index=search(username);
 		for(int i=0;i<customers.get(index).getRequests().size();i++)
 		{
-			if( date.equalsIgnoreCase(customers.get(index).getRequests().get(i).getDate()) && time.equals(customers.get(index).getRequests().get(i).getTime())&&(customers.get(index).getRequests().get(i).getStatus()==1) )
+			if( date.equalsIgnoreCase(customers.get(index).getRequests().get(i).getDate()) && time.equals(customers.get(index).getRequests().get(i).getTime()) )
 			{
-				
+				if(customers.get(index).getRequests().get(i).getStatus()==1)
 					return  discount * customers.get(index).getRequests().get(i).getproduct().getPrice();
 				
-			
-		}
 			}
+		}
 		return -1;
-		
-			
 	}
 	
 	public static double addDiscounttoRequest(String username,String date,String time) {
 		int index=search(username);
 		for(int i=0;i<customers.get(index).getRequests().size();i++)
 		{
-			if( date.equalsIgnoreCase(customers.get(index).getRequests().get(i).getDate()) && time.equals(customers.get(index).getRequests().get(i).getTime()) 
-			&& (customers.get(index).getRequests().get(i).getStatus()==1)
-				&& (customers.get(index).getRequests().get(i).getproduct().getPrice() >= 200.0))
+			if( date.equalsIgnoreCase(customers.get(index).getRequests().get(i).getDate()) && time.equals(customers.get(index).getRequests().get(i).getTime()) )
+			{
+				if(customers.get(index).getRequests().get(i).getStatus()==1)
+					if(customers.get(index).getRequests().get(i).getproduct().getPrice() >= 200.0)
 					return 0.20;
 			}
-			
+			}
 		
 		return 1;
     }
@@ -159,7 +179,7 @@ public class CustomerFunction {
 			return 1;
 		else if((currentDay<day)||(currentMonth<month)||(currentYear<year))
 			return -1;
-		else if((currentDay==day)||(currentMonth==month)||(currentYear==year))
+		else if((currentDay==day)&&(currentMonth==month)&&(currentYear==year))
 		{
 			if((currentHour>=hour)&&(currentMinute>=minute))
 				return 1;
@@ -177,6 +197,7 @@ public class CustomerFunction {
 		
 		Customer.resorRequestStill();
 	}
+	
 	// need to write function that check all order if still or done  in worker to notify customer if order done
 	
 	
@@ -184,25 +205,12 @@ public class CustomerFunction {
 	public static void viewallrequest( String n) {
 		for(int i =0 ; i < requests.size(); i++) {
 			if(requests.get(i).getNameCustomer().equalsIgnoreCase(n)) {
-				Logger logger=Logger.getLogger(
-						CustomerFunction.class.getName());
-						String footer = i + ". "+requests.get(i).getproduct().getName()+"\n Time of order : "+requests.get(i).getTime()+" and Date of order : "+requests.get(i).getDate()+"\n***************************************************\n";
-					
-				logger.log(Level.INFO,footer);
-				}
+			System.out.print(i + ". "+requests.get(i).getproduct().getName()+"\n Time of order : "+requests.get(i).getTime()+" and Date of order : "+requests.get(i).getDate()+"\n***************************************************\n");
+		}
 	}
 	}
-	public static double addDiscounttoTest(String username , String name , double totalprice) {
-		
-		for(int i=0;i<5;i++)
-		{
-			if( username.equalsIgnoreCase(name) && totalprice >= 200.0)
-					return 0.20;
-	    }
-			
-		
-		return 1;
-    }
 	
-}
+	
+	
 
+}

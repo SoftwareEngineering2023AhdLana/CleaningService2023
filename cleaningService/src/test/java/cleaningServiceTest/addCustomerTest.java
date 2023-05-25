@@ -1,4 +1,6 @@
-package cleaningService;
+package cleaningServiceTest;
+
+
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -14,7 +16,7 @@ public class addCustomerTest {
     String result1,result2;
     String res1,res2,res3;
     String re1,re2,re3;
-
+    CustomerFunction cf = new CustomerFunction();
  
    
 	@Given("the customer {string} does not already exist")
@@ -29,7 +31,7 @@ public class addCustomerTest {
 		// Test adding a customer that does not exist
 		
 		
-		 result1 = customers.addCustomer("mohamad");
+		 result1 = cf.addCustomer("mohamad");
 
 
 	
@@ -61,7 +63,7 @@ public class addCustomerTest {
 	    // Write code here that turns the phrase above into concrete actions
 	
 		// Test adding a customer that already exists
-		result2 = customers.addCustomer("lana");
+		result2 = cf.addCustomer("lana");
 
 	
 	}
@@ -121,7 +123,7 @@ public class addCustomerTest {
 		customer1.setPhoneNumber("123456");
 		customer1.setAddress("Tel Aviv");
 		customer1.setEmail("julia@company.com");
-		res1 = customers.addCustomerWithInfo(customer1);
+		res1 = cf.addCustomerWithInfo(customer1);
 
 		Customer customer2 = new Customer();
 		customer2.setUsername("david");
@@ -130,7 +132,7 @@ public class addCustomerTest {
 		customer2.setPhoneNumber("052123456");
 		customer2.setAddress("Haifa");
 		customer2.setEmail("david@company.com");
-		res2 = customers.addCustomerWithInfo(customer2);
+		res2 = cf.addCustomerWithInfo(customer2);
 
 		Customer customer3 = new Customer();
 		customer3.setUsername("sarah");
@@ -139,7 +141,7 @@ public class addCustomerTest {
 		customer3.setPhoneNumber("052312456");
 		customer3.setAddress("Jerusalem");
 		customer3.setEmail("sarah@company.com");
-		res3 = customers.addCustomerWithInfo(customer3);
+		res3 = cf.addCustomerWithInfo(customer3);
 		
 	
 	}
@@ -177,7 +179,7 @@ public class addCustomerTest {
 		customer1.setPhoneNumber("123456");
 		customer1.setAddress("Tel Aviv");
 		customer1.setEmail("john@company.com");
-		re1 = customers.addCustomerWithInfo(customer1);
+		re1 = cf.addCustomerWithInfo(customer1);
 
 		Customer customer2 = new Customer();
 		customer2.setUsername("mike");
@@ -186,7 +188,7 @@ public class addCustomerTest {
 		customer2.setPhoneNumber("052123456");
 		customer2.setAddress("Haifa");
 		customer2.setEmail("mike@company.com");
-		re2 = customers.addCustomerWithInfo(customer2);
+		re2 = cf.addCustomerWithInfo(customer2);
 
 		Customer customer3 = new Customer();
 		customer3.setUsername("amy");
@@ -195,7 +197,7 @@ public class addCustomerTest {
 		customer3.setPhoneNumber(" ");
 		customer3.setAddress("Jerusalem");
 		customer3.setEmail("amy@company.com");
-		re3 = customers.addCustomerWithInfo(customer3);
+		re3 = cf.addCustomerWithInfo(customer3);
 
 	}
 	@Then("I should get an error message {string}")
